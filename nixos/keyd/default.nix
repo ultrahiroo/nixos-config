@@ -1,7 +1,4 @@
 { pkgs, ... }: {
-  # programs.keyd = {
-  #   enable = true;
-  # };
   systemd.services.keyd = {
     description = "key remapping daemon";
     enable = true;
