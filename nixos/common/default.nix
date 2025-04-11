@@ -28,10 +28,6 @@
       openFirewall = true;
     };
 
-    power-profiles-daemon = {
-      enable = true;
-    };
-
     printing.enable = true;
   };
 
@@ -43,9 +39,6 @@
     sysstat
     lm_sensors
     neofetch
-    # scrot
-    # xfce.thunar
-    # nnn
   ];
 
   networking.firewall.enable = false;
