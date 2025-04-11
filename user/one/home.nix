@@ -8,5 +8,6 @@
     ../../home/chromium
     ../../home/firefox
     ../../home/btop
+    ../../home/ripgrep
   ];
 }

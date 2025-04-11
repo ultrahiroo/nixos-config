@@ -24,6 +24,7 @@ journalctl -xe --unit home-manager-<username>.service
 - https://nixos.wiki/wiki/KDE
 - https://nixos.wiki/wiki/Nixos-rebuild
 - https://nixos.wiki/wiki/Power_Management
+- https://wiki.nixos.org/wiki/Secret_Service
 
 ## Issue
 - https://discourse.nixos.org/t/why-cant-i-use-let-variables-in-flake-nix-inputs/39929
@@ -32,3 +33,4 @@ journalctl -xe --unit home-manager-<username>.service
 - https://unix.stackexchange.com/questions/500025/how-to-add-a-file-to-etc-in-nixos
 - https://discourse.nixos.org/t/how-to-get-the-service-running-for-keyd/24991/3
 - https://discourse.nixos.org/t/failed-to-start-home-manager-environment-for-user/50254
+- https://discourse.nixos.org/t/how-to-automatically-unlock-kwallet-at-start-up/61308

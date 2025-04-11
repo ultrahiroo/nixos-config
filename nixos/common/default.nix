@@ -35,7 +35,6 @@
     vim
     wget
     curl
-    git
     sysstat
     lm_sensors
     neofetch
