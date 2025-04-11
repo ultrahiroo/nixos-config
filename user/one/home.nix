@@ -7,5 +7,6 @@
     # ../../home/i3
     ../../home/chromium
     ../../home/firefox
+    ../../home/btop
   ];
 }
