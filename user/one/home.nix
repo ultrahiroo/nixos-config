@@ -14,5 +14,7 @@
     ../../home/brave
     ../../home/chromium
     ../../home/firefox
+
+    ../../home/kate
   ];
 }
