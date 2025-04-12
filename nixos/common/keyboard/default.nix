@@ -1,6 +1,6 @@
 { ... }: {
   services.xserver = {
-    autoRepeatDelay = 120;
+    autoRepeatDelay = 180;
     autoRepeatInterval = 30;
     xkb = {
       layout = "us";
