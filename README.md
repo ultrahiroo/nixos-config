@@ -25,6 +25,8 @@ journalctl -xe --unit home-manager-<username>.service
 - https://nixos.wiki/wiki/Nixos-rebuild
 - https://nixos.wiki/wiki/Power_Management
 - https://wiki.nixos.org/wiki/Secret_Service
+- https://nixos.wiki/wiki/Keyboard_Layout_Customization
+- https://wiki.nixos.org/wiki/Command_Shell
 
 ## Issue
 - https://discourse.nixos.org/t/why-cant-i-use-let-variables-in-flake-nix-inputs/39929

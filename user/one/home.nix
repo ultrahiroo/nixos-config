@@ -4,10 +4,14 @@
 
     ../../home/common
     ../../home/git
-    # ../../home/i3
-    ../../home/chromium
-    ../../home/firefox
     ../../home/btop
     ../../home/ripgrep
+
+    ../../home/i3
+    ../../home/plasma
+
+    ../../home/brave
+    ../../home/chromium
+    ../../home/firefox
   ];
 }

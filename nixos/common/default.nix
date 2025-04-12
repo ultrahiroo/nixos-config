@@ -2,10 +2,10 @@
   imports = [
     ./audio
     ./font
+    ./keyboard
     ./locale
     ./nix
     ./user
-    ./xserver
   ];
 
   programs.dconf.enable = true;
