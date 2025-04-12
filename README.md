@@ -11,7 +11,7 @@ sudo nixos-rebuild switch --flake .#main
 
 ## If Error When Switch
 ```sh
-journalctl -xe --unit home-manager-<username>.service
+journalctl -xe --unit home-manager-one.service
 ```
 
 # Reference
