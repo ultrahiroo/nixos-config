@@ -1,5 +1,5 @@
 { pkgs, username, ... }: {
- users.users.${username} = {
+  users.users.${username} = {
     group = username;
     isNormalUser = true;
     description = username;
