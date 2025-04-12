@@ -6,6 +6,7 @@
     ../../home/git
     ../../home/btop
     ../../home/ripgrep
+    ../../home/gh
 
     ../../home/i3
     ../../home/plasma

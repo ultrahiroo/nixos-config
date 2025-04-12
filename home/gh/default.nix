@@ -1,6 +1,6 @@
 { ... }: {
   programs = {
-    git = {
+    gh = {
       enable = true;
     };
   };
