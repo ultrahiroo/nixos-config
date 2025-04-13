@@ -1,4 +1,4 @@
-{ username, ... }: {
+{ username, pkgs, ... }: {
   imports = [
     ./git.nix
 
@@ -17,4 +17,11 @@
 
     ../../home/kate
   ];
+  home = {
+    packages = with pkgs; [
+      python3
+      python3Packages.pip
+      python3Packages.virtualenv
+    ];
+  };
 }
