@@ -3,10 +3,10 @@
     ./git.nix
 
     ../../home/common
-    ../../home/git
     ../../home/btop
-    ../../home/ripgrep
     ../../home/gh
+    ../../home/git
+    ../../home/ripgrep
 
     ../../home/i3
     ../../home/plasma
