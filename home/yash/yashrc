@@ -1,0 +1,19 @@
+# Defalut Initialization
+. --autoload --no-alias ${HOME}/.config/yash/initialization/common
+
+# Environment
+# . ${HOME}/.config/yash/export.sh
+
+# Screen
+clean
+
+# Prompt
+if [ "${LANG}" != 'C' ]; then
+    . ${HOME}/.config/yash/prompt.sh
+fi
+
+# Alias
+. ${HOME}/.config/yash/alias.sh
+
+# Function
+. ${HOME}/.config/yash/function.sh

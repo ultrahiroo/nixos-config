@@ -7,6 +7,7 @@
     ../../home/gh
     ../../home/git
     ../../home/ripgrep
+    ../../home/yash
 
     ../../home/i3
     ../../home/plasma
@@ -19,6 +20,9 @@
   ];
   home = {
     packages = with pkgs; [
+      clangStdenv
+      eza
+      fd
       python3
       python3Packages.pip
       python3Packages.virtualenv
