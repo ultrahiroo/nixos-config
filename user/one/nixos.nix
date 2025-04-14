@@ -6,6 +6,7 @@
     ../../nixos/plasma
     ../../nixos/gnupg
     ../../nixos/gnome-keyring
+    ../../nixos/wireguard
   ];
   users.users.${username}.shell = pkgs.yash;
 }
