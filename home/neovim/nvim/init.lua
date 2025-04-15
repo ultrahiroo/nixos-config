@@ -1,0 +1,7 @@
+vim.loader.enable()
+require('option')
+require('keymap')
+require('user_command')
+require('colorscheme')
+require('plugin')
+require('autocmd')

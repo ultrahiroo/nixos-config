@@ -17,6 +17,7 @@
     ../../home/firefox
 
     ../../home/kate
+    ../../home/neovim
   ];
   home = {
     packages = with pkgs; [
