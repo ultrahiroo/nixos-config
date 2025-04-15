@@ -24,18 +24,26 @@
       url = "github:catppuccin/bat";
       flake = false;
     };
+    clean-flake = {
+      url = "path:/user/one/project/clean";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
     self,
     nixpkgs,
     home-manager,
+    clean-flake,
     ...
   }: {
     nixosConfigurations = {
       nixos-test = let
         username = "one";
-        specialArgs = {inherit username;};
+        specialArgs = { inherit username; };
+        clean-overlay = final: prev: {
+          cleanPackage = clean-flake.packages.${prev.system};
+        };
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
@@ -44,6 +52,10 @@
           modules = [
             ./host/nixos-test
             ./user/${username}/nixos.nix
+
+            ({ config, pkgs, ... }: { nixpkgs.overlays = [
+              clean-overlay
+            ]; })
 
             home-manager.nixosModules.home-manager
             {
@@ -58,7 +70,10 @@
 
       main = let
         username = "one";
-        specialArgs = {inherit username;};
+        specialArgs = { inherit username; };
+        clean-overlay = final: prev: {
+          cleanPackage = clean-flake.packages.${prev.system};
+        };
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
@@ -67,6 +82,10 @@
           modules = [
             ./host/main
             ./user/${username}/nixos.nix
+
+            ({ config, pkgs, ... }: { nixpkgs.overlays = [
+              clean-overlay
+            ]; })
 
             home-manager.nixosModules.home-manager
             {

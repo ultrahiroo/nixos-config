@@ -20,9 +20,12 @@
   ];
   home = {
     packages = with pkgs; [
-      clangStdenv
+      cleanPackage.clean
+      bat
+      clang
       eza
       fd
+      gnumake
       python3
       python3Packages.pip
       python3Packages.virtualenv
