@@ -2,7 +2,7 @@
 . --autoload --no-alias ${HOME}/.config/yash/initialization/common
 
 # Environment
-# . ${HOME}/.config/yash/export.sh
+. ${HOME}/.config/yash/export.sh
 
 # Screen
 clean
