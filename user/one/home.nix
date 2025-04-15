@@ -6,7 +6,6 @@
     ../../home/btop
     ../../home/gh
     ../../home/git
-    ../../home/ripgrep
     ../../home/yash
 
     ../../home/i3
@@ -22,14 +21,19 @@
   home = {
     packages = with pkgs; [
       cleanPackage.clean
+      alacritty
       bat
       clang
       eza
       fd
+      gg
       gnumake
+      ripgrep
       python3
       python3Packages.pip
       python3Packages.virtualenv
+      wl-clipboard
+      xclip
     ];
   };
 }
