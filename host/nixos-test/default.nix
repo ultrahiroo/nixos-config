@@ -15,7 +15,5 @@
 
   networking = {
     hostName = "nixos-test";
-    wireless.enable = false;
-    networkmanager.enable = true;
   };
 }

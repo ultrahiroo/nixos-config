@@ -4,6 +4,7 @@
     ./font
     ./keyboard
     ./locale
+    ./network
     ./nix
     ./user
   ];
@@ -13,16 +14,8 @@
 
   services = {
     dbus.packages = [pkgs.gcr];
-
     geoclue2.enable = true;
-
     udev.packages = with pkgs; [gnome-settings-daemon];
-
     printing.enable = true;
   };
-
-  environment.systemPackages = with pkgs; [
-  ];
-
-  networking.firewall.enable = false;
 }

@@ -14,15 +14,13 @@
 
   networking = {
     hostName = "main";
-    wireless.enable = false;
-    networkmanager.enable = true;
   };
 
   # For NVidia GPU
   hardware.graphics = {
     enable = true;
   };
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
