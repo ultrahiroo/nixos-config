@@ -1,5 +1,18 @@
 {
   "nodes": {
+    "alacritty-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1738998213,
+        "narHash": "sha256-crizOmAUvu77KHMzettgk+ZmJUQaFZhjqcyc8NrDsss=",
+        "path": "/user/one/setting/alacritty",
+        "type": "path"
+      },
+      "original": {
+        "path": "/user/one/setting/alacritty",
+        "type": "path"
+      }
+    },
     "catppuccin-bat": {
       "flake": false,
       "locked": {
@@ -50,6 +63,19 @@
         "owner": "numtide",
         "repo": "flake-utils",
         "type": "github"
+      }
+    },
+    "font-data": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1743019183,
+        "narHash": "sha256-DFzQhPbHO1s1k6q6XkN9KvFN3wn+OE/PYycdZXNGnO4=",
+        "path": "/user/one/home/www/collection/font",
+        "type": "path"
+      },
+      "original": {
+        "path": "/user/one/home/www/collection/font",
+        "type": "path"
       }
     },
     "home-manager": {
@@ -122,8 +148,10 @@
     },
     "root": {
       "inputs": {
+        "alacritty-config": "alacritty-config",
         "catppuccin-bat": "catppuccin-bat",
         "clean-flake": "clean-flake",
+        "font-data": "font-data",
         "home-manager": "home-manager",
         "nixos": "nixos",
         "nixos-hardware": "nixos-hardware",

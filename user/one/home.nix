@@ -7,6 +7,7 @@
     ../../home/gh
     ../../home/git
     ../../home/yash
+    ../../home/font
 
     ../../home/i3
     ../../home/plasma
@@ -17,6 +18,8 @@
 
     ../../home/kate
     ../../home/neovim
+
+    ../../home/alacritty
   ];
   home = {
     packages = with pkgs; [

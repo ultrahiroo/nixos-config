@@ -1,17 +1,6 @@
 {
   description = "NixOS and Home Manager Configuration";
 
-  nixConfig = {
-    extra-substituters = [
-      "https://nix-community.cachix.org"
-      "https://cuda-maintainers.cachix.org"
-    ];
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
-    ];
-  };
-
   inputs = {
     nixos.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixos-hardware.url = "github:NixOS/nixos-hardware";
@@ -28,6 +17,14 @@
       url = "path:/user/one/project/clean";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    font-data = {
+      url = "path:/user/one/home/www/collection/font";
+      flake = false;
+    };
+    alacritty-config = {
+      url = "path:/user/one/setting/alacritty";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
@@ -40,7 +37,10 @@
     nixosConfigurations = {
       nixos-test = let
         username = "one";
-        specialArgs = { inherit username; };
+        specialArgs = {
+          inherit username;
+          inherit inputs;
+        };
         clean-overlay = final: prev: {
           cleanPackage = clean-flake.packages.${prev.system};
         };
@@ -57,12 +57,10 @@
               clean-overlay
             ]; })
 
-            home-manager.nixosModules.home-manager
-            {
+            home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-
-              home-manager.extraSpecialArgs = inputs // specialArgs;
+              home-manager.extraSpecialArgs = specialArgs;
               home-manager.users.${username} = import ./user/${username}/home.nix;
             }
           ];
@@ -70,7 +68,10 @@
 
       main = let
         username = "one";
-        specialArgs = { inherit username; };
+        specialArgs = {
+          inherit username;
+          inherit inputs;
+        };
         clean-overlay = final: prev: {
           cleanPackage = clean-flake.packages.${prev.system};
         };
@@ -87,12 +88,10 @@
               clean-overlay
             ]; })
 
-            home-manager.nixosModules.home-manager
-            {
+            home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-
-              home-manager.extraSpecialArgs = inputs // specialArgs;
+              home-manager.extraSpecialArgs = specialArgs;
               home-manager.users.${username} = import ./user/${username}/home.nix;
             }
           ];
