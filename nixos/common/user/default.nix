@@ -3,9 +3,8 @@
     group = username;
     isNormalUser = true;
     description = username;
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
     ];
   };
   users.groups.${username} = {};

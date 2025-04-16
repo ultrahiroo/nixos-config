@@ -27,14 +27,18 @@
       alacritty
       bat
       clang
+      curl
       eza
       fd
       gg
       gnumake
+      neofetch
+      kdePackages.kate
       ripgrep
       python3
       python3Packages.pip
       python3Packages.virtualenv
+      wget
       wl-clipboard
       xclip
     ];

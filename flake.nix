@@ -25,6 +25,10 @@
       url = "path:/user/one/setting/alacritty";
       flake = false;
     };
+    wireguard-config = {
+      url = "path:/user/one/setting/wireguard";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {

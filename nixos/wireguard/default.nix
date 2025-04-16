@@ -1,6 +1,6 @@
-{ username, ... }: {
+{ inputs, ... }: {
   networking.wg-quick.interfaces.wg0 = {
     autostart = true;
-    configFile = "/home/${username}/.config/wireguard/wg0.conf";
+    configFile = "${inputs.wireguard-config}/wg0.conf";
   };
 }

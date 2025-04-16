@@ -32,12 +32,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vim
-    wget
-    curl
-    sysstat
-    lm_sensors
-    neofetch
   ];
 
   networking.firewall.enable = false;

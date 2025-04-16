@@ -155,7 +155,8 @@
         "home-manager": "home-manager",
         "nixos": "nixos",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "wireguard-config": "wireguard-config"
       }
     },
     "systems": {
@@ -171,6 +172,19 @@
         "owner": "nix-systems",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "wireguard-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744639653,
+        "narHash": "sha256-9baTa3d9Tzr+uKiD/p675Y1teu//Sa6RNRPkIcKjkqc=",
+        "path": "/user/one/setting/wireguard",
+        "type": "path"
+      },
+      "original": {
+        "path": "/user/one/setting/wireguard",
+        "type": "path"
       }
     }
   },
