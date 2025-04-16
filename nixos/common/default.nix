@@ -18,16 +18,6 @@
 
     udev.packages = with pkgs; [gnome-settings-daemon];
 
-    openssh = {
-      enable = true;
-      settings = {
-        X11Forwarding = true;
-        PermitRootLogin = "no";
-        PasswordAuthentication = false;
-      };
-      openFirewall = true;
-    };
-
     printing.enable = true;
   };
 

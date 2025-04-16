@@ -41,6 +41,7 @@
       wget
       wl-clipboard
       xclip
+      yash
     ];
   };
 }
