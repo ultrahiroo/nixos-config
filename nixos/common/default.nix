@@ -12,6 +12,7 @@
   programs.dconf.enable = true;
   security.polkit.enable = true;
 
+  security.pam.services.login.enableGnomeKeyring = true;
   services = {
     dbus.packages = with pkgs; [ gcr ];
     geoclue2.enable = true;

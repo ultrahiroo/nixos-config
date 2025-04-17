@@ -15,6 +15,10 @@
     hyprland = {
       url = "github:hyprwm/Hyprland";
     };
+    hy3 = {
+      url = "github:outfoxxed/hy3";
+      inputs.hyprland.follows = "hyprland";
+    };
     catppuccin-bat = {
       url = "github:catppuccin/bat";
       flake = false;
@@ -32,7 +36,7 @@
       flake = false;
     };
     hyprland-config = {
-      url = "path:/user/one/setting/hypr";
+      url = "path:/user/one/setting/hyprland/hypr";
       flake = false;
     };
     neovim-config = {
