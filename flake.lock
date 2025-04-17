@@ -257,6 +257,19 @@
         "type": "github"
       }
     },
+    "hyprland-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744868041,
+        "narHash": "sha256-0lpb1v6sihpvWgomxlYGpsv9BYGgAin4SenkSlGxXCk=",
+        "path": "/user/one/setting/hypr",
+        "type": "path"
+      },
+      "original": {
+        "path": "/user/one/setting/hypr",
+        "type": "path"
+      }
+    },
     "hyprland-protocols": {
       "inputs": {
         "nixpkgs": [
@@ -520,6 +533,7 @@
         "font-data": "font-data",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
+        "hyprland-config": "hyprland-config",
         "neovim-config": "neovim-config",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",

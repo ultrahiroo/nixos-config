@@ -11,6 +11,7 @@
 
     ../../home/i3
     ../../home/plasma
+    ../../home/hyprland
 
     ../../home/brave
     ../../home/chromium

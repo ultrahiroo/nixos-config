@@ -31,6 +31,10 @@
       url = "path:/user/one/setting/alacritty";
       flake = false;
     };
+    hyprland-config = {
+      url = "path:/user/one/setting/hypr";
+      flake = false;
+    };
     neovim-config = {
       url = "path:/user/one/setting/nvim";
       flake = false;
