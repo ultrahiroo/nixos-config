@@ -429,6 +429,19 @@
         "type": "github"
       }
     },
+    "neovim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1744709696,
+        "narHash": "sha256-nf6pAFknn1MH1d4WyPfI+l183M+LM4vMCC+L1bRGvSM=",
+        "path": "/user/one/setting/nvim",
+        "type": "path"
+      },
+      "original": {
+        "path": "/user/one/setting/nvim",
+        "type": "path"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1744633460,
@@ -507,6 +520,7 @@
         "font-data": "font-data",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
+        "neovim-config": "neovim-config",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "wireguard-config": "wireguard-config"

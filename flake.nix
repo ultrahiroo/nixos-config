@@ -31,6 +31,10 @@
       url = "path:/user/one/setting/alacritty";
       flake = false;
     };
+    neovim-config = {
+      url = "path:/user/one/setting/nvim";
+      flake = false;
+    };
     wireguard-config = {
       url = "path:/user/one/setting/wireguard";
       flake = false;

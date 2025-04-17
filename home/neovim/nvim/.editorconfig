@@ -1,5 +1,0 @@
-# https://github.com/CppCXY/EmmyLuaCodeStyle
-# https://github.com/CppCXY/EmmyLuaCodeStyle/blob/master/lua.template.editorconfig
-[*.lua]
-# none|single|double
-quote_style = single

@@ -1,2 +1,0 @@
-#!/bin/sh
-nvr --remote-send '<Esc>:badd tmp.text<CR>:bprevious | startinsert<CR>'
