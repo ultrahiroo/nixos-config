@@ -9,6 +9,7 @@
     ../../nixos/openssh
     ../../nixos/plasma
     ../../nixos/wireguard
+    ../../nixos/steam
   ];
   users.users.${username}.shell = pkgs.yash;
 }

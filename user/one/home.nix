@@ -28,21 +28,32 @@
       alacritty
       bat
       clang
+      cmake
+      # codon
       curl
       eza
       fd
       gg
       gnumake
+      meson
       neofetch
       kdePackages.kate
       ripgrep
       python3
       python3Packages.pip
       python3Packages.virtualenv
+      vscode
       wget
       wl-clipboard
       xclip
       yash
+
+      bottles
+      gamescope
+      heroic
+      lutris
+      mangohud
+      protonup
     ];
   };
 }

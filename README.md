@@ -39,3 +39,5 @@ journalctl -xe --unit home-manager-one.service
 - https://discourse.nixos.org/t/failed-to-start-home-manager-environment-for-user/50254
 - https://discourse.nixos.org/t/how-to-automatically-unlock-kwallet-at-start-up/61308
 - https://nixos-and-flakes.thiscute.world/other-usage-of-flakes/inputs
+- https://github.com/hyprwm/Hyprland/issues/4664
+- https://journix.dev/posts/gaming-on-nixos/

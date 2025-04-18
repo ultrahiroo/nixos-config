@@ -13,10 +13,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
-      url = "github:hyprwm/Hyprland";
+      url = "github:hyprwm/Hyprland?submodules=1&ref=v0.48.0";
     };
     hy3 = {
-      url = "github:outfoxxed/hy3";
+      url = "github:outfoxxed/hy3?ref=hl0.48.0";
+      inputs.hyprland.follows = "hyprland";
+    };
+    hyprbars = {
+      url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
     };
     catppuccin-bat = {
@@ -83,7 +87,9 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = specialArgs;
-              home-manager.users.${username} = import ./user/${username}/home.nix;
+              home-manager.users.${username}.imports = [
+                ./user/${username}/home.nix
+              ];
             }
           ];
         };
@@ -114,7 +120,9 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = specialArgs;
-              home-manager.users.${username} = import ./user/${username}/home.nix;
+              home-manager.users.${username}.imports = [
+                ./user/${username}/home.nix
+              ];
             }
           ];
         };
