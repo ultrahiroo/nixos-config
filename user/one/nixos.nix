@@ -8,8 +8,16 @@
     ../../nixos/keyd
     ../../nixos/openssh
     ../../nixos/plasma
-    ../../nixos/wireguard
     ../../nixos/steam
+    ../../nixos/caddy
+    # ../../nixos/web_server
+    ../../nixos/waydroid
+    ../../nixos/distrobox
+    # ../../nixos/virtualbox
+    ../../nixos/virt-manager
   ];
   users.users.${username}.shell = pkgs.yash;
+  environment.systemPackages = with pkgs; [
+    virtiofsd
+  ];
 }

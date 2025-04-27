@@ -591,7 +591,8 @@
         "neovim-config": "neovim-config",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
-        "wireguard-config": "wireguard-config"
+        "wireguard-config": "wireguard-config",
+        "wireproxy-config": "wireproxy-config"
       }
     },
     "systems": {
@@ -634,6 +635,19 @@
       },
       "original": {
         "path": "/user/one/setting/wireguard",
+        "type": "path"
+      }
+    },
+    "wireproxy-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1745014222,
+        "narHash": "sha256-SzY97EIqgRVJVehuoDHm6xX376Ng5o6KWj7/ABdq3GI=",
+        "path": "/user/one/setting/wireproxy/wireproxy",
+        "type": "path"
+      },
+      "original": {
+        "path": "/user/one/setting/wireproxy/wireproxy",
         "type": "path"
       }
     },

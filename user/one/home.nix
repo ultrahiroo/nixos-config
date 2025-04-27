@@ -21,39 +21,53 @@
     ../../home/neovim
 
     ../../home/alacritty
+
+    # ../../home/caddy
+    ../../home/mydns
+    ../../home/wireproxy
+    ../../home/web_server
   ];
   home = {
     packages = with pkgs; [
       cleanPackage.clean
       alacritty
+      baobab
       bat
+      caddy
       clang
       cmake
-      # codon
+      cpu-x
       curl
+      devenv
       eza
       fd
       gg
       gnumake
       meson
       neofetch
+      nodejs_23
+      nvtopPackages.full
       kdePackages.kate
       ripgrep
       python3
       python3Packages.pip
       python3Packages.virtualenv
+      scc
+      tmux
+      unixtools.quota
       vscode
       wget
+      wireproxy
       wl-clipboard
       xclip
       yash
 
       bottles
-      gamescope
-      heroic
-      lutris
+      # heroic
+      # lutris
       mangohud
-      protonup
+      protonup-qt
+      # rare
     ];
   };
 }

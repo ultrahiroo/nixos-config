@@ -7,9 +7,10 @@
       localNetworkGameTransfers.openFirewall = true;
       gamescopeSession.enable = true;
     };
-  };
-  programs = {
     gamescope = {
+      enable = true;
+    };
+    gamemode = {
       enable = true;
     };
   };

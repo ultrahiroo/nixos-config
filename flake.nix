@@ -51,6 +51,10 @@
       url = "path:/user/one/setting/wireguard";
       flake = false;
     };
+    wireproxy-config = {
+      url = "path:/user/one/setting/wireproxy/wireproxy";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {

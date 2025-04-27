@@ -14,6 +14,11 @@ sudo nixos-rebuild switch --flake .#main
 journalctl -xe --unit home-manager-one.service
 ```
 
+## Reload systemd
+```sh
+sudo systemctl daemon-reload
+```
+
 # Reference
 ## Example
 - https://github.com/ryan4yin/nix-config/tree/i3-kickstarter
