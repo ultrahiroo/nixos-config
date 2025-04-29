@@ -19,8 +19,8 @@
       url = "github:outfoxxed/hy3?ref=hl0.48.0";
       inputs.hyprland.follows = "hyprland";
     };
-    hyprbars = {
-      url = "github:hyprwm/hyprland-plugins";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins?ref=v0.48.0";
       inputs.hyprland.follows = "hyprland";
     };
     catppuccin-bat = {

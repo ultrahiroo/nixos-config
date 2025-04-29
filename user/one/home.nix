@@ -47,6 +47,7 @@
       neofetch
       nodejs_23
       nvtopPackages.full
+      kdePackages.filelight
       kdePackages.kate
       ripgrep
       python3

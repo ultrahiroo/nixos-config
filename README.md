@@ -19,6 +19,11 @@ journalctl -xe --unit home-manager-one.service
 sudo systemctl daemon-reload
 ```
 
+## Clean
+```sh
+nix store gc
+```
+
 # Reference
 ## Example
 - https://github.com/ryan4yin/nix-config/tree/i3-kickstarter

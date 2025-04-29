@@ -13,6 +13,6 @@ in {
   };
   environment.sessionVariables = rec {
     HYPRLAND_PLUGIN_HY3 = "${inputs.hy3.packages.${pkgs.system}.hy3}/lib/libhy3.so";
-    HYPRLAND_PLUGIN_HYPRBARS = "${inputs.hyprbars.packages.${pkgs.system}.hyprbars}/lib/libhyprbars.so";
+    HYPRLAND_PLUGIN_HYPRBARS = "${inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars}/lib/libhyprbars.so";
   };
 }
