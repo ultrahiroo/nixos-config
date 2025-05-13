@@ -5,5 +5,9 @@
       plugin = ${inputs.hy3.packages.${pkgs.system}.hy3}/lib/libhy3.so
       # plugin = ${inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars}/lib/libhyprbars.so
     '';
+    ".config/hypr/hyprpaper.conf".text = ''
+      preload = ${../../wallpaper/wallpaper.jpg}
+      wallpaper = monitor, ${../../wallpaper/wallpaper.jpg}
+    '';
   };
 }

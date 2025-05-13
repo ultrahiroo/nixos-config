@@ -318,8 +318,8 @@
     "hyprland-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1744962007,
-        "narHash": "sha256-pBHPRrMXzUm1JZLGHma8pnA9ZFPTmELng9Vbuvk1/0w=",
+        "lastModified": 1747145040,
+        "narHash": "sha256-2N3oE9SKOSjWXETDzJ9kSXhJX5ozkIvpjP9cLx8pDZU=",
         "path": "/user/one/setting/hyprland/hypr",
         "type": "path"
       },

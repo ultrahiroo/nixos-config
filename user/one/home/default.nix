@@ -1,4 +1,4 @@
-{ username, pkgs, ... }: {
+{ inputs, pkgs, username, ... }: {
   imports = [
     ./common
     ./btop
@@ -48,6 +48,7 @@
       gimp
       gg
       gnumake
+      hyprpaper
       meson
       neofetch
       nodejs_23
