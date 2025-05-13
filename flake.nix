@@ -31,6 +31,14 @@
       url = "path:/user/one/project/clean";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    codon-flake = {
+      url = "path:/user/one/project/codon";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # davinci-resolve-flake = {
+    #   url = "path:/user/one/project/davinci-resolve";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     font-data = {
       url = "path:/user/one/home/www/collection/font";
       flake = false;
@@ -61,7 +69,6 @@
     self,
     nixpkgs,
     home-manager,
-    clean-flake,
     ...
   }: {
     nixosConfigurations = {
@@ -72,7 +79,9 @@
           inherit inputs;
         };
         clean-overlay = final: prev: {
-          cleanPackage = clean-flake.packages.${prev.system};
+          cleanPackage = inputs.clean-flake.packages.${prev.system};
+          codonPackage = inputs.codon-flake.packages.${prev.system};
+          # davinci-resolvePackage = inputs.davinci-resolve-flake.packages.${prev.system};
         };
       in
         nixpkgs.lib.nixosSystem {
@@ -81,7 +90,7 @@
 
           modules = [
             ./host/nixos-test
-            ./user/${username}/nixos.nix
+            ./user/${username}/nixos
 
             ({ config, pkgs, ... }: { nixpkgs.overlays = [
               clean-overlay
@@ -92,7 +101,7 @@
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = specialArgs;
               home-manager.users.${username}.imports = [
-                ./user/${username}/home.nix
+                ./user/${username}/home
               ];
             }
           ];
@@ -105,7 +114,9 @@
           inherit inputs;
         };
         clean-overlay = final: prev: {
-          cleanPackage = clean-flake.packages.${prev.system};
+          cleanPackage = inputs.clean-flake.packages.${prev.system};
+          codonPackage = inputs.codon-flake.packages.${prev.system};
+          # davinci-resolvePackage = inputs.davinci-resolve-flake.packages.${prev.system};
         };
       in
         nixpkgs.lib.nixosSystem {
@@ -114,7 +125,7 @@
 
           modules = [
             ./host/main
-            ./user/${username}/nixos.nix
+            ./user/${username}/nixos
 
             ({ config, pkgs, ... }: { nixpkgs.overlays = [
               clean-overlay
@@ -125,7 +136,7 @@
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = specialArgs;
               home-manager.users.${username}.imports = [
-                ./user/${username}/home.nix
+                ./user/${username}/home
               ];
             }
           ];

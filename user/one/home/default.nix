@@ -1,38 +1,42 @@
 { username, pkgs, ... }: {
   imports = [
-    ./git.nix
+    ./common
+    ./btop
+    ./gh
+    ./git
+    ./yash
+    ./font
 
-    ../../home/common
-    ../../home/btop
-    ../../home/gh
-    ../../home/git
-    ../../home/yash
-    ../../home/font
+    ./i3
+    ./plasma
+    ./hyprland
+    ./waybar
 
-    ../../home/i3
-    ../../home/plasma
-    ../../home/hyprland
+    ./brave
+    ./chromium
+    ./firefox
 
-    ../../home/brave
-    ../../home/chromium
-    ../../home/firefox
+    ./kate
+    ./neovim
 
-    ../../home/kate
-    ../../home/neovim
+    ./alacritty
 
-    ../../home/alacritty
-
-    # ../../home/caddy
-    ../../home/mydns
-    ../../home/wireproxy
-    ../../home/web_server
+    # ./caddy
+    ./mydns
+    ./wireproxy
+    ./web_server
   ];
   home = {
     packages = with pkgs; [
       cleanPackage.clean
+      codonPackage.codon
+      # davinci-resolvePackage.davinci-resolve
+
       alacritty
+      appimage-run
       baobab
       bat
+      blender
       caddy
       clang
       cmake
@@ -41,6 +45,7 @@
       devenv
       eza
       fd
+      gimp
       gg
       gnumake
       meson
@@ -49,14 +54,21 @@
       nvtopPackages.full
       kdePackages.filelight
       kdePackages.kate
-      ripgrep
+      kdePackages.kdeconnect-kde
+      kdePackages.kdenlive
+      obs-studio
       python3
       python3Packages.pip
       python3Packages.virtualenv
+      ripgrep
       scc
       tmux
+      unityhub
       unixtools.quota
+      unzip
+      vlc
       vscode
+      waybar
       wget
       wireproxy
       wl-clipboard

@@ -1,4 +1,9 @@
 # Command
+## Update
+```sh
+nix flake update
+```
+
 ## Check
 ```sh
 nix flake check
