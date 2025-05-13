@@ -7,7 +7,7 @@
     '';
     ".config/hypr/hyprpaper.conf".text = ''
       preload = ${../../wallpaper/wallpaper.jpg}
-      wallpaper = monitor, ${../../wallpaper/wallpaper.jpg}
+      wallpaper = , ${../../wallpaper/wallpaper.jpg}
     '';
   };
 }

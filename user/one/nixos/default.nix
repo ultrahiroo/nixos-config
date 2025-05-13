@@ -17,6 +17,8 @@
     ./virt-manager
   ];
   environment.systemPackages = with pkgs; [
+    clang
+    gcc
     virtiofsd
   ];
   environment.sessionVariables = rec {

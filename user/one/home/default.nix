@@ -38,7 +38,6 @@
       bat
       blender
       caddy
-      clang
       cmake
       cpu-x
       curl
