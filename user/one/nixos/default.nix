@@ -1,6 +1,8 @@
 { username, pkgs, ... }: {
   imports = [
     ./common
+    ./display_manager
+
     ./fcitx5
     ./gnome-keyring
     ./gnupg
@@ -31,6 +33,7 @@
     # PATH = [ 
     #   "${XDG_BIN_HOME}"
     # ];
+
     EDITOR   = "nvim";
     BROWSER  = "brave";
     TERMINAL = "alacritty";
