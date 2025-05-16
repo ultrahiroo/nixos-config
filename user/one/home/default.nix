@@ -25,6 +25,7 @@
     ./mydns
     ./wireproxy
     ./web_server
+    ./virt-manager
   ];
   home = {
     packages = with pkgs; [

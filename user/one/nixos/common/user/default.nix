@@ -4,7 +4,11 @@
     group = username;
     isNormalUser = true;
     description = username;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "libvirtd"
+    ];
     home = "/home/${username}";
     shell = pkgs.yash;
     packages = with pkgs; [

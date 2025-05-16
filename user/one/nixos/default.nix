@@ -13,15 +13,17 @@
     ./steam
     ./caddy
     # ./web_server
+
     ./waydroid
     ./distrobox
-    # ./virtualbox
+    ./virtualbox
     ./virt-manager
   ];
   environment.systemPackages = with pkgs; [
     clang
     gcc
-    virtiofsd
+    gparted
+    kdePackages.partitionmanager
   ];
   environment.sessionVariables = rec {
     # XDG_CACHE_HOME  = "$HOME/.cache";
