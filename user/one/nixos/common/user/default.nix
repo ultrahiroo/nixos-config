@@ -8,6 +8,8 @@
       "networkmanager"
       "wheel"
       "libvirtd"
+      "input"
+      "kvm"
     ];
     home = "/home/${username}";
     shell = pkgs.yash;

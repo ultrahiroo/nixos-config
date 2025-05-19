@@ -49,6 +49,7 @@
       gg
       gnumake
       hyprpaper
+      looking-glass-client
       meson
       neofetch
       nodejs_23
