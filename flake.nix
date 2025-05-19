@@ -95,7 +95,7 @@
             ./host/nixos-test
             ./user/${username}/nixos
 
-            ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay ]; })
+            ({ ... }: { nixpkgs.overlays = [ overlay ]; })
 
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
@@ -130,7 +130,7 @@
             ./host/main
             ./user/${username}/nixos
 
-            ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay ]; })
+            ({ ... }: { nixpkgs.overlays = [ overlay ]; })
 
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;

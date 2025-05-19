@@ -6,7 +6,7 @@
         After = [ "network-online.target" ];
       };
       Install = {
-        WantedBy = [ "network-online.target" ];
+        WantedBy = [ "default.target" ];
       };
       Service = {
         ExecStart = "${pkgs.python3}/bin/python3 /user/one/project/mydns/mydns";
