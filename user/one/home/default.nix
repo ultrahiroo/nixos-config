@@ -21,10 +21,10 @@
 
     ./alacritty
 
-    # ./caddy
     ./mydns
-    ./wireproxy
+    # ./wireproxy
     ./web_server
+
     ./virt-manager
   ];
   home = {

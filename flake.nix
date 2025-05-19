@@ -27,6 +27,9 @@
       url = "github:catppuccin/bat";
       flake = false;
     };
+    vgpu4nixos = {
+      url = "github:mrzenc/vgpu4nixos";
+    };
     clean-flake = {
       url = "path:/user/one/project/clean";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -63,6 +66,10 @@
       url = "path:/user/one/setting/wireproxy/wireproxy";
       flake = false;
     };
+    # vgpu-driver-data = {
+    #   url = "path:/home/one/nixos/user/one/nixos/vgpu/NVIDIA-GRID-Linux-KVM-535.129.03-537.70.zip";
+    #   flake = false;
+    # };
   };
 
   outputs = inputs @ {
@@ -124,6 +131,8 @@
           system = "x86_64-linux";
 
           modules = [
+            # inputs.vgpu4nixos.nixosModules.host
+
             ./host/main
             ./user/${username}/nixos
 

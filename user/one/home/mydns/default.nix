@@ -3,6 +3,7 @@
     "${username}-mydns" = {
       Unit = {
         Description = "MyDNS Service";
+        After = [ "network-online.target" ];
       };
       Install = {
         WantedBy = [ "default.target" ];

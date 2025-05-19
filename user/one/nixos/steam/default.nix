@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ ... }: {
   programs = {
     steam = {
       enable = true;
@@ -14,7 +14,7 @@
       enable = true;
     };
   };
-  environment.sessionVariables = {
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "~/.steam/root/compatibilitytools.d";
-  };
+  # environment.sessionVariables = {
+  #   STEAM_EXTRA_COMPAT_TOOLS_PATHS = "~/.steam/root/compatibilitytools.d";
+  # };
 }

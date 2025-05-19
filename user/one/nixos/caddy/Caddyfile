@@ -1,3 +1,7 @@
-localhost {
+testnet.inouehiroo.mydns.jp {
+	reverse_proxy :8080
+}
+
+inouehiroo.mydns.jp {
 	reverse_proxy :8888
 }
