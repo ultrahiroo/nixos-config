@@ -33,6 +33,8 @@
       codonPackage.codon
       # davinci-resolvePackage.davinci-resolve
 
+      davinci-resolve
+
       alacritty
       appimage-run
       baobab
@@ -45,6 +47,7 @@
       devenv
       eza
       fd
+      file
       gimp
       gg
       gnumake
@@ -64,6 +67,7 @@
       python3Packages.virtualenv
       ripgrep
       scc
+      shotcut
       tmux
       unityhub
       unixtools.quota

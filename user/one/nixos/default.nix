@@ -2,6 +2,7 @@
   imports = [
     ./common
     ./display_manager
+    ./appimage
 
     ./fcitx5
     ./gnome-keyring
@@ -12,7 +13,6 @@
     ./plasma
     ./steam
     ./caddy
-    # ./web_server
 
     ./waydroid
     ./distrobox

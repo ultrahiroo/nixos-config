@@ -38,10 +38,10 @@
       url = "path:/user/one/project/codon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # davinci-resolve-flake = {
-    #   url = "path:/user/one/project/davinci-resolve";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    davinci-resolve-flake = {
+      url = "path:/user/one/project/davinci-resolve";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     font-data = {
       url = "path:/user/one/home/www/collection/font";
       flake = false;
@@ -66,10 +66,6 @@
       url = "path:/user/one/setting/wireproxy/wireproxy";
       flake = false;
     };
-    # vgpu-driver-data = {
-    #   url = "path:/home/one/nixos/user/one/nixos/vgpu/NVIDIA-GRID-Linux-KVM-535.129.03-537.70.zip";
-    #   flake = false;
-    # };
   };
 
   outputs = inputs @ {
@@ -85,10 +81,10 @@
           inherit username;
           inherit inputs;
         };
-        clean-overlay = final: prev: {
+        overlay = final: prev: {
           cleanPackage = inputs.clean-flake.packages.${prev.system};
           codonPackage = inputs.codon-flake.packages.${prev.system};
-          # davinci-resolvePackage = inputs.davinci-resolve-flake.packages.${prev.system};
+          davinci-resolvePackage = inputs.davinci-resolve-flake.packages.${prev.system};
         };
       in
         nixpkgs.lib.nixosSystem {
@@ -99,9 +95,7 @@
             ./host/nixos-test
             ./user/${username}/nixos
 
-            ({ config, pkgs, ... }: { nixpkgs.overlays = [
-              clean-overlay
-            ]; })
+            ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay ]; })
 
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
@@ -120,10 +114,10 @@
           inherit username;
           inherit inputs;
         };
-        clean-overlay = final: prev: {
+        overlay = final: prev: {
           cleanPackage = inputs.clean-flake.packages.${prev.system};
           codonPackage = inputs.codon-flake.packages.${prev.system};
-          # davinci-resolvePackage = inputs.davinci-resolve-flake.packages.${prev.system};
+          davinci-resolvePackage = inputs.davinci-resolve-flake.packages.${prev.system};
         };
       in
         nixpkgs.lib.nixosSystem {
@@ -136,9 +130,7 @@
             ./host/main
             ./user/${username}/nixos
 
-            ({ config, pkgs, ... }: { nixpkgs.overlays = [
-              clean-overlay
-            ]; })
+            ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay ]; })
 
             home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
