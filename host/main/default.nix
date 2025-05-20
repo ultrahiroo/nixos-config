@@ -1,9 +1,12 @@
-{ config, pkgs, ... }: {
+{ ... }: {
   imports = [
     ../common
     ./hardware-configuration.nix
+    ./filesystem
     ./nvidia.nix
-    ./gpu-passthrough
+    ./iommu
+
+    # ./gpu-passthrough
     ./vgpu
   ];
 

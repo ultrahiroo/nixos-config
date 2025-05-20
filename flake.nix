@@ -125,7 +125,7 @@
           system = "x86_64-linux";
 
           modules = [
-            # inputs.vgpu4nixos.nixosModules.host
+            inputs.vgpu4nixos.nixosModules.host
 
             ./host/main
             ./user/${username}/nixos

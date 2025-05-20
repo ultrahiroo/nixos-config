@@ -16,7 +16,10 @@
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/ddacd9bc-110f-4621-aa1b-f257830ee5ec";
       fsType = "btrfs";
-      options = [ "subvol=@" ];
+      options = [
+        "subvol=@"
+        "discard"
+      ];
     };
 
   fileSystems."/boot" =
@@ -28,6 +31,9 @@
   fileSystems."/home/one/mount" =
     { device = "/dev/disk/by-uuid/bb99279a-1612-4641-ab80-8320893cadd2";
       fsType = "btrfs";
+      options = [
+        "discard"
+      ];
     };
 
   swapDevices = [ ];

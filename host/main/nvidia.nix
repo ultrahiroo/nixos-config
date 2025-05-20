@@ -15,8 +15,8 @@
       enable = false;
       finegrained = false;
     };
-    open = true;
-    nvidiaSettings = true;
+    open = false;
+    nvidiaSettings = false;
 
     # package = config.boot.kernelPackages.nvidiaPackages.mkDriver {
     #   version = "535.216.01";
@@ -26,7 +26,8 @@
     #   settingsSha256 = "sha256-9PgaYJbP1s7hmKCYmkuLQ58nkTruhFdHAs4W84KQVME=";
     #   persistencedSha256 = "sha256-ckF/BgDA6xSFqFk07rn3HqXuR0iGfwA4PRxpP38QZgw=";
     # };
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
-    # package = config.boot.kernelPackages.nvidiaPackages.vgpu_16_10;
+    # package = config.boot.kernelPackages.nvidiaPackages.latest;
+    # package = config.boot.kernelPackages.nvidiaPackages.vgpu_16_5;
+    package = config.boot.kernelPackages.nvidiaPackages.vgpu_17_3;
   };
 }

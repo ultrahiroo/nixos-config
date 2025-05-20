@@ -1,4 +1,4 @@
-{ inputs, pkgs, username, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./common
     ./btop
@@ -41,6 +41,7 @@
       bat
       blender
       caddy
+      cargo
       cmake
       cpu-x
       curl
