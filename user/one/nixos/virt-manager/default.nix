@@ -22,4 +22,7 @@
       onShutdown = "shutdown";
     };
   };
+  virtualisation.libvirtd.hooks.qemu = {
+    "qemu" = ./qemu;
+  };
 }

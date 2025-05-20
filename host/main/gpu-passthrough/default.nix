@@ -5,7 +5,6 @@ let
     "10de:1aeb"
   ];
   vfio_id_string = "${builtins.concatStringsSep "," vfio_id}";
-  vm_name = "win11";
 in {
   # boot = {
   #   kernelParams = [
@@ -14,8 +13,7 @@ in {
   #   extraModprobeConfig = "options vfio-pci ids=${vfio_id_string}";
   # };
   environment.etc = {
-    "libvirt/hooks/qemu".source = ./qemu;
-    "libvirt/hooks/qemu.d/${vm_name}/prepare/begin/start.sh".source = ./start.sh;
-    "libvirt/hooks/qemu.d/${vm_name}/release/end/stop.sh".source = ./stop.sh;
+    "libvirt/hooks/_qemu.d/prepare/begin".source = ./qemu.d/prepare/begin;
+    "libvirt/hooks/_qemu.d/release/end".source = ./qemu.d/release/end;
   };
 }

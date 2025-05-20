@@ -23,9 +23,6 @@
     };
   };
   programs.mdevctl.enable = true;
-  virtualisation.libvirtd.hooks.qemu = {
-    "qemu" = ./qemu;
-  };
   # environment.etc = {
   #   "libvirt/hooks/qemu.d/prepare/begin".source = ./qemu.d/prepare/begin;
   #   "libvirt/hooks/qemu.d/release/end".source = ./qemu.d/release/end;

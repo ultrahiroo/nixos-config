@@ -63,6 +63,7 @@
       kdePackages.kate
       kdePackages.kdeconnect-kde
       kdePackages.kdenlive
+      killall
       obs-studio
       python3
       python3Packages.pip
