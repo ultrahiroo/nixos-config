@@ -6,13 +6,14 @@ nix-store --add-fixed sha256 NVIDIA-GRID-Linux-KVM/NVIDIA-GRID-Linux-KVM-550.90.
 # Check List
 - [ ] vgpu_16_0
 - [ ] vgpu_16_1
-- [x] vgpu_16_2
-- [x] vgpu_16_5
-- [ ] vgpu_17_1
-- [v] vgpu_17_3
+- [ ] vgpu_16_2
+- [x] vgpu_16_5: host does not work: 5月 21 02:10:52 main kernel: [drm:__nv_drm_gem_nvkms_memory_prime_get_sg_table [nvidia_drm]] *ERROR* [nvidia-drm] [GPU ID 0x00000100] Cannot create sg_table for NvKmsKapiMemory 0x00000000e819692a
+- [ ] vgpu_17_1: vgpu4nixos does not support
+- [x] vgpu_17_3: host works but vm dose not work
 
 # Reference
 - https://github.com/mrzenc/vgpu4nixos
+- https://github.com/VGPU-Community-Drivers/vGPU-Unlock-patcher
 - https://docs.nvidia.com/vgpu/16.0/grid-vgpu-release-notes-generic-linux-kvm/index.html
 - https://docs.nvidia.com/vgpu/17.0/grid-vgpu-release-notes-generic-linux-kvm/index.html
 - https://archive.org/download/NVIDIA-VGPU-Driver-Archive/NVIDIA-GRID-vGPU-Linux-KVM-Drivers/

@@ -3,7 +3,7 @@
     ../common
     ./hardware-configuration.nix
     ./filesystem
-    ./nvidia.nix
+    ./nvidia
     ./iommu
 
     ./gpu-passthrough

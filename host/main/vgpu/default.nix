@@ -3,13 +3,13 @@
   hardware.nvidia.vgpu.patcher.copyVGPUProfiles = {
     "2187:0000" = "1E30:12BA";
   };
-  # hardware.nvidia.vgpu.patcher.options.doNotForceGPLLicense = true;
+  hardware.nvidia.vgpu.patcher.options.doNotForceGPLLicense = true;
   # hardware.nvidia.vgpu.patcher.options.remapP40ProfilesToV100D = true;
   # hardware.nvidia.vgpu.patcher.options.extra = [
   #   "--spoof-devid"
   # ];
   hardware.nvidia.vgpu.patcher.profileOverrides = {
-    "1000" = {
+    "331" = {
       vramAllocation = 3596;  # MiB
       heads = 1;
       enableCuda = true;
@@ -18,7 +18,7 @@
       framerateLimit = 60;
       xmlConfig = {
         # frl_config = 0;
-        frl_enable = 0;
+        frl_enable = "0";
       };
     };
   };
