@@ -4,27 +4,36 @@
     "2187:0000" = "1E30:12BA";
   };
   hardware.nvidia.vgpu.patcher.options.doNotForceGPLLicense = true;
-  # hardware.nvidia.vgpu.patcher.options.remapP40ProfilesToV100D = true;
   # hardware.nvidia.vgpu.patcher.options.extra = [
   #   "--spoof-devid"
   # ];
   hardware.nvidia.vgpu.patcher.profileOverrides = {
     "331" = {
-      vramAllocation = 3596;  # MiB
+      vramAllocation = 2048;  # MiB
       heads = 1;
       enableCuda = true;
       display.width = 1920;
       display.height = 1080;
       framerateLimit = 60;
       xmlConfig = {
-        # frl_config = 0;
-        frl_enable = "0";
+        frame_rate_limiter = "0";
+      };
+    };
+    "334" = {
+      vramAllocation = 2048;  # MiB
+      heads = 1;
+      enableCuda = true;
+      display.width = 1920;
+      display.height = 1080;
+      framerateLimit = 60;
+      xmlConfig = {
+        frame_rate_limiter = "0";
       };
     };
   };
   programs.mdevctl.enable = true;
-  # environment.etc = {
-  #   "libvirt/hooks/qemu.d/prepare/begin".source = ./qemu.d/prepare/begin;
-  #   "libvirt/hooks/qemu.d/release/end".source = ./qemu.d/release/end;
-  # };
+  environment.etc = {
+    "libvirt/hooks/qemu.d/prepare/begin".source = ./qemu.d/prepare/begin;
+    "libvirt/hooks/qemu.d/release/end".source = ./qemu.d/release/end;
+  };
 }
