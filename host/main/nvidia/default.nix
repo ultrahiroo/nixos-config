@@ -26,10 +26,10 @@
     #   settingsSha256 = "sha256-9PgaYJbP1s7hmKCYmkuLQ58nkTruhFdHAs4W84KQVME=";
     #   persistencedSha256 = "sha256-ckF/BgDA6xSFqFk07rn3HqXuR0iGfwA4PRxpP38QZgw=";
     # };
-    # package = config.boot.kernelPackages.nvidiaPackages.production;
+    package = config.boot.kernelPackages.nvidiaPackages.production;
 
     # package = config.boot.kernelPackages.nvidiaPackages.vgpu_16_2;
     # package = config.boot.kernelPackages.nvidiaPackages.vgpu_16_5;
-    package = config.boot.kernelPackages.nvidiaPackages.vgpu_17_3;
+    # package = config.boot.kernelPackages.nvidiaPackages.vgpu_17_3;
   };
 }

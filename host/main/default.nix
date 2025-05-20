@@ -7,7 +7,7 @@
     ./iommu
 
     ./gpu-passthrough
-    ./vgpu
+    # ./vgpu
   ];
 
   boot.loader = {
