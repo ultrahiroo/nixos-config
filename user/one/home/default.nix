@@ -53,6 +53,7 @@
       gg
       gnumake
       hyprpaper
+      libxml2
       looking-glass-client
       meson
       neofetch

@@ -1,0 +1,10 @@
+#!/run/current-system/sw/bin/bash
+set -ex
+
+# MDEV_UUID="$(/etc/profiles/per-user/one/bin/xmllint --xpath 'string(/domain/devices/hostdev[@type="mdev"][@display="on"]/source/address/@uuid)' -)"
+
+UUID_NAME='win11'
+MDEV_UUID="$(/run/current-system/sw/bin/uuidgen --name ${UUID_NAME} --namespace @dns --sha1)"
+
+/run/current-system/sw/bin/mdevctl stop --uuid ${MDEV_UUID}
+/run/current-system/sw/bin/mdevctl undefine --uuid ${MDEV_UUID}

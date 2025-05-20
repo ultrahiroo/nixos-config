@@ -1,0 +1,10 @@
+#!/run/current-system/sw/bin/bash
+set -ex
+
+UUID_NAME='win11'
+MDEV_TYPE='nvidia-436'
+MDEV_UUID="$(/run/current-system/sw/bin/uuidgen --name ${UUID_NAME} --namespace @dns --sha1)"
+MDEV_PARENT="0000:01:00.0"
+
+/run/current-system/sw/bin/mdevctl define --auto --uuid ${MDEV_UUID} --parent ${MDEV_PARENT} --type ${MDEV_TYPE}
+/run/current-system/sw/bin/mdevctl start --uuid ${MDEV_UUID}
