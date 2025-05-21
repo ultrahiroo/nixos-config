@@ -22,7 +22,6 @@
     ./alacritty
 
     ./mydns
-    # ./wireproxy
     ./web_server
 
     ./virt-manager

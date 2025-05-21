@@ -32,4 +32,12 @@
     # package = config.boot.kernelPackages.nvidiaPackages.vgpu_16_5;
     # package = config.boot.kernelPackages.nvidiaPackages.vgpu_17_3;
   };
+
+  # boot.initrd.kernelModules = [
+  #   "nvidia"
+  #   "nvidia_drm"
+  #   "nvidia_uvm"
+  #   "nvidia_modeset"
+  #   "i2c-nvidia_gpu"
+  # ];
 }

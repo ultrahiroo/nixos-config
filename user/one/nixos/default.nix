@@ -1,8 +1,9 @@
-{ username, pkgs, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./common
     ./display_manager
     ./appimage
+    ./plymouth
 
     ./fcitx5
     ./gnome-keyring
