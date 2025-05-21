@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+VM_NAME='win11'
+
+virsh start ${VM_NAME}
+
+sleep 10
+
+virsh stop ${VM_NAME}

@@ -15,17 +15,15 @@ VIRSH_GPU_SERIAL='pci_0000_01_00_3'
 /run/current-system/sw/bin/virsh nodedev-reattach ${VIRSH_GPU_USB}
 /run/current-system/sw/bin/virsh nodedev-reattach ${VIRSH_GPU_SERIAL}
 
-echo 1 > /sys/class/vtconsole/vtcon0/bind
-echo 1 > /sys/class/vtconsole/vtcon1/bind
+# echo 1 > /sys/class/vtconsole/vtcon0/bind
+# echo 1 > /sys/class/vtconsole/vtcon1/bind
 
-echo "efi-framebuffer.0" > /sys/bus/platform/drivers/efi-framebuffer/bind
+# echo 'efi-framebuffer.0' > /sys/bus/platform/drivers/efi-framebuffer/bind
 
 /run/current-system/sw/bin/modprobe nvidia_drm
 /run/current-system/sw/bin/modprobe nvidia_modeset
 /run/current-system/sw/bin/modprobe nvidia_uvm
 /run/current-system/sw/bin/modprobe nvidia
 # /run/current-system/sw/bin/modprobe i2c_nvidia_gpu
-/run/current-system/sw/bin/modprobe drm_kms_helper
-/run/current-system/sw/bin/modprobe drm
 
 /etc/profiles/per-user/one/bin/systemctl start display-manager.service

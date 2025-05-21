@@ -13,8 +13,8 @@ in {
   #   extraModprobeConfig = "options vfio-pci ids=${vfio_id_string}";
   # };
 
-  # environment.etc = {
-  #   "libvirt/hooks/qemu.d/prepare/begin".source = ./qemu.d/prepare/begin;
-  #   "libvirt/hooks/qemu.d/release/end".source = ./qemu.d/release/end;
-  # };
+  environment.etc = {
+    "libvirt/hooks/qemu.d/prepare/begin".source = ./qemu.d/prepare/begin;
+    "libvirt/hooks/qemu.d/release/end".source = ./qemu.d/release/end;
+  };
 }

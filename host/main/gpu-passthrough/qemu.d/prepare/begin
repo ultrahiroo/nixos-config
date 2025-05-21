@@ -8,10 +8,10 @@ VIRSH_GPU_SERIAL='pci_0000_01_00_3'
 
 /etc/profiles/per-user/one/bin/systemctl stop display-manager.service
 
-echo 0 > /sys/class/vtconsole/vtcon0/bind
-echo 0 > /sys/class/vtconsole/vtcon1/bind
+# echo 0 > /sys/class/vtconsole/vtcon0/bind
+# echo 0 > /sys/class/vtconsole/vtcon1/bind
 
-echo efi-framebuffer.0 > /sys/bus/platform/drivers/efi-framebuffer/unbind
+# echo 'efi-framebuffer.0' > /sys/bus/platform/drivers/efi-framebuffer/unbind
 
 /run/current-system/sw/bin/sleep 5
 
@@ -20,8 +20,6 @@ echo efi-framebuffer.0 > /sys/bus/platform/drivers/efi-framebuffer/unbind
 /run/current-system/sw/bin/modprobe -r nvidia_uvm
 /run/current-system/sw/bin/modprobe -r nvidia
 # /run/current-system/sw/bin/modprobe -r i2c_nvidia_gpu
-/run/current-system/sw/bin/modprobe -r drm_kms_helper
-/run/current-system/sw/bin/modprobe -r drm
 
 /run/current-system/sw/bin/virsh nodedev-detach ${VIRSH_GPU_VIDEO}
 /run/current-system/sw/bin/virsh nodedev-detach ${VIRSH_GPU_AUDIO}

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+systemctl isolate multi-user.target
+modprobe -r nvidia-drm
+# systemctl start graphical.target

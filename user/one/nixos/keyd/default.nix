@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
   systemd.services.keyd = {
     description = "key remapping daemon";
     enable = true;
@@ -11,6 +11,7 @@
     after = [ "local-fs.target" ];
   };
   environment.etc = {
-    "keyd/default.conf".source = ./default.conf;
+    "keyd/default.conf".source = ./keyd/default.conf;
   };
+  users.groups.keyd.members = [ username ];
 }

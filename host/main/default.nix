@@ -6,7 +6,7 @@
     ./nvidia
     ./iommu
 
-    ./gpu-passthrough
+    # ./gpu-passthrough
     # ./vgpu
   ];
 
