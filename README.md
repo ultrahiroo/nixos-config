@@ -33,6 +33,9 @@ nix store gc
 ## Example
 - https://github.com/ryan4yin/nix-config/tree/i3-kickstarter
 
+## Document
+- https://nixos.org/manual/nixos/stable/#sec-modularity
+
 ## Wiki
 - https://nixos.wiki/wiki/Nvidia
 - https://nixos.wiki/wiki/Fcitx5

@@ -153,5 +153,6 @@ alias nix-profile-world='nix profile list'
 alias nix-profile-upgrade='nix profile upgrade'
 alias nix-profile-upgrade-all="nix profile upgrade '.*'"
 alias nix-profile-clean='nix store gc'
+alias nix-repl-flake='nix repl --expr "builtins.getFlake \"$PWD\""'
 
 alias nvtop='LINES= nvtop'

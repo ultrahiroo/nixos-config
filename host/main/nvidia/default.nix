@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, lib, pkgs, ... }: {
   boot.blacklistedKernelModules = [
     # "nouveau"
     "i2c_nvidia_gpu"
@@ -33,11 +33,8 @@
     # package = config.boot.kernelPackages.nvidiaPackages.vgpu_17_3;
   };
 
-  # boot.initrd.kernelModules = [
-  #   "nvidia"
-  #   "nvidia_drm"
-  #   "nvidia_uvm"
-  #   "nvidia_modeset"
-  #   "i2c-nvidia_gpu"
-  # ];
+  boot.kernelModules = lib.mkBefore [
+    "intel_kvm"
+    "nvidia"
+  ];
 }
