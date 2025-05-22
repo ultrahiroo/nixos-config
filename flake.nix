@@ -73,18 +73,19 @@
   };
 
   outputs = inputs @ { self, ... }: {
-    nixosConfigurations = {
+    nixosConfigurations = let
+      username = "one";
+      specialArgs = {
+        inherit username;
+        inherit inputs;
+      };
+      overlay = [ (final: prev: {
+        cleanPackage = inputs.clean-flake.packages.${prev.system};
+        codonPackage = inputs.codon-flake.packages.${prev.system};
+        davinci-resolvePackage = inputs.davinci-resolve-flake.packages.${prev.system};
+      }) ];
+    in {
       main = let
-        username = "one";
-        specialArgs = {
-          inherit username;
-          inherit inputs;
-        };
-        overlay = final: prev: {
-          cleanPackage = inputs.clean-flake.packages.${prev.system};
-          codonPackage = inputs.codon-flake.packages.${prev.system};
-          davinci-resolvePackage = inputs.davinci-resolve-flake.packages.${prev.system};
-        };
       in
         inputs.nixpkgs.lib.nixosSystem {
           inherit specialArgs;
@@ -95,32 +96,24 @@
             inputs.nixos-generators.nixosModules.all-formats
 
             ./host/main
-            ./user/${username}/nixos
+            ./nixos
 
-            ({ ... }: { nixpkgs.overlays = [ overlay ]; })
+            ({ ... }: { nixpkgs.overlays = overlay; })
 
             inputs.home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = specialArgs;
-              home-manager.users.${username}.imports = [
-                ./user/${username}/home
-              ];
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = specialArgs;
+                users.${username}.imports = [
+                  ./user/${username}/home
+                ];
+              };
             }
           ];
         };
 
       rpi4 = let
-        username = "one";
-        specialArgs = {
-          inherit username;
-          inherit inputs;
-        };
-        overlay = final: prev: {
-          cleanPackage = inputs.clean-flake.packages.${prev.system};
-          codonPackage = inputs.codon-flake.packages.${prev.system};
-          davinci-resolvePackage = inputs.davinci-resolve-flake.packages.${prev.system};
-        };
       in
         inputs.nixpkgs.lib.nixosSystem {
           inherit specialArgs;
@@ -131,17 +124,19 @@
             inputs.nixos-generators.nixosModules.all-formats
 
             ./host/rpi4
-            ./user/${username}/nixos
+            ./nixos
 
-            ({ ... }: { nixpkgs.overlays = [ overlay ]; })
+            ({ ... }: { nixpkgs.overlays = overlay; })
 
             inputs.home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = specialArgs;
-              home-manager.users.${username}.imports = [
-                ./user/${username}/home
-              ];
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                extraSpecialArgs = specialArgs;
+                users.${username}.imports = [
+                  ./user/${username}/home
+                ];
+              };
             }
           ];
         };
