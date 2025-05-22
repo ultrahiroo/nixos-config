@@ -10,29 +10,29 @@
       auto-optimise-store = true;
     };
     gc = {
-      automatic = true;
+      automatic = false;
       dates = "daily";
       persistent = true;
       options = "--delete-older-than 7d";
     };
   };
 
-  # systemd.timers."nix-store-gc" = {
-  #   wantedBy = [ "timers.target" ];
-  #   timerConfig = {
-  #     OnBootSec = "5m";
-  #     OnUnitActiveSec = "1d";
-  #     Unit = "nix-store-gc.service";
-  #   };
-  # };
+  systemd.timers."profile-wipe-history" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnBootSec = "5m";
+      OnUnitActiveSec = "1d";
+      Unit = "profile-wipe-history";
+    };
+  };
 
-  # systemd.services."nix-store-gc" = {
-  #   script = ''
-  #     ${pkgs.nix}bin/nix store gc --delete-older-than 7d
-  #   '';
-  #   serviceConfig = {
-  #     Type = "oneshot";
-  #     User = "root";
-  #   };
-  # };
+  systemd.services."profile-wipe-history" = {
+    script = ''
+      ${pkgs.nix}/bin/nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 7d
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
+    };
+  };
 }
