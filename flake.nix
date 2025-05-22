@@ -3,13 +3,17 @@
 
   inputs = {
     nixpkgs = {
-      url = "github:nixos/nixpkgs/nixos-24.11";
+      url = "github:NixOS/nixpkgs/nixos-24.11";
     };
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
     };
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland = {
@@ -68,46 +72,8 @@
     };
   };
 
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  }: {
+  outputs = inputs @ { self, ... }: {
     nixosConfigurations = {
-      nixos-test = let
-        username = "one";
-        specialArgs = {
-          inherit username;
-          inherit inputs;
-        };
-        overlay = final: prev: {
-          cleanPackage = inputs.clean-flake.packages.${prev.system};
-          codonPackage = inputs.codon-flake.packages.${prev.system};
-          davinci-resolvePackage = inputs.davinci-resolve-flake.packages.${prev.system};
-        };
-      in
-        nixpkgs.lib.nixosSystem {
-          inherit specialArgs;
-          system = "x86_64-linux";
-
-          modules = [
-            ./host/nixos-test
-            ./user/${username}/nixos
-
-            ({ ... }: { nixpkgs.overlays = [ overlay ]; })
-
-            home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.extraSpecialArgs = specialArgs;
-              home-manager.users.${username}.imports = [
-                ./user/${username}/home
-              ];
-            }
-          ];
-        };
-
       main = let
         username = "one";
         specialArgs = {
@@ -120,19 +86,56 @@
           davinci-resolvePackage = inputs.davinci-resolve-flake.packages.${prev.system};
         };
       in
-        nixpkgs.lib.nixosSystem {
+        inputs.nixpkgs.lib.nixosSystem {
           inherit specialArgs;
           system = "x86_64-linux";
 
           modules = [
             # inputs.vgpu4nixos.nixosModules.host
+            inputs.nixos-generators.nixosModules.all-formats
 
             ./host/main
             ./user/${username}/nixos
 
             ({ ... }: { nixpkgs.overlays = [ overlay ]; })
 
-            home-manager.nixosModules.home-manager {
+            inputs.home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = specialArgs;
+              home-manager.users.${username}.imports = [
+                ./user/${username}/home
+              ];
+            }
+          ];
+        };
+
+      rpi4 = let
+        username = "one";
+        specialArgs = {
+          inherit username;
+          inherit inputs;
+        };
+        overlay = final: prev: {
+          cleanPackage = inputs.clean-flake.packages.${prev.system};
+          codonPackage = inputs.codon-flake.packages.${prev.system};
+          davinci-resolvePackage = inputs.davinci-resolve-flake.packages.${prev.system};
+        };
+      in
+        inputs.nixpkgs.lib.nixosSystem {
+          inherit specialArgs;
+          system = "aarch64-linux";
+
+          modules = [
+            inputs.nixos-hardware.nixosModules.raspberry-pi-4
+            inputs.nixos-generators.nixosModules.all-formats
+
+            ./host/rpi4
+            ./user/${username}/nixos
+
+            ({ ... }: { nixpkgs.overlays = [ overlay ]; })
+
+            inputs.home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = specialArgs;

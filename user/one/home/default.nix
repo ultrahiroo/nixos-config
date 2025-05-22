@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ lib, pkgs, ... }: {
   imports = [
     ./common
     ./btop
@@ -29,10 +29,6 @@
   home = {
     packages = with pkgs; [
       cleanPackage.clean
-      codonPackage.codon
-      # davinci-resolvePackage.davinci-resolve
-
-      davinci-resolve
 
       alacritty
       appimage-run
@@ -42,7 +38,6 @@
       caddy
       cargo
       cmake
-      cpu-x
       curl
       devenv
       eza
@@ -53,7 +48,6 @@
       gnumake
       hyprpaper
       libxml2
-      looking-glass-client
       meson
       neofetch
       nodejs_23
@@ -71,7 +65,6 @@
       scc
       shotcut
       tmux
-      unityhub
       unixtools.quota
       unzip
       vlc
@@ -87,8 +80,16 @@
       # heroic
       # lutris
       mangohud
-      protonup-qt
       # rare
-    ];
+    ] ++ lib.optionals stdenv.isx86_64 (with pkgs; [
+      codonPackage.codon
+      # davinci-resolvePackage.davinci-resolve
+      davinci-resolve
+
+      cpu-x
+      looking-glass-client
+      protonup-qt
+      unityhub
+    ]);
   };
 }

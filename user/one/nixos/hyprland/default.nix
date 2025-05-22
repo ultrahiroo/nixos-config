@@ -7,11 +7,10 @@ in {
     portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
   };
   hardware.graphics = {
-    enable32Bit = true;
     package = hyprland-pkgs.mesa;
     package32 = hyprland-pkgs.pkgsi686Linux.mesa;
   };
-  environment.sessionVariables = rec {
+  environment.sessionVariables = {
     HYPRLAND_PLUGIN_HY3 = "${inputs.hy3.packages.${pkgs.system}.hy3}/lib/libhy3.so";
     HYPRLAND_PLUGIN_HYPRBARS = "${inputs.hyprland-plugins.packages.${pkgs.system}.hyprbars}/lib/libhyprbars.so";
   };

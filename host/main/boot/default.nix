@@ -7,7 +7,7 @@
       systemd-boot = {
         enable = true;
       };
-      timeout = 0;
+      timeout = 3;
     };
     initrd = {
       verbose = false;

@@ -1,6 +1,5 @@
 { ... }: {
   imports = [
-    ../common
     ./hardware-configuration.nix
     ./boot
     ./filesystem
@@ -10,5 +9,8 @@
 
     # ./gpu-passthrough
     # ./vgpu
+  ];
+  boot.binfmt.emulatedSystems = [
+    "aarch64-linux"
   ];
 }

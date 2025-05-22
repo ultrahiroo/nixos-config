@@ -3,6 +3,8 @@
     ./gc
   ];
 
+  system.stateVersion = "24.11";
+
   nix.settings = {
     trusted-users = [ username ];
     experimental-features = [

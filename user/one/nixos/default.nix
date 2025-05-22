@@ -20,6 +20,7 @@
     ./virtualbox
     ./virt-manager
   ];
+
   environment.systemPackages = with pkgs; [
     clang
     gcc

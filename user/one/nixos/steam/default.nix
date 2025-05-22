@@ -1,7 +1,7 @@
-{ ... }: {
+{ pkgs, ... }: {
   programs = {
     steam = {
-      enable = true;
+      enable = pkgs.stdenv.isx86_64;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
@@ -14,7 +14,4 @@
       enable = true;
     };
   };
-  # environment.sessionVariables = {
-  #   STEAM_EXTRA_COMPAT_TOOLS_PATHS = "~/.steam/root/compatibilitytools.d";
-  # };
 }

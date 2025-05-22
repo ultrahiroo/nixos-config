@@ -29,6 +29,11 @@ sudo systemctl daemon-reload
 nix store gc
 ```
 
+## Generate image
+```sh
+nix build .#nixosConfigurations.rpi4.config.formats.sd-aarch64
+```
+
 # Reference
 ## Example
 - https://github.com/ryan4yin/nix-config/tree/i3-kickstarter
