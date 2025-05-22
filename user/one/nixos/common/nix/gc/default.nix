@@ -3,19 +3,20 @@
     ./keep-input.nix
   ];
 
-  nix.settings = {
-    keep-outputs = true;
-    keep-derivations = true;
-    auto-optimise-store = true;
+  nix = {
+    settings = {
+      keep-outputs = true;
+      keep-derivations = true;
+      auto-optimise-store = true;
+    };
+    gc = {
+      automatic = true;
+      dates = "daily";
+      persistent = true;
+      options = "--delete-older-than 7d";
+    };
   };
 
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    persistent = true;
-    options = "--delete-older-than 7d";
-  };
-    
   # systemd.timers."nix-store-gc" = {
   #   wantedBy = [ "timers.target" ];
   #   timerConfig = {
