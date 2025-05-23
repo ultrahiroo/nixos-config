@@ -26,5 +26,13 @@
         # "--loadavg-target" "5.0"
       ];
     };
+    mount = {
+      spec = "/home/one/mount";
+      hashTableSizeMB = 128;
+      verbosity = "crit";
+      extraOptions = [
+        # "--loadavg-target" "5.0"
+      ];
+    };
   };
 }

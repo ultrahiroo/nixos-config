@@ -1,6 +1,6 @@
-{ pkgs, username, ... }: {
+{ ... }: {
   systemd.user.services = {
-    "${username}-web_server" = {
+    web_server = {
       Unit = {
         Description = "Web Server Service";
       };

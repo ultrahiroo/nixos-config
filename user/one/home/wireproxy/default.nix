@@ -1,6 +1,6 @@
-{ inputs, pkgs, username, ... }: {
+{ inputs, pkgs, ... }: {
   systemd.user.services = {
-    "${username}-wireproxy" = {
+    wireproxy = {
       Unit = {
         Description = "Wireproxy Service";
       };

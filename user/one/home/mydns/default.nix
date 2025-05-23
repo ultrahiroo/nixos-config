@@ -1,6 +1,6 @@
-{ pkgs, username, ... }: {
+{ pkgs, ... }: {
   systemd.user.services = {
-    "${username}-mydns" = {
+    mydns = {
       Unit = {
         Description = "MyDNS Service";
         After = [ "network-online.target" ];

@@ -78,7 +78,8 @@
         inputs.nixos-generators.nixosModules.all-formats
       ];
       formatConfigs.sd-aarch64 = { ... }: {
-        # hardware.enableAllHardware = false;
+        fileExtension = inputs.nixpkgs.lib.mkForce ".img";
+        sdImage.compressImage = false;
       };
     };
 

@@ -4,9 +4,6 @@
 # Environment
 . ${HOME}/.config/yash/export.sh
 
-# Screen
-clean
-
 # Prompt
 if [ "${LANG}" != 'C' ]; then
     . ${HOME}/.config/yash/prompt.sh
@@ -17,3 +14,7 @@ fi
 
 # Function
 . ${HOME}/.config/yash/function.sh
+
+# Screen
+sleep 0.5
+clean
