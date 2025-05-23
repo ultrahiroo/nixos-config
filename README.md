@@ -34,7 +34,14 @@ nix store gc
 nix build .#nixosConfigurations.rpi4.config.formats.sd-aarch64
 ```
 
+# TODO
+- terminal launcher
+- remove delay before clean
+
 # Reference
+## Opened issue
+- https://github.com/NixOS/nix/issues/8881
+
 ## Example
 - https://github.com/ryan4yin/nix-config/tree/i3-kickstarter
 

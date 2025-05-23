@@ -1,5 +1,5 @@
-{ pkgs, username, ... }: {
-  users.groups.libvirtd.members = [ username ];
+{ pkgs, all_username, ... }: {
+  users.groups.libvirtd.members = all_username;
   programs.virt-manager.enable = true;
   virtualisation = {
     spiceUSBRedirection.enable = true;

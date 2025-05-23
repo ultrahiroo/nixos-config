@@ -1,9 +1,9 @@
-{ username, ... }: {
+{ default_username, ... }: {
   services.displayManager = {
     sddm.enable = true;
     autoLogin = {
       enable = true;
-      user = username;
+      user = default_username;
     };
     defaultSession = "hyprland";
   };

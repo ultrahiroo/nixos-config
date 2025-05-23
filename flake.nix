@@ -84,96 +84,59 @@
     };
 
     nixosConfigurations = let
-      username = "one";
-      username_list = [
+      all_username = [
+        "root"
         "one"
       ];
+      all_normal_username = [
+        "one"
+      ];
+      default_username = "one";
       specialArgs = {
-        inherit username;
         inherit inputs;
+        inherit all_username;
+        inherit all_normal_username;
+        inherit default_username;
       };
+
       overlay = [ (final: prev: {
         cleanPackage = inputs.clean-flake.packages.${prev.system};
         codonPackage = inputs.codon-flake.packages.${prev.system};
         davinci-resolvePackage = inputs.davinci-resolve-flake.packages.${prev.system};
       }) ];
 
-      merge =
-        lhs: rhs:
-        lhs // rhs // (builtins.mapAttrs (
-          rName: rValue:
-          let
-            lValue = lhs.${rName} or null;
-          in
-          if builtins.isAttrs lValue && builtins.isAttrs rValue then
-            merge lValue rValue
-          else if builtins.isList lValue && builtins.isList rValue then
-            lValue ++ rValue
-          else
-            rValue
-        ) rhs);
-      mergeList = builtins.foldl' merge {};
-
-      forEach = xs: f: map f xs;
-      all_user = forEach username_list (
-        x: { users = { ${x} = { imports = [ ./user/${x}/home ]; }; }; }
-      );
-
     in {
-      main = let
-      in
-        inputs.nixpkgs.lib.nixosSystem {
-          inherit specialArgs;
-          system = "x86_64-linux";
+      main = inputs.nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
+        system = "x86_64-linux";
 
-          modules = [
-            # inputs.vgpu4nixos.nixosModules.host
-            self.nixosModules.all-formats
+        modules = [
+          inputs.home-manager.nixosModules.home-manager
+          self.nixosModules.all-formats
+          ({ ... }: { nixpkgs.overlays = overlay; })
+          ./nixos
+          ./user
 
-            ./host/main
-            ./nixos
+          inputs.vgpu4nixos.nixosModules.host
+          ./host/main
+        ];
+      };
 
-            ({ ... }: { nixpkgs.overlays = overlay; })
+      rpi4 = inputs.nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
+        system = "aarch64-linux";
 
-            inputs.home-manager.nixosModules.home-manager {
-              home-manager = (mergeList ([
-                {
-                  useGlobalPkgs = true;
-                  useUserPackages = true;
-                  extraSpecialArgs = specialArgs;
-                }
-              ] ++ all_user));
-            }
-          ];
-        };
+        modules = [
+          inputs.home-manager.nixosModules.home-manager
+          self.nixosModules.all-formats
+          ({ ... }: { nixpkgs.overlays = overlay; })
+          ./nixos
+          ./user
 
-      rpi4 = let
-      in
-        inputs.nixpkgs.lib.nixosSystem {
-          inherit specialArgs;
-          system = "aarch64-linux";
-
-          modules = [
-            inputs.nixos-hardware.nixosModules.raspberry-pi-4
-            self.nixosModules.all-formats
-
-            ./host/rpi4
-            ./nixos
-
-            ({ ... }: { nixpkgs.overlays = overlay; })
-
-            inputs.home-manager.nixosModules.home-manager {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = specialArgs;
-                users.${username}.imports = [
-                  ./user/${username}/home
-                ];
-              };
-            }
-          ];
-        };
+          inputs.nixos-hardware.nixosModules.raspberry-pi-4
+          ./host/rpi4
+        ];
+      };
     };
   };
 }

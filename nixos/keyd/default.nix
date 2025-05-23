@@ -1,4 +1,4 @@
-{ pkgs, username, ... }: {
+{ pkgs, all_username, ... }: {
   systemd.services.keyd = {
     description = "key remapping daemon";
     enable = true;
@@ -13,5 +13,5 @@
   environment.etc = {
     "keyd/default.conf".source = ./keyd/default.conf;
   };
-  users.groups.keyd.members = [ username ];
+  users.groups.keyd.members = all_username;
 }

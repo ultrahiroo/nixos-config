@@ -1,4 +1,4 @@
-{ username, ... }: {
+{ all_username, ... }: {
    imports = [
     ./gc
   ];
@@ -6,7 +6,7 @@
   system.stateVersion = "24.11";
 
   nix.settings = {
-    trusted-users = [ username ];
+    trusted-users = all_username;
     experimental-features = [
       "flakes"
       "nix-command"
@@ -27,8 +27,4 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-
-  home-manager = {
-    backupFileExtension = "backup";
-  };
 }

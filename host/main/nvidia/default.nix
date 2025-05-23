@@ -34,7 +34,7 @@
   };
 
   boot.kernelModules = lib.mkBefore [
-    "intel_kvm"
+    "kvm-intel"
     "nvidia"
   ];
 }
