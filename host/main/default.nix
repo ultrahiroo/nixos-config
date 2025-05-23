@@ -2,7 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ./boot
-    ./filesystem
+    ./btrfs
     ./networking
     ./nvidia
     ./iommu

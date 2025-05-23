@@ -7,7 +7,6 @@
       Unit = "btrfs-balance.service";
     };
   };
-
   systemd.services."btrfs-balance" = {
     script = ''
       ${pkgs.btrfs-progs}/bin/btrfs balance start -dusage=10 /
@@ -15,6 +14,17 @@
     serviceConfig = {
       Type = "oneshot";
       User = "root";
+    };
+  };
+
+  services.beesd.filesystems = {
+    root = {
+      spec = "/";
+      hashTableSizeMB = 128;
+      verbosity = "crit";
+      extraOptions = [
+        # "--loadavg-target" "5.0"
+      ];
     };
   };
 }

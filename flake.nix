@@ -73,8 +73,20 @@
   };
 
   outputs = inputs @ { self, ... }: {
+    nixosModules.all-formats = { config, ... }: {
+      imports = [
+        inputs.nixos-generators.nixosModules.all-formats
+      ];
+      formatConfigs.sd-aarch64 = { ... }: {
+        # hardware.enableAllHardware = false;
+      };
+    };
+
     nixosConfigurations = let
       username = "one";
+      username_list = [
+        "one"
+      ];
       specialArgs = {
         inherit username;
         inherit inputs;
@@ -84,6 +96,28 @@
         codonPackage = inputs.codon-flake.packages.${prev.system};
         davinci-resolvePackage = inputs.davinci-resolve-flake.packages.${prev.system};
       }) ];
+
+      merge =
+        lhs: rhs:
+        lhs // rhs // (builtins.mapAttrs (
+          rName: rValue:
+          let
+            lValue = lhs.${rName} or null;
+          in
+          if builtins.isAttrs lValue && builtins.isAttrs rValue then
+            merge lValue rValue
+          else if builtins.isList lValue && builtins.isList rValue then
+            lValue ++ rValue
+          else
+            rValue
+        ) rhs);
+      mergeList = builtins.foldl' merge {};
+
+      forEach = xs: f: map f xs;
+      all_user = forEach username_list (
+        x: { users = { ${x} = { imports = [ ./user/${x}/home ]; }; }; }
+      );
+
     in {
       main = let
       in
@@ -93,7 +127,7 @@
 
           modules = [
             # inputs.vgpu4nixos.nixosModules.host
-            inputs.nixos-generators.nixosModules.all-formats
+            self.nixosModules.all-formats
 
             ./host/main
             ./nixos
@@ -101,14 +135,13 @@
             ({ ... }: { nixpkgs.overlays = overlay; })
 
             inputs.home-manager.nixosModules.home-manager {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                extraSpecialArgs = specialArgs;
-                users.${username}.imports = [
-                  ./user/${username}/home
-                ];
-              };
+              home-manager = (mergeList ([
+                {
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  extraSpecialArgs = specialArgs;
+                }
+              ] ++ all_user));
             }
           ];
         };
@@ -121,7 +154,7 @@
 
           modules = [
             inputs.nixos-hardware.nixosModules.raspberry-pi-4
-            inputs.nixos-generators.nixosModules.all-formats
+            self.nixosModules.all-formats
 
             ./host/rpi4
             ./nixos
