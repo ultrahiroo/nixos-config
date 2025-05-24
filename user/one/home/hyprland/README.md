@@ -15,6 +15,7 @@
 - https://wiki.hyprland.org/Configuring/Master-Layout/
 - https://wiki.hyprland.org/Configuring/Dwindle-Layout/
 - https://wiki.hyprland.org/Configuring/Animations/
+- https://wiki.hyprland.org/Configuring/XWayland/
 
 ## HowTo
 - https://github.com/hyprwm/Hyprland/issues/4664

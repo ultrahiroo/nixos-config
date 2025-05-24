@@ -20,9 +20,9 @@
       };
       onBoot = "ignore";
       onShutdown = "shutdown";
+      hooks.qemu = {
+        "qemu" = ./qemu;
+      };
     };
-  };
-  virtualisation.libvirtd.hooks.qemu = {
-    "qemu" = ./qemu;
   };
 }

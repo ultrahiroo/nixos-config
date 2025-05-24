@@ -19,9 +19,11 @@
     printing.enable = true;
   };
 
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-  ];
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+    ];
+  };
 
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = false;

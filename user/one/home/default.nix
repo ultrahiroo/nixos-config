@@ -44,13 +44,12 @@
       fd
       file
       gimp
-      gg
       gnumake
       hyprpaper
       libxml2
       meson
       neofetch
-      nodejs_23
+      nodejs
       nvtopPackages.full
       kdePackages.filelight
       kdePackages.kate
