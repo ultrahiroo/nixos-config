@@ -81,6 +81,12 @@
         fileExtension = inputs.nixpkgs.lib.mkForce ".img";
         sdImage.compressImage = false;
       };
+      formatConfigs.virtualbox = { ... }: {
+        virtualisation.virtualbox.guest = {
+          enable = true;
+          dragAndDrop = true;
+        };
+      };
     };
 
     nixosConfigurations = let

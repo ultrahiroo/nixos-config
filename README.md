@@ -35,7 +35,6 @@ nix build .#nixosConfigurations.rpi4.config.formats.sd-aarch64
 ```
 
 # TODO
-- terminal launcher
 - remove delay before clean
 
 # Reference
@@ -62,6 +61,7 @@ nix build .#nixosConfigurations.rpi4.config.formats.sd-aarch64
 
 ## Issue
 - https://discourse.nixos.org/t/why-cant-i-use-let-variables-in-flake-nix-inputs/39929
+- https://github.com/NixOS/nix/issues/5532
 
 ## HowTo
 - https://unix.stackexchange.com/questions/500025/how-to-add-a-file-to-etc-in-nixos
