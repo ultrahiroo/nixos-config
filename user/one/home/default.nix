@@ -28,8 +28,6 @@
   ];
   home = {
     packages = with pkgs; [
-      cleanPackage.clean
-
       alacritty
       appimage-run
       baobab
@@ -39,6 +37,8 @@
       cargo
       cmake
       curl
+      custom.clean
+      custom.terminal_emulator
       devenv
       eza
       fd
@@ -82,8 +82,8 @@
       mangohud
       # rare
     ] ++ lib.optionals stdenv.isx86_64 (with pkgs; [
-      codonPackage.codon
-      # davinci-resolvePackage.davinci-resolve
+      custom.codon
+      custom.davinci-resolve
       davinci-resolve
 
       cpu-x

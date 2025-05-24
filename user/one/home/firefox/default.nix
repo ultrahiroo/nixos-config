@@ -2,7 +2,14 @@
   programs = {
     firefox = {
       enable = true;
-      profiles.default = {};
+      profiles = {
+        default = {
+          id = 1;
+        };
+        one = {
+          id = 0;
+        };
+      };
     };
   };
 }

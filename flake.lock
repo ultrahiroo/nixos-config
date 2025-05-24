@@ -62,7 +62,7 @@
         "type": "github"
       }
     },
-    "clean-flake": {
+    "clean": {
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": [
@@ -70,8 +70,8 @@
         ]
       },
       "locked": {
-        "lastModified": 1747119385,
-        "narHash": "sha256-M2NY9hbpqQCnI8+S0YhZgq/9pD4LSGkPPcTfBq8cr+c=",
+        "lastModified": 1748100043,
+        "narHash": "sha256-XnOBxqds6iqt9KWPG88IMfJV+ZyNe1AD/c05ecqc+rE=",
         "path": "/user/one/project/clean",
         "type": "path"
       },
@@ -80,7 +80,7 @@
         "type": "path"
       }
     },
-    "codon-flake": {
+    "codon": {
       "inputs": {
         "flake-utils": "flake-utils_2",
         "nixpkgs": [
@@ -88,8 +88,8 @@
         ]
       },
       "locked": {
-        "lastModified": 1747123920,
-        "narHash": "sha256-Fi+P33BXR8EKWGhYeWmDeFro6UqZUorrpBbtniTOD+o=",
+        "lastModified": 1748100949,
+        "narHash": "sha256-hEpl4Kcdn0QoUWy7JoySWqFl5s2yIWDxkzM+LdKIUkc=",
         "path": "/user/one/project/codon",
         "type": "path"
       },
@@ -98,7 +98,7 @@
         "type": "path"
       }
     },
-    "davinci-resolve-flake": {
+    "davinci-resolve": {
       "inputs": {
         "flake-utils": "flake-utils_3",
         "nixpkgs": [
@@ -106,8 +106,8 @@
         ]
       },
       "locked": {
-        "lastModified": 1747694767,
-        "narHash": "sha256-x031G89/Z3QFOloKAwRFg7A/GrqkmP31OG+KLZO9kh4=",
+        "lastModified": 0,
+        "narHash": "sha256-kOnl560jKDoHgxkbuqxiz/IzrMmOXjzpBmEfxPO82pw=",
         "path": "/user/one/project/davinci-resolve",
         "type": "path"
       },
@@ -349,19 +349,6 @@
         "ref": "v0.48.0",
         "repo": "Hyprland",
         "type": "github"
-      }
-    },
-    "hyprland-config": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1747145040,
-        "narHash": "sha256-2N3oE9SKOSjWXETDzJ9kSXhJX5ozkIvpjP9cLx8pDZU=",
-        "path": "/user/one/setting/hyprland/hypr",
-        "type": "path"
-      },
-      "original": {
-        "path": "/user/one/setting/hyprland/hypr",
-        "type": "path"
       }
     },
     "hyprland-plugins": {
@@ -618,11 +605,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1747723695,
-        "narHash": "sha256-lSXzv33yv1O9r9Ai1MtYFDX3OKhWsZMn/5FFb4Rni/k=",
+        "lastModified": 1747900541,
+        "narHash": "sha256-dn64Pg9xLETjblwZs9Euu/SsjW80pd6lr5qSiyLY1pg=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "6ac6ec6fcb410e15a60ef5ec94b8a2b35b5dd282",
+        "rev": "11f2d9ea49c3e964315215d6baa73a8d42672f06",
         "type": "github"
       },
       "original": {
@@ -649,11 +636,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1747676747,
-        "narHash": "sha256-LXkWBVqilgx7Pohwqu/ABxDVw+Cmi5/Mj2S2mpUH0Fw=",
+        "lastModified": 1747862697,
+        "narHash": "sha256-U4HaNZ1W26cbOVm0Eb5OdGSnfQVWQKbLSPrSSa78KC0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "72841a4a8761d1aed92ef6169a636872c986c76d",
+        "rev": "2baa12ff69913392faf0ace833bc54bba297ea95",
         "type": "github"
       },
       "original": {
@@ -706,19 +693,19 @@
       "inputs": {
         "alacritty-config": "alacritty-config",
         "catppuccin-bat": "catppuccin-bat",
-        "clean-flake": "clean-flake",
-        "codon-flake": "codon-flake",
-        "davinci-resolve-flake": "davinci-resolve-flake",
+        "clean": "clean",
+        "codon": "codon",
+        "davinci-resolve": "davinci-resolve",
         "font-data": "font-data",
         "home-manager": "home-manager",
         "hy3": "hy3",
         "hyprland": "hyprland",
-        "hyprland-config": "hyprland-config",
         "hyprland-plugins": "hyprland-plugins",
         "neovim-config": "neovim-config",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
+        "terminal_emulator": "terminal_emulator",
         "vgpu4nixos": "vgpu4nixos",
         "wireguard-config": "wireguard-config",
         "wireproxy-config": "wireproxy-config"
@@ -782,6 +769,23 @@
         "owner": "nix-systems",
         "repo": "default-linux",
         "type": "github"
+      }
+    },
+    "terminal_emulator": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1748099147,
+        "narHash": "sha256-PB39ymTsfM8HqaG+FYSuaJtzKFSxJa7DRh2ZzO3fwyk=",
+        "path": "/user/one/project/terminal_emulator",
+        "type": "path"
+      },
+      "original": {
+        "path": "/user/one/project/terminal_emulator",
+        "type": "path"
       }
     },
     "vgpu4nixos": {

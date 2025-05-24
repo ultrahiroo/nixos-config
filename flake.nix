@@ -34,16 +34,20 @@
     vgpu4nixos = {
       url = "github:mrzenc/vgpu4nixos";
     };
-    clean-flake = {
+    clean = {
       url = "path:/user/one/project/clean";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    codon-flake = {
+    codon = {
       url = "path:/user/one/project/codon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    davinci-resolve-flake = {
+    davinci-resolve = {
       url = "path:/user/one/project/davinci-resolve";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    terminal_emulator = {
+      url = "path:/user/one/project/terminal_emulator";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     font-data = {
@@ -52,10 +56,6 @@
     };
     alacritty-config = {
       url = "path:/user/one/setting/alacritty";
-      flake = false;
-    };
-    hyprland-config = {
-      url = "path:/user/one/setting/hyprland/hypr";
       flake = false;
     };
     neovim-config = {
@@ -99,24 +99,28 @@
         inherit default_username;
       };
 
-      overlay = [ (final: prev: {
-        cleanPackage = inputs.clean-flake.packages.${prev.system};
-        codonPackage = inputs.codon-flake.packages.${prev.system};
-        davinci-resolvePackage = inputs.davinci-resolve-flake.packages.${prev.system};
+      nixpkgs-overlay = [ (final: prev: {
+        custom = {
+          clean = inputs.clean.packages.${prev.system}.default;
+          codon = inputs.codon.packages.${prev.system}.default;
+          davinci-resolve = inputs.davinci-resolve.packages.${prev.system}.default;
+          terminal_emulator = inputs.terminal_emulator.packages.${prev.system}.default;
+        };
       }) ];
+
+      commom_module = [
+        inputs.home-manager.nixosModules.home-manager
+        self.nixosModules.all-formats
+        ({ ... }: { nixpkgs.overlays = nixpkgs-overlay; })
+        ./nixos
+        ./user
+      ];
 
     in {
       main = inputs.nixpkgs.lib.nixosSystem {
         inherit specialArgs;
         system = "x86_64-linux";
-
-        modules = [
-          inputs.home-manager.nixosModules.home-manager
-          self.nixosModules.all-formats
-          ({ ... }: { nixpkgs.overlays = overlay; })
-          ./nixos
-          ./user
-
+        modules = commom_module ++ [
           inputs.vgpu4nixos.nixosModules.host
           ./host/main
         ];
@@ -125,14 +129,7 @@
       rpi4 = inputs.nixpkgs.lib.nixosSystem {
         inherit specialArgs;
         system = "aarch64-linux";
-
-        modules = [
-          inputs.home-manager.nixosModules.home-manager
-          self.nixosModules.all-formats
-          ({ ... }: { nixpkgs.overlays = overlay; })
-          ./nixos
-          ./user
-
+        modules = commom_module ++ [
           inputs.nixos-hardware.nixosModules.raspberry-pi-4
           ./host/rpi4
         ];
