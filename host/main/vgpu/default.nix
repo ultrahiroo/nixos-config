@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   hardware.nvidia.vgpu.patcher.enable = true;
   hardware.nvidia.vgpu.patcher.copyVGPUProfiles = {
     "2187:0000" = "1E30:12BA";
@@ -32,6 +32,9 @@
     };
   };
   programs.mdevctl.enable = true;
+  environment.systemPackages = with pkgs; [
+    libxml2
+  ];
   environment.etc = {
     "libvirt/hooks/qemu.d/prepare/begin".source = ./qemu.d/prepare/begin;
     "libvirt/hooks/qemu.d/release/end".source = ./qemu.d/release/end;

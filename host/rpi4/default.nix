@@ -1,5 +1,7 @@
 { ... }: {
-  hardware.graphics.enable32Bit = false;
+  imports = [
+    ./gpu
+  ];
 
   nixpkgs.overlays = [
     (final: super: {

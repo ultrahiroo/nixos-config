@@ -1,3 +1,8 @@
+# Command
+```sh
+hyprctl reload
+```
+
 # Reference
 ## Example
 - https://github.com/hyprwm/Hyprland/blob/main/example/hyprland.conf

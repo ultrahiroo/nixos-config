@@ -1,19 +1,23 @@
 { pkgs, ... }: {
   imports = [
     ./common
+    ./binfmt
     ./display_manager
     ./appimage
     ./plymouth
+    ./ydotool
 
     ./fcitx5
     ./gnome-keyring
     ./gnupg
-    ./hyprland
     ./keyd
     ./openssh
-    ./plasma
     ./steam
     ./caddy
+
+    ./hyprland
+    ./plasma
+    ./niri
 
     ./waydroid
     ./distrobox

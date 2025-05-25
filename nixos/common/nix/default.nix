@@ -1,4 +1,4 @@
-{ all_username, ... }: {
+{ all_username, pkgs, ... }: {
    imports = [
     ./gc
   ];
@@ -27,4 +27,8 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+
+  environment.systemPackages = with pkgs; [
+    nixos-rebuild-ng
+  ];
 }

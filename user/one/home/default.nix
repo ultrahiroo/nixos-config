@@ -23,40 +23,36 @@
 
     ./mydns
     ./web_server
-
-    ./virt-manager
   ];
   home = {
     packages = with pkgs; [
       alacritty
+      custom.terminal_emulator
+      foot
+      kdePackages.konsole
+      kitty
+      warp-terminal
+
       appimage-run
       baobab
       bat
       blender
-      caddy
       cargo
-      cmake
       curl
       custom.clean
-      custom.terminal_emulator
       devenv
       eza
       fd
       file
-      gimp
+      gimp3
       gnumake
-      hyprpaper
-      libxml2
       meson
       neofetch
-      nixos-rebuild-ng
       nodejs
-      nvtopPackages.full
       kdePackages.filelight
       kdePackages.kate
       kdePackages.kdeconnect-kde
       kdePackages.kdenlive
-      killall
       obs-studio
       python3
       python3Packages.pip
