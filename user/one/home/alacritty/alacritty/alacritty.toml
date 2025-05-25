@@ -1,0 +1,73 @@
+[[keyboard.bindings]]
+action = "Paste"
+key = "Paste"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Copy"
+
+[[keyboard.bindings]]
+action = "ScrollHalfPageUp"
+key = "PageUp"
+mode = "~Alt"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollHalfPageDown"
+key = "PageDown"
+mode = "~Alt"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "Home"
+mode = "~Alt"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "End"
+mode = "~Alt"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollLineUp"
+key = "Up"
+mode = "~Alt"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ScrollLineDown"
+key = "Down"
+mode = "~Alt"
+mods = "Control|Shift"
+
+[[mouse.bindings]]
+action = "ExpandSelection"
+mouse = "Right"
+
+[[mouse.bindings]]
+action = "ExpandSelection"
+mods = "Control"
+mouse = "Right"
+
+[[mouse.bindings]]
+action = "ExpandSelection"
+mode = "~Vi"
+mouse = "Middle"
+
+[keyboard]
+
+[font]
+size = 11.0
+
+[font.normal]
+family = "Plemol JP Console"
+style = "Text"
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 100000
+multiplier = 10

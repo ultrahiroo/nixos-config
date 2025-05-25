@@ -42,24 +42,12 @@
       url = "path:/user/one/project/codon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    davinci-resolve = {
-      url = "path:/user/one/project/davinci-resolve";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     terminal_emulator = {
       url = "path:/user/one/project/terminal_emulator";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     font-data = {
       url = "path:/user/one/home/www/collection/font";
-      flake = false;
-    };
-    alacritty-config = {
-      url = "path:/user/one/setting/alacritty";
-      flake = false;
-    };
-    neovim-config = {
-      url = "path:/user/one/setting/nvim";
       flake = false;
     };
     wireguard-config = {
@@ -109,7 +97,6 @@
         custom = {
           clean = inputs.clean.packages.${prev.system}.default;
           codon = inputs.codon.packages.${prev.system}.default;
-          davinci-resolve = inputs.davinci-resolve.packages.${prev.system}.default;
           terminal_emulator = inputs.terminal_emulator.packages.${prev.system}.default;
         };
       }) ];

@@ -1,18 +1,5 @@
 {
   "nodes": {
-    "alacritty-config": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1738998213,
-        "narHash": "sha256-crizOmAUvu77KHMzettgk+ZmJUQaFZhjqcyc8NrDsss=",
-        "path": "/user/one/setting/alacritty",
-        "type": "path"
-      },
-      "original": {
-        "path": "/user/one/setting/alacritty",
-        "type": "path"
-      }
-    },
     "aquamarine": {
       "inputs": {
         "hyprutils": [
@@ -70,7 +57,7 @@
         ]
       },
       "locked": {
-        "lastModified": 1748100043,
+        "lastModified": 1748106327,
         "narHash": "sha256-XnOBxqds6iqt9KWPG88IMfJV+ZyNe1AD/c05ecqc+rE=",
         "path": "/user/one/project/clean",
         "type": "path"
@@ -95,24 +82,6 @@
       },
       "original": {
         "path": "/user/one/project/codon",
-        "type": "path"
-      }
-    },
-    "davinci-resolve": {
-      "inputs": {
-        "flake-utils": "flake-utils_3",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 0,
-        "narHash": "sha256-kOnl560jKDoHgxkbuqxiz/IzrMmOXjzpBmEfxPO82pw=",
-        "path": "/user/one/project/davinci-resolve",
-        "type": "path"
-      },
-      "original": {
-        "path": "/user/one/project/davinci-resolve",
         "type": "path"
       }
     },
@@ -153,24 +122,6 @@
     "flake-utils_2": {
       "inputs": {
         "systems": "systems_2"
-      },
-      "locked": {
-        "lastModified": 1731533236,
-        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "flake-utils_3": {
-      "inputs": {
-        "systems": "systems_3"
       },
       "locked": {
         "lastModified": 1731533236,
@@ -333,7 +284,7 @@
         "hyprwayland-scanner": "hyprwayland-scanner",
         "nixpkgs": "nixpkgs",
         "pre-commit-hooks": "pre-commit-hooks",
-        "systems": "systems_4",
+        "systems": "systems_3",
         "xdph": "xdph"
       },
       "locked": {
@@ -554,19 +505,6 @@
         "type": "github"
       }
     },
-    "neovim-config": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1745885505,
-        "narHash": "sha256-kT4bExluFz0RphXag6i7nuLH8yP5MVPWJuTbloTPGE8=",
-        "path": "/user/one/setting/nvim",
-        "type": "path"
-      },
-      "original": {
-        "path": "/user/one/setting/nvim",
-        "type": "path"
-      }
-    },
     "nixlib": {
       "locked": {
         "lastModified": 1736643958,
@@ -691,17 +629,14 @@
     },
     "root": {
       "inputs": {
-        "alacritty-config": "alacritty-config",
         "catppuccin-bat": "catppuccin-bat",
         "clean": "clean",
         "codon": "codon",
-        "davinci-resolve": "davinci-resolve",
         "font-data": "font-data",
         "home-manager": "home-manager",
         "hy3": "hy3",
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
-        "neovim-config": "neovim-config",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
@@ -742,21 +677,6 @@
       }
     },
     "systems_3": {
-      "locked": {
-        "lastModified": 1681028828,
-        "narHash": "sha256-Vy1rq5AaRuLzOxct8nz4T6wlgyUR7zLU309k9mBC768=",
-        "owner": "nix-systems",
-        "repo": "default",
-        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-systems",
-        "repo": "default",
-        "type": "github"
-      }
-    },
-    "systems_4": {
       "locked": {
         "lastModified": 1689347949,
         "narHash": "sha256-12tWmuL2zgBgZkdoB6qXZsgJEH9LR3oUgpaQq2RbI80=",

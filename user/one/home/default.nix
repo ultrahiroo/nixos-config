@@ -49,6 +49,7 @@
       libxml2
       meson
       neofetch
+      nixos-rebuild-ng
       nodejs
       nvtopPackages.full
       kdePackages.filelight
@@ -82,7 +83,6 @@
       # rare
     ] ++ lib.optionals stdenv.isx86_64 (with pkgs; [
       custom.codon
-      custom.davinci-resolve
       davinci-resolve
 
       cpu-x
