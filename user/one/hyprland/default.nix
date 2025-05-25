@@ -8,8 +8,8 @@
         plugin = ${inputs.hyprland-plugins.packages.${pkgs.system}.hyprwinwrap}/lib/libhyprwinwrap.so
       '';
       ".config/hypr/hyprpaper.conf".text = ''
-        preload = ${../../wallpaper/wallpaper.jpg}
-        wallpaper = , ${../../wallpaper/wallpaper.jpg}
+        preload = ${../wallpaper/wallpaper.jpg}
+        wallpaper = , ${../wallpaper/wallpaper.jpg}
       '';
     };
     packages = with pkgs; [

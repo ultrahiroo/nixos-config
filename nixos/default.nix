@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   imports = [
     ./common
-    ./binfmt
     ./display_manager
     ./appimage
     ./plymouth

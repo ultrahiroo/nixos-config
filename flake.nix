@@ -61,21 +61,22 @@
   };
 
   outputs = inputs @ { self, ... }: {
-    nixosModules.all-formats = { config, ... }: {
-      imports = [
-        inputs.nixos-generators.nixosModules.all-formats
-      ];
-      formatConfigs.sd-aarch64 = { ... }: {
-        fileExtension = inputs.nixpkgs.lib.mkForce ".img";
-        sdImage.compressImage = false;
-      };
-      formatConfigs.virtualbox = { ... }: {
-        virtualisation.virtualbox.guest = {
-          enable = true;
-          dragAndDrop = true;
-        };
-      };
-    };
+    # nixosModules.all-formats = { config, ... }: {
+    #   imports = [
+    #     inputs.nixos-generators.nixosModules.all-formats
+    #   ];
+    #   formatConfigs.sd-aarch64 = { ... }: {
+    #     fileExtension = inputs.nixpkgs.lib.mkForce ".img";
+    #     sdImage.compressImage = false;
+    #   };
+    #   formatConfigs.virtualbox = { ... }: {
+    #     virtualisation.virtualbox.guest = {
+    #       enable = true;
+    #       dragAndDrop = true;
+    #     };
+    #   };
+    # };
+    nixosModules.all-formats = ./generator;
 
     nixosConfigurations = let
       all_username = [
