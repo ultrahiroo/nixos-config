@@ -17,6 +17,7 @@
     ./hyprland
     ./plasma
     ./niri
+    ./maomaowm
 
     ./waydroid
     ./distrobox

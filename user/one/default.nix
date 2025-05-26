@@ -11,6 +11,7 @@
     ./plasma
     ./hyprland
     ./waybar
+    ./maomaowm
 
     ./brave
     ./chromium
@@ -24,6 +25,7 @@
     ./mydns
     ./web_server
   ];
+
   home = {
     packages = with pkgs; [
       custom.terminal_emulator

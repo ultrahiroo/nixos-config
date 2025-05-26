@@ -32,6 +32,7 @@ nix store gc
 ## Generate image
 ```sh
 nix build .#nixosConfigurations.rpi4.config.formats.sd-aarch64
+nix build .#nixosConfigurations.rpi4.config.formats.rpi4-btrfs
 ```
 
 # TODO

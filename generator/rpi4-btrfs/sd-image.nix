@@ -322,7 +322,7 @@ in
     boot.postBootCommands =
       let
         fixOwner = lib.optionalString (fsType == "btrfs") ''
-          chown -f 0:0 /
+          # chown -f 0:0 /
         '';
         expandOnBoot = lib.optionalString config.sdImage.expandOnBoot ''
           # Figure out device names for the boot device and root filesystem.

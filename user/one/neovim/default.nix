@@ -3,8 +3,8 @@
     enable = true;
   };
   home.file = {
-    ".config/nvim/lua".source = ./nvim/lua;
     ".config/nvim/init.lua".source = ./nvim/init.lua;
+    ".config/nvim/lua" = { source = ./nvim/lua; recursive = true; };
   };
   home = {
     packages = with pkgs; [

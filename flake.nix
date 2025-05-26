@@ -31,6 +31,9 @@
       url = "github:catppuccin/bat";
       flake = false;
     };
+    maomaowm = {
+      url = "github:DreamMaoMao/maomaowm?ref=0.4.7";
+    };
     vgpu4nixos = {
       url = "github:mrzenc/vgpu4nixos";
     };
@@ -61,23 +64,6 @@
   };
 
   outputs = inputs @ { self, ... }: {
-    # nixosModules.all-formats = { config, ... }: {
-    #   imports = [
-    #     inputs.nixos-generators.nixosModules.all-formats
-    #   ];
-    #   formatConfigs.sd-aarch64 = { ... }: {
-    #     fileExtension = inputs.nixpkgs.lib.mkForce ".img";
-    #     sdImage.compressImage = false;
-    #   };
-    #   formatConfigs.virtualbox = { ... }: {
-    #     virtualisation.virtualbox.guest = {
-    #       enable = true;
-    #       dragAndDrop = true;
-    #     };
-    #   };
-    # };
-    nixosModules.all-formats = ./generator;
-
     nixosConfigurations = let
       all_username = [
         "root"
@@ -104,8 +90,9 @@
 
       commom_module = [
         inputs.home-manager.nixosModules.home-manager
-        self.nixosModules.all-formats
+        inputs.maomaowm.nixosModules.maomaowm
         ({ ... }: { nixpkgs.overlays = nixpkgs-overlay; })
+        ./generator
         ./nixos
         ./user
       ];
