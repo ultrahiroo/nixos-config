@@ -85,6 +85,28 @@
         "type": "path"
       }
     },
+    "firefox-addons": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "pkgs/firefox-addons",
+        "lastModified": 1748318605,
+        "narHash": "sha256-rxxxdxFGX+C6xT0QPzMY5lDSBgigqtegQfVRRrZicHg=",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "rev": "0497d706cb79a3eef1f35dbc45419850c0e01bf1",
+        "type": "gitlab"
+      },
+      "original": {
+        "dir": "pkgs/firefox-addons",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "type": "gitlab"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -206,19 +228,6 @@
         "type": "github"
       }
     },
-    "font-data": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1743019183,
-        "narHash": "sha256-DFzQhPbHO1s1k6q6XkN9KvFN3wn+OE/PYycdZXNGnO4=",
-        "path": "/user/one/home/www/collection/font",
-        "type": "path"
-      },
-      "original": {
-        "path": "/user/one/home/www/collection/font",
-        "type": "path"
-      }
-    },
     "gitignore": {
       "inputs": {
         "nixpkgs": [
@@ -248,11 +257,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1747556831,
-        "narHash": "sha256-Qb84nbYFFk0DzFeqVoHltS2RodAYY5/HZQKE8WnBDsc=",
+        "lastModified": 1748226808,
+        "narHash": "sha256-GaBRgxjWO1bAQa8P2+FDxG4ANBVhjnSjBms096qQdxo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "d0bbd221482c2713cccb80220f3c9d16a6e20a33",
+        "rev": "83665c39fa688bd6a1f7c43cf7997a70f6a109f9",
         "type": "github"
       },
       "original": {
@@ -801,11 +810,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1747953325,
-        "narHash": "sha256-y2ZtlIlNTuVJUZCqzZAhIw5rrKP4DOSklev6c8PyCkQ=",
+        "lastModified": 1748162331,
+        "narHash": "sha256-rqc2RKYTxP3tbjA+PB3VMRQNnjesrT0pEofXQTrMsS8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "55d1f923c480dadce40f5231feb472e81b0bab48",
+        "rev": "7c43f080a7f28b2774f3b3f43234ca11661bf334",
         "type": "github"
       },
       "original": {
@@ -859,7 +868,7 @@
         "catppuccin-bat": "catppuccin-bat",
         "clean": "clean",
         "codon": "codon",
-        "font-data": "font-data",
+        "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
         "hy3": "hy3",
         "hyprland": "hyprland",
@@ -869,9 +878,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_4",
         "terminal_emulator": "terminal_emulator",
-        "vgpu4nixos": "vgpu4nixos",
-        "wireguard-config": "wireguard-config",
-        "wireproxy-config": "wireproxy-config"
+        "vgpu4nixos": "vgpu4nixos"
       }
     },
     "systems": {
@@ -988,32 +995,6 @@
         "owner": "mrzenc",
         "repo": "vgpu4nixos",
         "type": "github"
-      }
-    },
-    "wireguard-config": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1744639653,
-        "narHash": "sha256-9baTa3d9Tzr+uKiD/p675Y1teu//Sa6RNRPkIcKjkqc=",
-        "path": "/user/one/setting/wireguard",
-        "type": "path"
-      },
-      "original": {
-        "path": "/user/one/setting/wireguard",
-        "type": "path"
-      }
-    },
-    "wireproxy-config": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1745067004,
-        "narHash": "sha256-TmUMVb2FP8eOfxyvyyUXXbhdXTaBe+WIeEJeSQOD2Ns=",
-        "path": "/user/one/setting/wireproxy/wireproxy",
-        "type": "path"
-      },
-      "original": {
-        "path": "/user/one/setting/wireproxy/wireproxy",
-        "type": "path"
       }
     },
     "xdph": {

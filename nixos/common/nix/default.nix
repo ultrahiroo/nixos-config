@@ -1,9 +1,9 @@
-{ all_username, pkgs, ... }: {
+{ all_username, nixos_version, pkgs, ... }: {
    imports = [
     ./gc
   ];
 
-  system.stateVersion = "24.11";
+  system.stateVersion = nixos_version;
 
   nix.settings = {
     trusted-users = all_username;

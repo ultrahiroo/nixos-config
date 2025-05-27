@@ -1,23 +1,41 @@
 { pkgs, ... }: {
   fonts = {
     packages = with pkgs; [
+      dejavu_fonts
       material-design-icons
-
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-emoji
-
       nerd-fonts.fira-code
       nerd-fonts.jetbrains-mono
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-emoji
+      plemoljp
+      plemoljp-nf
+      plemoljp-hs
+      source-code-pro
+      source-han-code-jp
     ];
 
     enableDefaultPackages = false;
-    fontconfig.enable = true;
-    fontconfig.defaultFonts = {
-      serif = ["Noto Serif" "Noto Color Emoji"];
-      sansSerif = ["Noto Sans" "Noto Color Emoji"];
-      monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
-      emoji = ["Noto Color Emoji"];
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        serif = [
+          "Noto Serif"
+          "Noto Color Emoji"
+        ];
+        sansSerif = [
+          "Noto Sans"
+          "Noto Color Emoji"
+        ];
+        monospace = [
+          "JetBrainsMono Nerd Font"
+          "Noto Color Emoji"
+        ];
+        emoji = [
+          "Noto Color Emoji"
+        ];
+      };
     };
   };
 }

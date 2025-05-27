@@ -5,7 +5,6 @@
     ./gh
     ./git
     ./yash
-    ./font
 
     ./i3
     ./plasma

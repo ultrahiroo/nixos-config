@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ pkgs, ... }: {
   systemd.user.services = {
     wireproxy = {
       Unit = {
@@ -9,7 +9,7 @@
       };
       Service = {
         # User = "root";
-        ExecStart = "${pkgs.wireproxy}/bin/wireproxy --config ${inputs.wireproxy-config}/wireproxy.conf";
+        ExecStart = "${pkgs.wireproxy}/bin/wireproxy --config /etc/wireproxy/wireproxy.conf";
         #ExecStart = "${pkgs.wireproxy}/bin/wireproxy --config ${inputs.wireproxy-config}/wireproxy.conf";
         # ExecReload = "${pkgs.wireproxy}/bin/wireproxy --config ${inputs.wireproxy-config}/wireproxy.conf";
         Restart = "always";
@@ -17,8 +17,5 @@
         #NoNewPrivileges = "false";
       };
     };
-  };
-  home.file = {
-    ".config/wireproxy".source = inputs.wireproxy-config;
   };
 }

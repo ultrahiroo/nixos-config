@@ -37,6 +37,10 @@
     vgpu4nixos = {
       url = "github:mrzenc/vgpu4nixos";
     };
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     clean = {
       url = "path:/user/one/project/clean";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -48,18 +52,6 @@
     terminal_emulator = {
       url = "path:/user/one/project/terminal_emulator";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    font-data = {
-      url = "path:/user/one/home/www/collection/font";
-      flake = false;
-    };
-    wireguard-config = {
-      url = "path:/user/one/setting/wireguard";
-      flake = false;
-    };
-    wireproxy-config = {
-      url = "path:/user/one/setting/wireproxy/wireproxy";
-      flake = false;
     };
   };
 
@@ -73,11 +65,13 @@
         "one"
       ];
       default_username = "one";
+      nixos_version = "25.05";
       specialArgs = {
         inherit inputs;
         inherit all_username;
         inherit all_normal_username;
         inherit default_username;
+        inherit nixos_version;
       };
 
       nixpkgs-overlay = [ (final: prev: {
@@ -86,6 +80,7 @@
           codon = inputs.codon.packages.${prev.system}.default;
           terminal_emulator = inputs.terminal_emulator.packages.${prev.system}.default;
         };
+        firefox-addons = inputs.firefox-addons.packages.${prev.system};
       }) ];
 
       commom_module = [

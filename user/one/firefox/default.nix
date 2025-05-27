@@ -8,9 +8,36 @@
       languagePacks = [
         "ja"
       ];
+      policies = {
+        ExtensionSettings = with builtins;
+          let extension = shortId: uuid: {
+            name = uuid;
+            value = {
+              install_url = (
+                "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi"
+              );
+              installation_mode = "normal_installed";
+            };
+          };
+          in listToAttrs [
+            (extension "adguard-adblocker" "adguardadblocker@adguard.com")
+            (extension "clearurls" "{74145f27-f039-47ce-a470-a662b129930a}")
+            (extension "deepl-translate" "firefox-extension@deepl.com")
+            (extension "onetab" "extension@one-tab.com")
+            (extension "raindropio" "jid0-adyhmvsP91nUO8pRv0Mn2VKeB84@jetpack")
+            # (extension "ublock-origin" "uBlock0@raymondhill.net")
+            (extension "vimium-c" "vimium-c@gdh1995.cn")
+          ];
+      };
       profiles = {
         default = {
           id = 1;
+          extensions = {
+            # packages = with pkgs.firefox-addons; [
+            #   raindropio
+            #   vimium-c
+            # ];
+          };
           settings = {
             "app.normandy.first_run" = false;
             # "browser.laterrun.bookkeeping.sessionCount" = 1;

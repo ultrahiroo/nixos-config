@@ -1,10 +1,10 @@
-{ ... }: {
+{ nixos_version, ... }: {
   programs = {
     home-manager = {
       enable = true;
     };
   };
   home = {
-    stateVersion = "24.11";
+    stateVersion = nixos_version;
   };
 }

@@ -2,6 +2,7 @@
   imports = [
     ./audio
     ./gpu
+    # ./filesystem
   ];
 
   nixpkgs.overlays = [
@@ -10,14 +11,4 @@
         super.makeModulesClosure (x // { allowMissing = true; });
     })
   ];
-
-  fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-label/NIXOS_SD";
-      fsType = "btrfs";
-      options = [
-        "subvol=@"
-      ];
-    };
-  };
 }

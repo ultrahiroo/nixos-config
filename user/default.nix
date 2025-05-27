@@ -20,14 +20,15 @@
 
   forEach = xs: f: map f xs;
   all_user = forEach all_normal_username (
-    x: { users = { ${x} = { imports = [ ./${x} ]; }; }; }
+    x: { ${x} = { imports = [ ./${x} ]; }; }
   );
 
 in {
-  home-manager = (mergeList ([ {
+  home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = specialArgs;
     backupFileExtension = "backup";
-  } ] ++ all_user));
+    users = (mergeList all_user);
+  };
 }

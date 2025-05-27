@@ -10,28 +10,28 @@
 
 {
   # imports = [
-  #   # ../../profiles/base.nix
-  #   "${inputs.nixpkgs}/nixos/modules/profiles/base.nix"
+  #   "${inputs.nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
   #   ./sd-image.nix
   # ];
+
   imports = [
-    "${inputs.nixpkgs}/nixos/modules/installer/sd-card/sd-image-aarch64.nix"
+    # "${inputs.nixpkgs}/nixos/modules/profiles/base.nix"
     ./sd-image.nix
   ];
 
-  # boot.loader.grub.enable = false;
-  # boot.loader.generic-extlinux-compatible.enable = true;
+  boot.loader.grub.enable = false;
+  boot.loader.generic-extlinux-compatible.enable = true;
 
-  # boot.consoleLogLevel = lib.mkDefault 7;
+  boot.consoleLogLevel = lib.mkDefault 7;
 
   # The serial ports listed here are:
   # - ttyS0: for Tegra (Jetson TX1)
   # - ttyAMA0: for QEMU's -machine virt
-  # boot.kernelParams = [
-  #   "console=ttyS0,115200n8"
-  #   "console=ttyAMA0,115200n8"
-  #   "console=tty0"
-  # ];
+  boot.kernelParams = [
+    "console=ttyS0,115200n8"
+    "console=ttyAMA0,115200n8"
+    "console=tty0"
+  ];
 
   sdImage = {
     populateFirmwareCommands =
@@ -107,9 +107,9 @@
         cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/bcm2711-rpi-cm4.dtb firmware/
         cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/bcm2711-rpi-cm4s.dtb firmware/
       '';
-    # populateRootCommands = ''
-    #   mkdir -p ./files/boot
-    #   ${config.boot.loader.generic-extlinux-compatible.populateCmd} -c ${config.system.build.toplevel} -d ./files/boot
-    # '';
+    populateRootCommands = ''
+      mkdir -p ./files/boot
+      ${config.boot.loader.generic-extlinux-compatible.populateCmd} -c ${config.system.build.toplevel} -d ./files/boot
+    '';
   };
 }
