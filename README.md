@@ -46,7 +46,8 @@ nix build .#nixosConfigurations.rpi4.config.formats.rpi4-btrfs
 2. config maomaowm
 3. remove full path input
 4. fix rpi4-btrfs
-5. remove delay before clean
+5. disko
+6. remove delay before clean
 
 # Reference
 ## Opened issue

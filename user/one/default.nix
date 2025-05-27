@@ -1,6 +1,7 @@
 { lib, pkgs, ... }: {
   imports = [
     ./common
+    ./bat
     ./btop
     ./gh
     ./git
