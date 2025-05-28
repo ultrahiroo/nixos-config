@@ -57,15 +57,14 @@
         ]
       },
       "locked": {
-        "lastModified": 1748106327,
-        "narHash": "sha256-XnOBxqds6iqt9KWPG88IMfJV+ZyNe1AD/c05ecqc+rE=",
-        "path": "/user/one/project/clean",
+        "path": "./package/clean",
         "type": "path"
       },
       "original": {
-        "path": "/user/one/project/clean",
+        "path": "./package/clean",
         "type": "path"
-      }
+      },
+      "parent": []
     },
     "codon": {
       "inputs": {
@@ -75,15 +74,14 @@
         ]
       },
       "locked": {
-        "lastModified": 1748100949,
-        "narHash": "sha256-hEpl4Kcdn0QoUWy7JoySWqFl5s2yIWDxkzM+LdKIUkc=",
-        "path": "/user/one/project/codon",
+        "path": "./package/codon",
         "type": "path"
       },
       "original": {
-        "path": "/user/one/project/codon",
+        "path": "./package/codon",
         "type": "path"
-      }
+      },
+      "parent": []
     },
     "disko": {
       "inputs": {
@@ -645,6 +643,17 @@
         "type": "github"
       }
     },
+    "merge-list": {
+      "locked": {
+        "path": "./package/merge-list",
+        "type": "path"
+      },
+      "original": {
+        "path": "./package/merge-list",
+        "type": "path"
+      },
+      "parent": []
+    },
     "mmsg": {
       "inputs": {
         "flake-parts": "flake-parts_2",
@@ -895,6 +904,7 @@
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
         "maomaowm": "maomaowm",
+        "merge-list": "merge-list",
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_4",
@@ -969,15 +979,14 @@
         ]
       },
       "locked": {
-        "lastModified": 1748099147,
-        "narHash": "sha256-PB39ymTsfM8HqaG+FYSuaJtzKFSxJa7DRh2ZzO3fwyk=",
-        "path": "/user/one/project/terminal_emulator",
+        "path": "./package/terminal_emulator",
         "type": "path"
       },
       "original": {
-        "path": "/user/one/project/terminal_emulator",
+        "path": "./package/terminal_emulator",
         "type": "path"
-      }
+      },
+      "parent": []
     },
     "treefmt-nix": {
       "inputs": {

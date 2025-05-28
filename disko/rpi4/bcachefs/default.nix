@@ -1,8 +1,11 @@
 { pkgs, ... }: let
   mount_point = "/mnt";
-  target = "${mount_point}/boot/firmware";
+  target = "${mount_point}/boot";
   postMountHook-boot = ''
-    mkdir ${target}/
+    mkdir -p ${target}/
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/bootcode.bin ${target}/
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/fixup4.dat ${target}/
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/start4.elf ${target}/
     cp ${pkgs.ubootRaspberryPi4_64bit}/u-boot.bin ${target}/u-boot-rpi4.bin
     cp ${pkgs.raspberrypi-armstubs}/armstub8-gic.bin ${target}/
     cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/bcm2711-rpi-4-b.dtb ${target}/
@@ -36,10 +39,6 @@ in
     fi
   '';
   disko = {
-    # imageBuilder.extraPostVM = ''
-    #   ${pkgs.zstd}/bin/zstd --compress $out/*raw
-    #   rm $out/*raw
-    # '';
     devices = {
       disk = {
         rpi4-bcachefs = {

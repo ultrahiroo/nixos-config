@@ -134,11 +134,6 @@ let
     ${lib.getExe systemToInstallNative.config.system.build.destroyFormatMount} --yes-wipe-all-disks
   '';
 
-  max_count = 1024;
-  xargs_option = [
-    "--max-lines=${toString max_count}"
-    "--max-procs=$(${pkgs.coreutils}/bin/nproc)"
-  ];
   installer = lib.optionalString cfg.copyNixStore ''
     ${binfmtSetup}
     unset NIX_REMOTE
@@ -148,7 +143,13 @@ let
 
     # We copy files with cp because `nix copy` seems to have a large memory leak
     mkdir -p ${systemToInstall.config.disko.rootMountPoint}/nix/store
-    time xargs ${toString xargs_option} cp --recursive --target ${systemToInstall.config.disko.rootMountPoint}/nix/store < ${closureInfo}/store-paths
+
+    TARGET=${systemToInstall.config.disko.rootMountPoint}/nix/store
+    FILE=${closureInfo}/store-paths
+    ALL_COUNT=$(wc -l $FILE | cut -d " " -f 1)
+    CPU_COUNT=$(nproc)
+    COUNT=$(expr $ALL_COUNT / $CPU_COUNT)
+    time xargs --max-lines=$COUNT --max-procs=$CPU_COUNT cp --recursive --target $TARGET < $FILE
 
     ${systemToInstall.config.system.build.nixos-install}/bin/nixos-install --root ${systemToInstall.config.disko.rootMountPoint} --system ${systemToInstall.config.system.build.toplevel} --keep-going --no-channel-copy -v --no-root-password --option binary-caches ""
     umount -Rv ${lib.escapeShellArg systemToInstall.config.disko.rootMountPoint}

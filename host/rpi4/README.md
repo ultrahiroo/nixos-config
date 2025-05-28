@@ -13,3 +13,6 @@
 
 ## Closed pull requests
 - https://github.com/NixOS/nixpkgs/pull/241534
+
+## Minimal firmware list
+- https://forums.raspberrypi.com/viewtopic.php?t=380823

@@ -1,7 +1,6 @@
 # Command
 ```sh
 nix eval --file ./test.nix
-nix eval --file ./test2.nix
 ```
 
 # Reference
@@ -18,3 +17,8 @@ nix eval --file ./test2.nix
 - https://stackoverflow.com/questions/78358294/deeply-merge-sets-in-nix
 - https://unix.stackexchange.com/questions/749215/building-nixos-config-where-i-merge-two-attribute-sets-with-mkmerge-results-in-e
 - https://stackoverflow.com/questions/78358294/deeply-merge-sets-in-nix
+
+## nix flake template
+- https://zero-to-nix.com/concepts/flakes/
+## nix flake checks template
+- https://github.com/ttak0422/fizz-buzz-nix

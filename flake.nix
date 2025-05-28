@@ -2,6 +2,9 @@
   description = "NixOS and Home Manager Configuration";
 
   inputs = {
+    self = {
+      submodules = true;
+    };
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-25.05";
     };
@@ -23,12 +26,12 @@
     hyprland = {
       url = "github:hyprwm/Hyprland?submodules=1&ref=v0.48.0";
     };
-    hy3 = {
-      url = "github:outfoxxed/hy3?ref=hl0.48.0";
-      inputs.hyprland.follows = "hyprland";
-    };
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins?ref=v0.48.0";
+      inputs.hyprland.follows = "hyprland";
+    };
+    hy3 = {
+      url = "github:outfoxxed/hy3?ref=hl0.48.0";
       inputs.hyprland.follows = "hyprland";
     };
     catppuccin-bat = {
@@ -45,16 +48,19 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    merge-list = {
+      url = "path:./package/merge-list";
+    };
     clean = {
-      url = "path:/user/one/project/clean";
+      url = "path:./package/clean";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     codon = {
-      url = "path:/user/one/project/codon";
+      url = "path:./package/codon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     terminal_emulator = {
-      url = "path:/user/one/project/terminal_emulator";
+      url = "path:./package/terminal_emulator";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

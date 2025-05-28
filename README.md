@@ -31,8 +31,8 @@ nix store gc
 
 ```sh
 ls -la /nix/var/nix/gcroots/auto
-nix-collect-garbage --delete-older-than 7d
-nix-collect-garbage --delete-old
+sudo nix-collect-garbage --delete-older-than 7d
+sudo nix-collect-garbage --delete-old
 ```
 
 ## Generate image
@@ -48,12 +48,12 @@ sudo ./result
 ```
 
 # TODO
-1. disko
+1. remove full path input
+2. disko
   - btrfs
   - bcachefs
   - xfs
-2. config maomaowm
-3. remove full path input
+3. config maomaowm
 4. fix rpi4-btrfs: does not boot: btrfs subvolume is not defined at boot?
 5. fix rpi4-btrfs: image generating is too slow
 6. remove delay before clean
@@ -92,3 +92,4 @@ sudo ./result
 - https://nixos-and-flakes.thiscute.world/other-usage-of-flakes/inputs
 - https://github.com/hyprwm/Hyprland/issues/4664
 - https://journix.dev/posts/gaming-on-nixos/
+- https://discourse.nixos.org/t/nix-2-27-0-released/62003
