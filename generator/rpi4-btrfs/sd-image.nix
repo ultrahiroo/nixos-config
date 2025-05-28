@@ -210,6 +210,10 @@ in
       "/" = {
         device = "/dev/disk/by-label/NIXOS_SD";
         fsType = lib.mkForce fsType;
+        options = [
+        ] ++ lib.optionals (fsType == "btrfs") [
+          "subvol=@"
+        ];
       };
     };
 

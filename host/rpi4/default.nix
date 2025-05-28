@@ -2,7 +2,6 @@
   imports = [
     ./audio
     ./gpu
-    # ./filesystem
   ];
 
   nixpkgs.overlays = [

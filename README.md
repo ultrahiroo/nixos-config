@@ -36,17 +36,26 @@ nix-collect-garbage --delete-old
 ```
 
 ## Generate image
+### nixos-generator
 ```sh
 nix build .#nixosConfigurations.rpi4.config.formats.sd-aarch64
 nix build .#nixosConfigurations.rpi4.config.formats.rpi4-btrfs
 ```
+### disko
+```sh
+nix build .#nixosConfigurations.rpi4-disko.config.system.build.diskoImagesScript
+sudo ./result
+```
 
 # TODO
-1. firefox addon
+1. disko
+  - btrfs
+  - bcachefs
+  - xfs
 2. config maomaowm
 3. remove full path input
-4. fix rpi4-btrfs
-5. disko
+4. fix rpi4-btrfs: does not boot: btrfs subvolume is not defined at boot?
+5. fix rpi4-btrfs: image generating is too slow
 6. remove delay before clean
 
 # Reference

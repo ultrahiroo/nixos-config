@@ -16,6 +16,10 @@
       url = "github:nix-community/nixos-generators";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland = {
       url = "github:hyprwm/Hyprland?submodules=1&ref=v0.48.0";
     };
@@ -108,6 +112,17 @@
         modules = commom_module ++ [
           inputs.nixos-hardware.nixosModules.raspberry-pi-4
           ./host/rpi4
+          ./host/rpi4/filesystem
+        ];
+      };
+
+      rpi4-disko = inputs.nixpkgs.lib.nixosSystem {
+        inherit specialArgs;
+        system = "aarch64-linux";
+        modules = commom_module ++ [
+          inputs.nixos-hardware.nixosModules.raspberry-pi-4
+          ./host/rpi4
+          ./disko/rpi4/btrfs
         ];
       };
     };
