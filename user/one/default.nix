@@ -42,6 +42,7 @@
       curl
       custom.clean
       devenv
+      disko
       eza
       fd
       file

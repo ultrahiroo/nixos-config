@@ -32,7 +32,7 @@ nix store gc
 ```sh
 ls -la /nix/var/nix/gcroots/auto
 sudo nix-collect-garbage --delete-older-than 7d
-sudo nix-collect-garbage --delete-old
+sudo nix-collect-garbage --delete-old && nix-collect-garbage --delete-old
 ```
 
 ## Generate image
@@ -43,20 +43,21 @@ nix build .#nixosConfigurations.rpi4.config.formats.rpi4-btrfs
 ```
 ### disko
 ```sh
-nix build .#nixosConfigurations.rpi4-disko.config.system.build.diskoImagesScript
-sudo ./result
+nix build .#nixosConfigurations.rpi4-disko.config.system.build.diskoImagesScript && sudo ./result
+```
+```sh
+sudo disko-install --flake '.#rpi4-btrfs' --disk main /dev/sde
 ```
 
 # TODO
-1. remove full path input
-2. disko
+1. disko
   - btrfs
   - bcachefs
   - xfs
-3. config maomaowm
-4. fix rpi4-btrfs: does not boot: btrfs subvolume is not defined at boot?
-5. fix rpi4-btrfs: image generating is too slow
-6. remove delay before clean
+2. config maomaowm
+3. fix rpi4-btrfs: does not boot: btrfs subvolume is not defined at boot?
+4. fix rpi4-btrfs: image generating is too slow
+5. remove delay before clean
 
 # Reference
 ## Opened issue

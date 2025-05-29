@@ -41,7 +41,7 @@ in
   disko = {
     devices = {
       disk = {
-        rpi4-bcachefs = {
+        main = {
           imageSize = "50G";
           type = "disk";
           device = "/dev/mmcblk0";

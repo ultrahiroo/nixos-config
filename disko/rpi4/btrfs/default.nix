@@ -4,8 +4,25 @@
   postMountHook-boot = ''
     mkdir -p ${target}/
     cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/bootcode.bin ${target}/
+
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/fixup.dat ${target}/
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/fixup_cd.dat ${target}/
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/fixup_db.dat ${target}/
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/fixup_x.dat ${target}/
     cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/fixup4.dat ${target}/
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/fixup4cd.dat ${target}/
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/fixup4db.dat ${target}/
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/fixup4x.dat ${target}/
+
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/start.elf ${target}/
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/start_cd.elf ${target}/
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/start_db.elf ${target}/
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/start_x.elf ${target}/
     cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/start4.elf ${target}/
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/start4cd.elf ${target}/
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/start4db.elf ${target}/
+    cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/start4x.elf ${target}/
+
     cp ${pkgs.ubootRaspberryPi4_64bit}/u-boot.bin ${target}/u-boot-rpi4.bin
     cp ${pkgs.raspberrypi-armstubs}/armstub8-gic.bin ${target}/
     cp ${pkgs.raspberrypifw}/share/raspberrypi/boot/bcm2711-rpi-4-b.dtb ${target}/
@@ -40,7 +57,7 @@ in {
   disko = {
     devices = {
       disk = {
-        rpi4-btrfs = {
+        main = {
           imageSize = "50G";
           type = "disk";
           device = "/dev/mmcblk0";
