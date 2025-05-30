@@ -4,3 +4,4 @@ secret/
 NVIDIA-GRID-Linux-KVM*
 /result
 *.raw
+*.img

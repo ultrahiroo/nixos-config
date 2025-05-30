@@ -8,3 +8,7 @@
 - https://noogle.dev/f/pkgs/vmTools/runInLinuxVM
 - https://superuser.com/questions/1817639/can-i-restrict-the-amount-of-cpus-that-qemu-can-use-is-there-a-command-line-opt
 - https://github.com/nix-community/disko/issues/550
+
+## Opened issue
+### Firmware
+https://github.com/NixOS/nixpkgs/issues/406201

@@ -2,10 +2,14 @@
   hardware.graphics.enable32Bit = false;
 
   hardware = {
-    raspberry-pi."4".apply-overlays-dtmerge.enable = true;
-    deviceTree = {
+    # raspberry-pi."4".apply-overlays-dtmerge.enable = true;
+    # deviceTree = {
+    #   enable = true;
+    #   filter = "*rpi-4-*.dtb";
+    # };
+    raspberry-pi."4".fkms-3d = {
       enable = true;
-      filter = "*rpi-4-*.dtb";
+      cma = 512;
     };
   };
 

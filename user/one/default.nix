@@ -48,6 +48,7 @@
       file
       gimp3
       gnumake
+      gptfdisk
       meson
       neofetch
       nodejs

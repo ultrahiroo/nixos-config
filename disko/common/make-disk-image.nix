@@ -148,7 +148,7 @@ let
     FILE=${closureInfo}/store-paths
     ALL_COUNT=$(wc -l $FILE | cut -d " " -f 1)
     CPU_COUNT=$(nproc)
-    COUNT=$(expr $ALL_COUNT / $CPU_COUNT)
+    COUNT=$(expr $ALL_COUNT / $CPU_COUNT / 4)
     time xargs --max-lines=$COUNT --max-procs=$CPU_COUNT cp --recursive --target $TARGET < $FILE
 
     ${systemToInstall.config.system.build.nixos-install}/bin/nixos-install --root ${systemToInstall.config.disko.rootMountPoint} --system ${systemToInstall.config.system.build.toplevel} --keep-going --no-channel-copy -v --no-root-password --option binary-caches ""

@@ -23,6 +23,10 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    raspberrypi-firmware = {
+      url = "github:raspberrypi/firmware?ref=1.20250430";
+      flake = false;
+    };
     hyprland = {
       url = "github:hyprwm/Hyprland?submodules=1&ref=v0.48.0";
     };
@@ -118,7 +122,7 @@
         modules = commom_module ++ [
           inputs.nixos-hardware.nixosModules.raspberry-pi-4
           ./host/rpi4
-          ./host/rpi4/filesystem
+          # ./host/rpi4/filesystem
         ];
       };
 

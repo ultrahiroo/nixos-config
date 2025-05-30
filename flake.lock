@@ -892,6 +892,23 @@
         "type": "github"
       }
     },
+    "raspberrypi-firmware": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1746016739,
+        "narHash": "sha256-U41EgEDny1R+JFktSC/3CE+2Qi7GJludj929ft49Nm0=",
+        "owner": "raspberrypi",
+        "repo": "firmware",
+        "rev": "bc7f439c234e19371115e07b57c366df59cc1bc7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "raspberrypi",
+        "ref": "1.20250430",
+        "repo": "firmware",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "catppuccin-bat": "catppuccin-bat",
@@ -908,6 +925,7 @@
         "nixos-generators": "nixos-generators",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_4",
+        "raspberrypi-firmware": "raspberrypi-firmware",
         "terminal_emulator": "terminal_emulator",
         "vgpu4nixos": "vgpu4nixos"
       }
