@@ -4,7 +4,7 @@
     ./font
     ./keyboard
     ./locale
-    ./network
+    ./networking
     ./nix
     ./user
   ];

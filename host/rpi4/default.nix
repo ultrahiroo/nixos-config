@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, ... }: {
   imports = [
     ./audio
     ./gpu
@@ -13,10 +13,10 @@
   ];
 
   boot = {
-    # loader = {
-    #   grub.enable = false;
-    #   generic-extlinux-compatible.enable = true;
-    # };
+    loader = {
+      grub.enable = false;
+      generic-extlinux-compatible.enable = true;
+    };
     consoleLogLevel = 7;
     kernelParams = [
       "console=ttyS0,115200n8"
@@ -26,8 +26,23 @@
   };
 
   hardware = {
+    raspberry-pi."4".apply-overlays-dtmerge.enable = true;
+    deviceTree = {
+      enable = true;
+      filter = lib.mkForce "bcm2711-rpi-4-b.dtb";
+    };
+  };
+
+  hardware = {
     raspberry-pi."4".bluetooth = {
       enable = false;
     };
   };
+
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 4 * 1024;  # MiB
+    }
+  ];
 }

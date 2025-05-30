@@ -12,6 +12,7 @@ nix flake check
 ## Install
 ```sh
 sudo nixos-rebuild switch --flake .#main
+sudo nixos-rebuild switch --flake .#rpi4-disko
 ```
 
 ## If Error When Switch

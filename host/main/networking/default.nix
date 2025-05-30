@@ -1,12 +1,11 @@
 { ... }: {
   networking = {
     hostName = "main";
-    interfaces.eno1.ipv4.addresses = [
+    interfaces.eth0.ipv4.addresses = [
       {
         address = "192.168.0.23";
         prefixLength = 24;
       }
     ];
-    defaultGateway = "192.168.0.1";
   };
 }
