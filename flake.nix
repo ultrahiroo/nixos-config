@@ -2,9 +2,6 @@
   description = "NixOS and Home Manager Configuration";
 
   inputs = {
-    self = {
-      submodules = true;
-    };
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-25.05";
     };

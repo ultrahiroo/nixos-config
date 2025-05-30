@@ -1,0 +1,73 @@
+#!/usr/bin/env python3
+import os
+import shutil
+import subprocess
+from typing import Dict, List
+
+
+class Command:
+    value: List[str]
+    env: Dict[str, str]
+
+    def __init__(
+        self,
+        value: List[str],
+        env: Dict[str, str] | None = None,
+    ) -> None:
+        self.value = value
+        self.env = env if env is not None else {}
+
+
+class Config:
+    command_list: List[Command]
+
+    def __init__(self, command_list: List[Command]) -> None:
+        self.command_list = command_list
+
+
+def main() -> None:
+    config = Config(command_list=[
+        Command(
+            value=['alacritty'],
+            env={
+                # 'WINIT_UNIX_BACKEND': 'x11',
+                # 'WAYLAND_DISPLAY': 'alacritty',
+            },
+        ),
+        Command(
+            value=['qterminal'],
+            env={},
+        ),
+        Command(
+            value=['konsole'],
+            env={},
+        ),
+        Command(
+            value=['foot'],
+            env={},
+        ),
+        Command(
+            value=['xterm'],
+            env={},
+        ),
+    ])
+
+    for i in range(len(config.command_list)):
+        command = config.command_list[i]
+        command_path = shutil.which(cmd=command.value[0])
+        if command_path is None:
+            continue
+
+        env = os.environ.copy()
+        custom_env = command.env
+        env.update(custom_env)
+
+        process = subprocess.run(args=command.value, env=env)
+        if process.returncode == 0:
+            exit()
+
+    raise AssertionError('A valid terminal is not available')
+
+
+if __name__ == '__main__':
+    main()

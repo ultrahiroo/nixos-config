@@ -58,6 +58,7 @@ sudo disko-install --flake '.#rpi4-btrfs' --disk main /dev/sde
 3. fix rpi4-btrfs: does not boot: btrfs subvolume is not defined at boot?
 4. fix rpi4-btrfs: image generating is too slow
 5. remove delay before clean
+6. submodule is too slow
 
 # Reference
 ## Opened issue
