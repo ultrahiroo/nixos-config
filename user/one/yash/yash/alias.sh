@@ -156,3 +156,5 @@ alias nix-profile-clean='nix store gc'
 alias nix-repl-flake='nix repl --expr "builtins.getFlake \"$PWD\""'
 
 alias nvtop='LINES= nvtop'
+alias gparted='sudo -EH gparted'
+alias kde-partition-manager='sudo partitionmanager'

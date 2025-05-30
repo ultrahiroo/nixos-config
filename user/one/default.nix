@@ -34,6 +34,11 @@
       kitty
       warp-terminal
 
+      bcachefs-tools
+      btrfs-progs
+      e2fsprogs
+      xfsprogs
+
       appimage-run
       baobab
       bat
