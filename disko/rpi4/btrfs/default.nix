@@ -1,5 +1,5 @@
 { inputs, pkgs, ... }: let
-  first_boot_file = "first-boot";
+  first_boot_filename = "first-boot";
   mount_point = "/mnt";
   target = "${mount_point}/firmware";
   postMountHook-boot = ''
@@ -12,14 +12,14 @@
     cp ${../config.txt} ${target}/config.txt
   '';
   postMountHook-root = ''
-    touch ${mount_point}/${first_boot_file}
+    touch ${mount_point}/${first_boot_filename}
   '';
 in {
   imports = [
     ../../common
   ];
   boot.postBootCommands = ''
-    if [ -f /${first_boot_file} ]; then
+    if [ -f /${first_boot_filename} ]; then
       set -euxo pipefail
 
       rootPart=$(${pkgs.util-linux}/bin/findmnt -n -o SOURCE /)
@@ -30,7 +30,7 @@ in {
       ${pkgs.parted}/bin/partprobe
       ${pkgs.btrfs-progs}/bin/btrfs filesystem resize max /
 
-      rm -f /${first_boot_file}
+      rm -f /${first_boot_filename}
     fi
   '';
   disko = {
