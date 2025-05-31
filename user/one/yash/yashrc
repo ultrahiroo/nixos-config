@@ -15,6 +15,11 @@ fi
 # Function
 . ${HOME}/.config/yash/function.sh
 
+SOURCE="/etc/profiles/per-user/${USER}/etc/profile.d/hm-session-vars.sh"
+if test -e ${SOURCE}; then
+    . ${SOURCE}
+fi
+
 # Screen
 sleep 0.5
 clean

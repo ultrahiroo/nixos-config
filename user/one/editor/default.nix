@@ -6,10 +6,11 @@
   home = {
     packages = with pkgs; [
       kdePackages.kate
+      micro
       vscode
     ];
   };
-  systemd.user.sessionVariables = {
-    EDITOR   = "nvim";
+  home.sessionVariables = {
+    EDITOR = "nvim";
   };
 }

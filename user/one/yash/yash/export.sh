@@ -89,7 +89,7 @@ export GIT_DISCOVERY_ACROSS_FILESYSTEM='1' # Git on Btrfs
 #     export _JAVA_AWT_WM_NONREPARENTING='1'  # https://github.com/swaywm/sway/issues/595
 # fi
 
-# export BROWSER='chromium-browser'
+# export BROWSER='firefox'
 export EDITOR='nvim'
 # export EDITOR='micro'
 # export PAGER='bat'

@@ -1,5 +1,4 @@
 { pkgs, all_username, ... }: {
-  users.groups.libvirtd.members = all_username;
   programs.virt-manager.enable = true;
   virtualisation = {
     spiceUSBRedirection.enable = true;
@@ -24,5 +23,10 @@
         "qemu" = ./qemu;
       };
     };
+  };
+  users.groups = {
+    libvirtd.members = all_username;
+    input.members = all_username;
+    kvm.members = all_username;
   };
 }

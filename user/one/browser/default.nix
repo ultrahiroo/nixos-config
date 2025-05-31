@@ -4,7 +4,7 @@
     ./chromium
     ./firefox
   ];
-  systemd.user.sessionVariables = {
-    BROWSER  = "firefox";
+  home.sessionVariables = {
+    BROWSER = "firefox";
   };
 }
