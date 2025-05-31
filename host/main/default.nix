@@ -4,8 +4,8 @@
     ./boot
     ./btrfs
     ./networking
-    ./nvidia
     ./iommu
+    ./nvidia
 
     # ./gpu-passthrough
     # ./vgpu
