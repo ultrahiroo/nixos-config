@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{ pkgs, lib, ... }: {
   imports = [
     ./audio
     ./gpu
@@ -26,18 +26,34 @@
   };
 
   hardware = {
-    raspberry-pi."4".apply-overlays-dtmerge.enable = true;
+    raspberry-pi."4" = {
+      apply-overlays-dtmerge = {
+        enable = true;
+      };
+      bluetooth = {
+        enable = false;
+      };
+    };
     deviceTree = {
       enable = true;
       filter = lib.mkForce "bcm2711-rpi-4-b.dtb";
+      overlays = [
+        {
+          name = "disable-wifi";
+          dtboFile = "${pkgs.raspberrypifw}/share/raspberrypi/boot/overlays/disable-wifi.dtbo";
+        }
+        {
+          name = "disable-bt";
+          dtboFile = "${pkgs.raspberrypifw}/share/raspberrypi/boot/overlays/disable-bt.dtbo";
+        }
+      ];
     };
   };
 
-  hardware = {
-    raspberry-pi."4".bluetooth = {
-      enable = false;
-    };
-  };
+  environment.systemPackages = with pkgs; [
+    libraspberrypi
+    raspberrypi-eeprom
+  ];
 
   swapDevices = [
     {

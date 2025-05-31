@@ -9,6 +9,9 @@
         init = {
           defaultBranch = "main";
         };
+        log = {
+          date = "format-local:%Y-%m-%d %H:%M:%S";
+        };
       };
     };
   };
