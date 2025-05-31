@@ -19,6 +19,11 @@ in {
     ../../common
   ];
   boot.postBootCommands = ''
+    if [ -f /${first_boot_file} ]; then
+      set -eux
+      ${pkgs.btrfs-progs}/bin/btrfs filesystem resize max /
+      rm -f /${first_boot_file}
+    fi
   '';
   # boot.postBootCommands = ''
   #   if [ -f /${first_boot_file} ]; then
@@ -43,16 +48,16 @@ in {
           imageSize = "30G";
           type = "disk";
           device = "/dev/mmcblk0";
-          postCreateHook = ''
-            lsblk
-            sgdisk -A 1:set:2 /dev/vda
-          '';
+          # postCreateHook = ''
+          #   lsblk
+          #   sgdisk -A 1:set:2 /dev/vda
+          # '';
           content = {
             type = "gpt";
             partitions = {
               firmware = {
                 size = "30M";
-                priority = 1;  # TODO
+                # priority = 1;  # TODO
                 type = "0700";
                 content = {
                   type = "filesystem";
@@ -75,9 +80,9 @@ in {
                 size = "100%";
                 content = {
                   type = "btrfs";
-                  extraArgs = [
-                    "-f"
-                  ];
+                  # extraArgs = [
+                  #   "-f"
+                  # ];
                   mountpoint = "/";
                   mountOptions = [
                     "compress=zstd"

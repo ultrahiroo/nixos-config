@@ -68,6 +68,7 @@
 
   outputs = inputs @ { self, ... }: {
     nixosConfigurations = let
+      nixos_version = "25.05";
       all_username = [
         "root"
         "one"
@@ -76,7 +77,6 @@
         "one"
       ];
       default_username = "one";
-      nixos_version = "25.05";
       specialArgs = {
         inherit inputs;
         inherit all_username;
@@ -95,8 +95,6 @@
       }) ];
 
       commom_module = [
-        inputs.home-manager.nixosModules.home-manager
-        inputs.maomaowm.nixosModules.maomaowm
         ({ ... }: { nixpkgs.overlays = nixpkgs-overlay; })
         ./generator
         ./nixos
@@ -108,7 +106,6 @@
         inherit specialArgs;
         system = "x86_64-linux";
         modules = commom_module ++ [
-          inputs.vgpu4nixos.nixosModules.host
           ./host/main
         ];
       };
@@ -117,7 +114,6 @@
         inherit specialArgs;
         system = "aarch64-linux";
         modules = commom_module ++ [
-          inputs.nixos-hardware.nixosModules.raspberry-pi-4
           ./host/rpi4
           # ./host/rpi4/filesystem
         ];
@@ -127,7 +123,6 @@
         inherit specialArgs;
         system = "aarch64-linux";
         modules = commom_module ++ [
-          inputs.nixos-hardware.nixosModules.raspberry-pi-4
           ./host/rpi4
           ./disko/rpi4/btrfs
         ];

@@ -1,5 +1,6 @@
-{ pkgs, lib, ... }: {
+{ inputs, lib, pkgs, ... }: {
   imports = [
+    inputs.nixos-hardware.nixosModules.raspberry-pi-4
     ./audio
     ./gpu
     ./networking
