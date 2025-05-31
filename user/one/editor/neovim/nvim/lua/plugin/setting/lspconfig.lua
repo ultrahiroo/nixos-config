@@ -1,7 +1,6 @@
 local function config()
     local lspconfig = require('lspconfig')
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
-    local mason_lspconfig = require('mason-lspconfig')
     local lsp_selection_range = require('lsp-selection-range')
     local lsr_client = require('lsp-selection-range.client')
     lsp_selection_range.setup({
@@ -41,11 +40,6 @@ local function config()
         pyright = {},
     }
 
-    mason_lspconfig.setup {
-        automatic_enable = false,
-        -- ensure_installed = vim.tbl_keys(server),
-    }
-
     for server_name, _ in pairs(server) do
         vim.lsp.enable(server_name)
         config = server[server_name]
@@ -77,7 +71,6 @@ return {
     'neovim/nvim-lspconfig',
     lazy = true,
     dependencies = {
-        { 'williamboman/mason-lspconfig.nvim' },
         { 'hrsh7th/cmp-nvim-lsp' },
         { 'camilledejoye/nvim-lsp-selection-range' },
     },

@@ -5,6 +5,7 @@
     ./gh
     ./git
     ./yash
+    ./xdg
 
     ./i3
     ./plasma

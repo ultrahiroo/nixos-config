@@ -1,3 +1,4 @@
+alias b='${BROWSER} &'
 alias browse='${BROWSER}'
 alias btrfs-df='sudo btrfs filesystem usage -T'
 alias btrfs-du='btrfs filesystem du --summarize'

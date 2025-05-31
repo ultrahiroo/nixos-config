@@ -11,7 +11,7 @@
       warp-terminal
     ];
   };
-  home.sessionVariables = {
+  systemd.user.sessionVariables = {
     TERMINAL = "alacritty";
   };
 }

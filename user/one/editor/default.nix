@@ -9,7 +9,7 @@
       vscode
     ];
   };
-  home.sessionVariables = {
+  systemd.user.sessionVariables = {
     EDITOR   = "nvim";
   };
 }
