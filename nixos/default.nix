@@ -41,9 +41,5 @@
     # PATH = [ 
     #   "${XDG_BIN_HOME}"
     # ];
-
-    EDITOR   = "nvim";
-    BROWSER  = "brave";
-    TERMINAL = "alacritty";
   };
 }

@@ -1,6 +1,5 @@
 { lib, pkgs, ... }: {
   imports = [
-    ./common
     ./bat
     ./btop
     ./gh
@@ -13,14 +12,9 @@
     ./waybar
     ./maomaowm
 
-    ./brave
-    ./chromium
-    ./firefox
-
-    ./kate
-    ./neovim
-
-    ./alacritty
+    ./terminal
+    ./editor
+    ./browser
 
     ./mydns
     ./web_server
@@ -28,12 +22,6 @@
 
   home = {
     packages = with pkgs; [
-      custom.terminal_emulator
-      foot
-      kdePackages.konsole
-      kitty
-      warp-terminal
-
       bcachefs-tools
       btrfs-progs
       e2fsprogs
@@ -58,7 +46,6 @@
       neofetch
       nodejs
       kdePackages.filelight
-      kdePackages.kate
       kdePackages.kdeconnect-kde
       kdePackages.kdenlive
       obs-studio
@@ -72,7 +59,6 @@
       unixtools.quota
       unzip
       vlc
-      vscode
       waybar
       wget
       wireproxy
