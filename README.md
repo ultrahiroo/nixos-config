@@ -44,7 +44,8 @@ nix build .#nixosConfigurations.rpi4.config.formats.rpi4-btrfs
 ```
 ### disko
 ```sh
-nix build .#nixosConfigurations.rpi4-disko.config.system.build.diskoImagesScript && sudo ./result
+nix build .#nixosConfigurations.rpi4-disko.config.system.build.diskoImagesScript
+sudo ./result
 ```
 ```sh
 sudo disko-install --flake '.#rpi4-btrfs' --disk main /dev/sde
@@ -55,11 +56,10 @@ sudo disko-install --flake '.#rpi4-btrfs' --disk main /dev/sde
   - btrfs
   - bcachefs
   - xfs
-2. config maomaowm
-3. fix rpi4-btrfs: does not boot: btrfs subvolume is not defined at boot?
-4. fix rpi4-btrfs: image generating is too slow
-5. remove delay before clean
-6. submodule is too slow
+1. config maomaowm
+1. fix rpi4-btrfs: does not boot: btrfs subvolume is not defined at boot?
+1. fix rpi4-btrfs: image generating is too slow
+1. submodule is too slow
 
 # Reference
 ## Opened issue

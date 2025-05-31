@@ -20,27 +20,19 @@ in {
   ];
   boot.postBootCommands = ''
     if [ -f /${first_boot_file} ]; then
-      set -eux
+      set -euxo pipefail
+
+      rootPart=$(${pkgs.util-linux}/bin/findmnt -n -o SOURCE /)
+      bootDevice=$(${pkgs.util-linux}/bin/lsblk -npo PKNAME $rootPart)
+      partNum=$(${pkgs.util-linux}/bin/lsblk -npo MAJ:MIN $rootPart | ${pkgs.gawk}/bin/awk -F: '{print $2}')
+
+      echo ",+," | ${pkgs.util-linux}/bin/sfdisk -N$partNum --no-reread $bootDevice
+      ${pkgs.parted}/bin/partprobe
       ${pkgs.btrfs-progs}/bin/btrfs filesystem resize max /
+
       rm -f /${first_boot_file}
     fi
   '';
-  # boot.postBootCommands = ''
-  #   if [ -f /${first_boot_file} ]; then
-  #     set -euo pipefail
-  #     set -x
-
-  #     rootPart=$(${pkgs.util-linux}/bin/findmnt -n -o SOURCE /)
-  #     bootDevice=$(${pkgs.util-linux}/bin/lsblk -npo PKNAME $rootPart)
-  #     partNum=$(${pkgs.util-linux}/bin/lsblk -npo MAJ:MIN $rootPart | ${pkgs.gawk}/bin/awk -F: '{print $2}')
-
-  #     echo ",+," | ${pkgs.util-linux}/bin/sfdisk -N$partNum --no-reread $bootDevice
-  #     ${pkgs.parted}/bin/partprobe
-  #     ${pkgs.btrfs-progs}/bin/btrfs filesystem resize max /
-
-  #     rm -f /disko-first-boot
-  #   fi
-  # '';
   disko = {
     devices = {
       disk = {
@@ -48,16 +40,16 @@ in {
           imageSize = "30G";
           type = "disk";
           device = "/dev/mmcblk0";
-          # postCreateHook = ''
-          #   lsblk
-          #   sgdisk -A 1:set:2 /dev/vda
-          # '';
+          postCreateHook = ''
+            lsblk
+            sgdisk -A 1:set:2 /dev/vda
+          '';
           content = {
             type = "gpt";
             partitions = {
               firmware = {
+                priority = 1;
                 size = "30M";
-                # priority = 1;  # TODO
                 type = "0700";
                 content = {
                   type = "filesystem";
@@ -67,6 +59,7 @@ in {
                 };
               };
               boot = {
+                priority = 2;
                 size = "1G";
                 type = "EF00";
                 content = {
@@ -76,13 +69,12 @@ in {
                 };
               };
               root = {
-                # name = "root";  # TODO
+                priority = 3;
                 size = "100%";
+                type = "8300";
                 content = {
-                  type = "btrfs";
-                  # extraArgs = [
-                  #   "-f"
-                  # ];
+                  type = "filesystem";
+                  format = "btrfs";
                   mountpoint = "/";
                   mountOptions = [
                     "compress=zstd"

@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./audio
+    ./boot
     ./font
     ./keyboard
     ./locale

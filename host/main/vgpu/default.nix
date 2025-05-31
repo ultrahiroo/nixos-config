@@ -1,7 +1,7 @@
 { inputs, pkgs, ... }: {
   imports = [
     inputs.vgpu4nixos.nixosModules.host
-  ];  
+  ];
   hardware.nvidia.vgpu.patcher.enable = true;
   hardware.nvidia.vgpu.patcher.copyVGPUProfiles = {
     "2187:0000" = "1E30:12BA";

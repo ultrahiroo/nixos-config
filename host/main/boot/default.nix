@@ -15,7 +15,6 @@
         enable = true;
       };
     };
-    consoleLogLevel = 3;
     kernelParams = [
       "quiet"
       "splash"

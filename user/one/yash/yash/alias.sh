@@ -34,9 +34,9 @@ alias glxgears='vblank_mode=0 glxgears'
 # --classify always
 # --icons always
 alias l='eza'
-alias ls='eza --classify always --group-directories-first'
-alias la='eza --classify always --group-directories-first --all --long'
-alias ll='eza --classify always --group-directories-first --all --long --git'
+alias ls='eza --classify always --group-directories-first --sort=Name'
+alias la='eza --classify always --group-directories-first --sort=Name --all --long'
+alias ll='eza --classify always --group-directories-first --sort=Name --all --long --git'
 alias tree='eza --classify always --tree --git-ignore'
 
 alias llc-as='llc -filetype=asm'
