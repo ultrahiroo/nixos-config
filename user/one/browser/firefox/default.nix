@@ -31,7 +31,7 @@
       };
       profiles = {
         default = {
-          id = 1;
+          id = 0;
           extensions = {
             # packages = with pkgs.firefox-addons; [
             #   raindropio
@@ -135,7 +135,7 @@
           };
         };
         one = {
-          id = 0;
+          id = 1;
         };
       };
     };
