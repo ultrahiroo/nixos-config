@@ -16,8 +16,8 @@ fi
 . ${HOME}/.config/yash/function.sh
 
 SOURCE="/etc/profiles/per-user/${USER}/etc/profile.d/hm-session-vars.sh"
-if test -e ${SOURCE}; then
-    . ${SOURCE}
+if test -e "${SOURCE}" && test "${__HM_SESS_VARS_SOURCED:=0}" -eq '0'; then
+    . "${SOURCE}"
 fi
 
 # Screen

@@ -115,7 +115,7 @@
         system = "aarch64-linux";
         modules = commom_module ++ [
           ./host/rpi4
-          # ./host/rpi4/filesystem
+          ./host/rpi4/filesystem
         ];
       };
 
@@ -124,7 +124,9 @@
         system = "aarch64-linux";
         modules = commom_module ++ [
           ./host/rpi4
-          ./disko/rpi4/btrfs
+          # ./disko/rpi4/btrfs
+          # ./disko/rpi4/bcachefs
+          ./disko/rpi4/xfs
         ];
       };
     };

@@ -28,7 +28,7 @@ in {
 
       echo ",+," | ${pkgs.util-linux}/bin/sfdisk -N$partNum --no-reread $bootDevice
       ${pkgs.parted}/bin/partprobe
-      ${pkgs.btrfs-progs}/bin/btrfs filesystem resize max /
+      ${pkgs.libxfs}/bin/xfs_growfs /
 
       rm -f /${first_boot_filename}
     fi
@@ -74,11 +74,8 @@ in {
                 type = "8300";
                 content = {
                   type = "filesystem";
-                  format = "btrfs";
+                  format = "xfs";
                   mountpoint = "/";
-                  mountOptions = [
-                    "compress=zstd"
-                  ];
                   postMountHook = postMountHook-root;
                 };
               };

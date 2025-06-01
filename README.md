@@ -51,11 +51,16 @@ sudo ./result
 sudo disko-install --flake '.#rpi4-btrfs' --disk main /dev/sde
 ```
 
+# Feature
+- nixos-generators
+  - [v] ext4
+  - [x] btrfs
+- disko
+  - [v] btrfs
+  - [x] bcachefs
+  - [ ] xfs
+
 # TODO
-1. disko
-  - btrfs
-  - bcachefs
-  - xfs
 1. config maomaowm
 1. fix rpi4-btrfs: does not boot: btrfs subvolume is not defined at boot?
 1. fix rpi4-btrfs: image generating is too slow

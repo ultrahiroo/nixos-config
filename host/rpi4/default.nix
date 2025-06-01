@@ -23,6 +23,7 @@
       "console=ttyAMA0,115200n8"
       "console=tty0"
     ];
+    kernelPackages = pkgs.linuxKernel.packages.linux_rpi4;
   };
 
   hardware = {
