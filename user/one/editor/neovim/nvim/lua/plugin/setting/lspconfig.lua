@@ -11,15 +11,32 @@ local function config()
     local server = {
         clangd = {
             cmd = {
-              'clangd',
-              '--enable-config',
+                'clangd',
+                '--enable-config',
             },
         },
         lua_ls = {},
-        nil_ls = {},
+        -- nil_ls = {
+        --     settings = {
+        --         ['nil'] = {
+        --             formatting = {
+        --                 command = { 'nixfmt' },
+        --             },
+        --         },
+        --     },
+        -- },
+        nixd = {
+            settings = {
+                nixd = {
+                    formatting = {
+                        command = { 'nixfmt' },
+                    },
+                },
+            },
+        },
         pylsp = {},
         pylyzer = {
-            cmd = {'pylyzer', '--server' },
+            cmd = { 'pylyzer', '--server' },
             filetypes = { 'python' },
             settings = {
                 python = {

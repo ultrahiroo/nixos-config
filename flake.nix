@@ -93,9 +93,10 @@
         };
         firefox-addons = inputs.firefox-addons.packages.${prev.system};
       }) ];
+      overlay-module = { ... }: { nixpkgs.overlays = nixpkgs-overlay; };
 
       commom_module = [
-        ({ ... }: { nixpkgs.overlays = nixpkgs-overlay; })
+        overlay-module
         ./generator
         ./nixos
         ./user

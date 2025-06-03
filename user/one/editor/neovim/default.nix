@@ -13,6 +13,8 @@
       clang-tools
       lua-language-server
       nil
+      nixd
+      nixfmt-rfc-style
       pyright
     ];
   };
