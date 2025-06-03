@@ -53,12 +53,12 @@ sudo disko-install --flake '.#rpi4-btrfs' --disk main /dev/sde
 
 # Feature
 - nixos-generators
-  - [v] ext4
-  - [x] btrfs
+  - [ ] btrfs
+  - [x] ext4
 - disko
-  - [v] btrfs
-  - [x] bcachefs
-  - [ ] xfs
+  - [x] btrfs
+  - [ ] bcachefs
+  - [x] xfs
 
 # TODO
 1. config maomaowm
