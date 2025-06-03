@@ -22,7 +22,7 @@
     timerConfig = {
       OnBootSec = "5m";
       OnUnitActiveSec = "1d";
-      Unit = "profile-wipe-history";
+      Unit = "profile-wipe-history.service";
     };
   };
 
