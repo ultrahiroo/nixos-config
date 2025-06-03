@@ -37,7 +37,7 @@ in {
     devices = {
       disk = {
         main = {
-          imageSize = "30G";
+          imageSize = "35G";
           type = "disk";
           device = "/dev/mmcblk0";
           postCreateHook = ''

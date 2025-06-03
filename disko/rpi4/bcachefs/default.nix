@@ -38,7 +38,7 @@ in
     devices = {
       disk = {
         main-bcachefs = {
-          imageSize = "30G";
+          imageSize = "20G";
           type = "disk";
           device = "/dev/mmcblk0";
           postCreateHook = ''
