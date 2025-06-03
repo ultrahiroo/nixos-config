@@ -28,7 +28,7 @@ in {
 
       echo ",+," | ${pkgs.util-linux}/bin/sfdisk -N$partNum --no-reread $bootDevice
       ${pkgs.parted}/bin/partprobe
-      ${pkgs.libxfs}/bin/xfs_growfs /
+      ${pkgs.xfsprogs}/bin/xfs_growfs /
 
       rm -f /${first_boot_filename}
     fi

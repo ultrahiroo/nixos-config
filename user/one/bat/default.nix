@@ -14,4 +14,7 @@
       };
     };
   };
+  home.sessionVariables = {
+    PAGER = "bat";
+  };
 }
