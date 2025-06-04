@@ -7,9 +7,25 @@ alias pager='${PAGER}'
 alias t='${TERMINAL}'
 alias terminal='${TERMINAL}'
 
+alias mkcd='
+    function _mkcd(){
+        mkdir ${1}
+        cd ${1}
+    }
+    _mkcd'
+
 alias df='df --human-readable'
 alias df-btrfs='sudo btrfs filesystem usage -T'
-alias du='du --human-readable --max-depth=1 | sort --human-numeric-sort'
+alias du='
+    function _du(){
+        if test ${#} -eq 1; then
+            TARGET=${1}
+        else
+            TARGET='.'
+        fi
+        du --human-readable --max-depth=1 "${TARGET}" | sort --human-numeric-sort
+    }
+    _du'
 alias du-btrfs='sudo btrfs filesystem du --summarize'
 
 alias clang-as='clang -S'
