@@ -77,6 +77,7 @@ sudo disko-install --flake '.#rpi4-btrfs' --disk main /dev/sde
 # Reference
 ## Opened issue
 - https://github.com/NixOS/nix/issues/8881
+- https://github.com/NixOS/nix/issues/8508
 
 ## Example
 - https://github.com/ryan4yin/nix-config/tree/i3-kickstarter

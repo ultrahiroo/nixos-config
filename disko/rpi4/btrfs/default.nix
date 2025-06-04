@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... }: let
+{ inputs, pkgs, ... }:
+let
   first_boot_filename = "first-boot";
   mount_point = "/mnt";
   target = "${mount_point}/firmware";
@@ -14,7 +15,8 @@
   postMountHook-root = ''
     touch ${mount_point}/${first_boot_filename}
   '';
-in {
+in
+{
   imports = [
     ../../common
   ];

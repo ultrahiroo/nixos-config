@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... }: let
+{ inputs, pkgs, ... }:
+let
   first_boot_filename = "first-boot";
   mount_point = "/mnt";
   target = "${mount_point}/firmware";
