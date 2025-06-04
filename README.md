@@ -12,6 +12,8 @@ nix flake check
 ## Install
 ```sh
 sudo nixos-rebuild switch --flake .#main
+```
+```sh
 sudo nixos-rebuild switch --flake .#rpi4-disko
 ```
 
@@ -48,6 +50,8 @@ nix-collect-garbage --delete-old
 ### nixos-generator
 ```sh
 nix build .#nixosConfigurations.rpi4.config.formats.sd-aarch64
+```
+```sh
 nix build .#nixosConfigurations.rpi4.config.formats.rpi4-btrfs
 ```
 ### disko
