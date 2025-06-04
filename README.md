@@ -32,7 +32,14 @@ nix store gc
 
 ```sh
 ls -la /nix/var/nix/gcroots/auto
+```
+
+```sh
 sudo nix-collect-garbage --delete-older-than 3d
+nix-collect-garbage --delete-older-than 3d
+```
+
+```sh
 sudo nix-collect-garbage --delete-old
 nix-collect-garbage --delete-old
 ```

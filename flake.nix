@@ -85,18 +85,8 @@
         inherit nixos_version;
       };
 
-      nixpkgs-overlay = [ (final: prev: {
-        custom = {
-          clean = inputs.clean.packages.${prev.system}.default;
-          codon = inputs.codon.packages.${prev.system}.default;
-          terminal_emulator = inputs.terminal_emulator.packages.${prev.system}.default;
-        };
-        firefox-addons = inputs.firefox-addons.packages.${prev.system};
-      }) ];
-      overlay-module = { ... }: { nixpkgs.overlays = nixpkgs-overlay; };
-
       commom_module = [
-        overlay-module
+        ./overlay
         ./generator
         ./nixos
         ./user
@@ -125,9 +115,7 @@
         system = "aarch64-linux";
         modules = commom_module ++ [
           ./host/rpi4
-          # ./disko/rpi4/btrfs
-          # ./disko/rpi4/bcachefs
-          ./disko/rpi4/xfs
+          ./disko/rpi4
         ];
       };
     };
