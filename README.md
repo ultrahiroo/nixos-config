@@ -32,8 +32,9 @@ nix store gc
 
 ```sh
 ls -la /nix/var/nix/gcroots/auto
-sudo nix-collect-garbage --delete-older-than 7d
-sudo nix-collect-garbage --delete-old && nix-collect-garbage --delete-old
+sudo nix-collect-garbage --delete-older-than 3d
+sudo nix-collect-garbage --delete-old
+nix-collect-garbage --delete-old
 ```
 
 ## Generate image

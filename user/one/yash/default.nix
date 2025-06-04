@@ -5,6 +5,7 @@
     ".config/yash/alias.sh".source = ./yash/alias.sh;
     ".config/yash/export.sh".source = ./yash/export.sh;
     ".config/yash/function.sh".source = ./yash/function.sh;
+    ".config/yash/home-manager.sh".source = ./yash/home-manager.sh;
     ".config/yash/prompt.sh".source = ./yash/prompt.sh;
   };
 }
