@@ -19,6 +19,7 @@
 
     ./mydns
     ./web_server
+    ./bottles
   ];
 
   home = {
@@ -70,7 +71,6 @@
       xclip
       yash
 
-      bottles
       # heroic
       # lutris
       mangohud
