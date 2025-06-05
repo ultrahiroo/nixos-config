@@ -52,15 +52,15 @@ nix-collect-garbage --delete-old
 nix build .#nixosConfigurations.rpi4.config.formats.sd-aarch64
 ```
 ```sh
-nix build .#nixosConfigurations.rpi4.config.formats.rpi4-btrfs
+nix build .#nixosConfigurations.rpi4.config.formats.sd-aarch64-btrfs
 ```
 ### disko
 ```sh
-nix build .#nixosConfigurations.rpi4-disko.config.system.build.diskoImagesScript
+nix build .#nixosConfigurations.rpi4-disko-btrfs.config.system.build.diskoImagesScript
 sudo ./result
 ```
 ```sh
-sudo disko-install --flake '.#rpi4-btrfs' --disk main /dev/sde
+sudo disko-install --flake '.#rpi4-disko-btrfs' --disk main /dev/sde
 ```
 
 # Feature

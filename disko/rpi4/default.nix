@@ -2,7 +2,5 @@
 {
   imports = [
     ./btrfs
-    # ./bcachefs
-    # ./xfs
   ];
 }

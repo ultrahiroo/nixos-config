@@ -32,7 +32,7 @@
     fsType = "btrfs";
     options = [
       "subvol=@"
-      "compress=zstd"
+      "compress-force=zstd"
     ];
   };
 
@@ -49,7 +49,7 @@
     device = "/dev/disk/by-uuid/bb99279a-1612-4641-ab80-8320893cadd2";
     fsType = "btrfs";
     options = [
-      "compress=zstd"
+      "compress-force=zstd"
     ];
   };
 

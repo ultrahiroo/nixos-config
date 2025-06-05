@@ -28,6 +28,9 @@
       e2fsprogs
       xfsprogs
 
+      compsize
+      killall
+
       appimage-run
       baobab
       bat
