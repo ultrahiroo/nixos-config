@@ -11,4 +11,4 @@
 
 ## Opened issue
 ### Firmware
-https://github.com/NixOS/nixpkgs/issues/406201
+- https://github.com/NixOS/nixpkgs/issues/406201
