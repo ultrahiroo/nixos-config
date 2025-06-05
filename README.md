@@ -60,7 +60,7 @@ nix build .#nixosConfigurations.rpi4-disko-btrfs.config.system.build.diskoImages
 sudo ./result
 ```
 ```sh
-sudo disko-install --flake '.#rpi4-disko-btrfs' --disk main /dev/sde
+sudo disko-install --flake .#rpi4-disko-btrfs --disk main /dev/sde
 ```
 
 # Feature

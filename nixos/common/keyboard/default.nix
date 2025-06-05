@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   services.xserver = {
     autoRepeatDelay = 180;
     autoRepeatInterval = 30;

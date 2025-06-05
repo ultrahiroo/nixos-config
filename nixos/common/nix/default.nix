@@ -1,4 +1,5 @@
-{ all_username, nixos_version, pkgs, ... }: {
+{ all_username, nixos_version, pkgs, ... }:
+{
    imports = [
     ./gc
   ];

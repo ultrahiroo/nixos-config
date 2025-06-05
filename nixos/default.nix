@@ -5,6 +5,7 @@
     ./appimage
     ./plymouth
     ./ydotool
+    ./nix-ld
 
     ./fcitx5
     ./gnome-keyring
