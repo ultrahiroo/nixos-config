@@ -38,9 +38,9 @@ in {
   #   ];
   # };
 
-  boot = {
-    kernelParams = [
-      "plymouth.use-simpledrm"
-    ];
-  };
+  # boot = {
+  #   kernelParams = [
+  #     "plymouth.use-simpledrm"
+  #   ];
+  # };
 }

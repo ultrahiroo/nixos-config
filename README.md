@@ -46,6 +46,14 @@ sudo nix-collect-garbage --delete-old
 nix-collect-garbage --delete-old
 ```
 
+## Repl
+```sh
+nix repl .
+```
+```sh
+nix repl '.#nixosConfigurations.main'
+```
+
 ## Generate image
 ### nixos-generator
 ```sh
@@ -104,6 +112,7 @@ sudo disko-install --flake .#rpi4-disko-btrfs --disk main /dev/sde
 ## Issue
 - https://discourse.nixos.org/t/why-cant-i-use-let-variables-in-flake-nix-inputs/39929
 - https://github.com/NixOS/nix/issues/5532
+- https://github.com/NixOS/nix/issues/10103
 
 ## HowTo
 - https://unix.stackexchange.com/questions/500025/how-to-add-a-file-to-etc-in-nixos
@@ -114,3 +123,4 @@ sudo disko-install --flake .#rpi4-disko-btrfs --disk main /dev/sde
 - https://github.com/hyprwm/Hyprland/issues/4664
 - https://journix.dev/posts/gaming-on-nixos/
 - https://discourse.nixos.org/t/nix-2-27-0-released/62003
+- https://discourse.nixos.org/t/use-repl-to-inspect-a-flake/28275/2

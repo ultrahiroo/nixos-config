@@ -1,11 +1,19 @@
-{ config, lib, pkgs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   boot.blacklistedKernelModules = [
     "i2c_nvidia_gpu"
   ];
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-    extraPackages = with pkgs; [ nvidia-vaapi-driver ];
+    extraPackages = with pkgs; [
+      nvidia-vaapi-driver
+    ];
   };
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
@@ -22,10 +30,6 @@
   };
 
   boot.initrd.kernelModules = lib.mkBefore [
-    "kvm-intel"
-    "vfio_pci"
-    "vfio"
-    "vfio_iommu_type1"
     "nvidia"
     "nvidia_modeset"
     "nvidia_uvm"
