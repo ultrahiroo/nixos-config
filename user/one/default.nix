@@ -32,6 +32,9 @@
       compsize
       killall
 
+      cloc
+      scc
+
       appimage-run
       baobab
       bat
@@ -58,7 +61,6 @@
       python3Packages.pip
       python3Packages.virtualenv
       ripgrep
-      scc
       shotcut
       tmux
       unixtools.quota
