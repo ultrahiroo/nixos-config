@@ -48,9 +48,6 @@ nix-collect-garbage --delete-old
 
 ## Repl
 ```sh
-nix repl .
-```
-```sh
 nix repl '.#nixosConfigurations.main'
 ```
 
