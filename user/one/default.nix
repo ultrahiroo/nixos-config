@@ -35,6 +35,8 @@
       cloc
       scc
 
+      droidcam
+
       appimage-run
       baobab
       bat
@@ -56,7 +58,6 @@
       kdePackages.filelight
       kdePackages.kdeconnect-kde
       kdePackages.kdenlive
-      obs-studio
       python3
       python3Packages.pip
       python3Packages.virtualenv

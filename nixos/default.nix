@@ -14,6 +14,7 @@
     ./openssh
     ./steam
     ./caddy
+    ./obs-studio
 
     ./hyprland
     ./plasma
