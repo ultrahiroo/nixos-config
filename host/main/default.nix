@@ -2,6 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ./boot
+    ./filesystem
     ./btrfs
     ./networking
     ./iommu
