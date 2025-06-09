@@ -7,6 +7,7 @@
     ./ydotool
     ./nix-ld
     ./v4l2loopback
+    ./mumble
 
     ./fcitx5
     ./gnome-keyring

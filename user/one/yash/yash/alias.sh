@@ -172,3 +172,6 @@ alias gparted='sudo -EH gparted'
 alias kde-partition-manager='sudo partitionmanager'
 alias compsize='sudo compsize'
 alias reboot='systemctl reboot --no-wall'
+
+alias pulseaudio-control='pavucontrol'
+alias pipewire-control='qpwgraph'

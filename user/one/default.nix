@@ -38,6 +38,7 @@
       droidcam
       qpwgraph
       pavucontrol
+      qjackctl
 
       appimage-run
       baobab
