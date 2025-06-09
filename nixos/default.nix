@@ -6,6 +6,7 @@
     ./plymouth
     ./ydotool
     ./nix-ld
+    ./v4l2loopback
 
     ./fcitx5
     ./gnome-keyring

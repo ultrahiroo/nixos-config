@@ -36,6 +36,8 @@
       scc
 
       droidcam
+      qpwgraph
+      pavucontrol
 
       appimage-run
       baobab
