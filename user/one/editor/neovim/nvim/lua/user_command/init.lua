@@ -119,7 +119,12 @@ vim.api.nvim_create_user_command(
 vim.api.nvim_create_user_command(
     'LspReload',
     function()
-        vim.cmd('LspRestart')
+        local bufnr = vim.api.nvim_get_current_buf()
+        local client_list = vim.lsp.get_clients({ bufnr = bufnr })
+        for i = 1, #client_list do
+            local client_name = client_list[i].name
+            vim.cmd('LspRestart ' .. client_name)
+        end
     end,
     {}
 )
