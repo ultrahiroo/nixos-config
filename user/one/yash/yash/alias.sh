@@ -23,7 +23,7 @@ alias du='
         else
             TARGET='.'
         fi
-        du --human-readable --max-depth=1 "${TARGET}" | sort --human-numeric-sort
+        du --human-readable --max-depth=1 "${TARGET}" | sort --human-numeric-sort --reverse
     }
     _du'
 alias du-btrfs='sudo btrfs filesystem du --summarize'
