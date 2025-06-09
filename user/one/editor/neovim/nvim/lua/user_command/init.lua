@@ -4,7 +4,7 @@ local function help(opts)
 end
 
 vim.api.nvim_create_user_command(
-    'Help',
+    'H',
     function(opts)
         help(opts)
     end,
@@ -12,7 +12,7 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-    'H',
+    'Help',
     function(opts)
         help(opts)
     end,
@@ -43,12 +43,10 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
-    'PrintInspect',
+    'Print',
     function(opts)
         vim.api.nvim_input(':lua print(vim.inspect(' .. opts.args .. '))<Left><Left>')
     end,
--- https://neovim.io/doc/user/map.html#command-attributes
--- https://neovim.io/doc/user/map.html#%3Acommand-complete
     { nargs = '?', complete = 'lua' }
 )
 
@@ -58,6 +56,14 @@ vim.api.nvim_create_user_command(
         vim.cmd('verbose map ' .. opts.args)
     end,
     { nargs = 1 }
+)
+
+vim.api.nvim_create_user_command(
+    'Replace',
+    function(opts)
+        vim.api.nvim_input(':%s/' .. opts.fargs[1] .. '/' .. opts.fargs[2] .. '/gc')
+    end,
+    { nargs = '*' }
 )
 
 vim.api.nvim_create_user_command(
