@@ -40,6 +40,8 @@
       pavucontrol
       qjackctl
 
+      gnirehtet
+
       appimage-run
       baobab
       bat
