@@ -117,6 +117,14 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
+    'Reference',
+    function()
+        vim.lsp.buf.references()
+    end,
+    {}
+)
+
+vim.api.nvim_create_user_command(
     'LspReload',
     function()
         local bufnr = vim.api.nvim_get_current_buf()

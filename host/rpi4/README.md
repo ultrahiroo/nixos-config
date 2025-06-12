@@ -1,3 +1,6 @@
+# Hardware
+Raspberry Pi 4B 4GB
+
 # Reference
 ## Wiki
 - https://wiki.nixos.org/wiki/NixOS_on_ARM/Raspberry_Pi_4

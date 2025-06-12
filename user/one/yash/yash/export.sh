@@ -169,3 +169,5 @@ export EDITOR='nvim'
 # export MYPY_CACHE_DIR='/tmp/mypy'
 
 # export NIXPKGS_ALLOW_UNFREE=1
+LESS=''
+APULSE_PLAYBACK_DEVICE='pipewire'
