@@ -6,6 +6,7 @@
     ./git
     ./yash
     ./xdg
+    ./linux-pam
 
     ./i3
     ./plasma

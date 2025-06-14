@@ -2,13 +2,17 @@
   imports = [
     ./common
     ./display_manager
-    ./appimage
     ./plymouth
     ./ydotool
     ./nix-ld
     ./v4l2loopback
     ./mumble
-    ./adb
+
+    ./appimage
+    ./flatpak
+
+    ./android
+    ./windows
 
     ./fcitx5
     ./gnome-keyring
@@ -24,7 +28,6 @@
     ./niri
     ./maomaowm
 
-    ./waydroid
     ./distrobox
     ./virtualbox
     ./virt-manager

@@ -13,6 +13,7 @@
       dedicatedServer.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
       gamescopeSession.enable = true;
+      protontricks.enable = true;
     };
     gamescope = {
       enable = true;

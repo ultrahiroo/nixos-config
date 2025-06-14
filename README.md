@@ -14,6 +14,9 @@ nix flake check
 sudo nixos-rebuild switch --flake .#main
 ```
 ```sh
+sudo nixos-rebuild-ng switch --flake .#main --option sandbox false
+```
+```sh
 sudo nixos-rebuild switch --flake .#rpi4-disko
 ```
 

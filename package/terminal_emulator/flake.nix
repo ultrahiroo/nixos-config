@@ -5,7 +5,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
-  outputs = { self, nixpkgs }:
+  outputs =
+    { self, nixpkgs }:
     let
       packageName = "terminal_emulator";
       pythonVersion = "python312";
@@ -15,20 +16,29 @@
         "x86_64-darwin"
         "aarch64-darwin"
       ];
-      forAllSystems = f: nixpkgs.lib.genAttrs allSystems (system: f {
-        pkgs = import nixpkgs { inherit system; };
-        inherit system;
-      });
+      forAllSystems =
+        f:
+        nixpkgs.lib.genAttrs allSystems (
+          system:
+          f {
+            pkgs = import nixpkgs { inherit system; };
+            inherit system;
+          }
+        );
     in
     {
-      packages = forAllSystems ({ pkgs, system }: {
-        default = let
-            python = pkgs.${pythonVersion};
-          in
-          python.pkgs.buildPythonApplication {
-            name = packageName;
-            src = ./.;
-          };
-      });
+      packages = forAllSystems (
+        { pkgs, system }:
+        {
+          default =
+            let
+              python = pkgs.${pythonVersion};
+            in
+            python.pkgs.buildPythonApplication {
+              name = packageName;
+              src = ./.;
+            };
+        }
+      );
     };
 }
