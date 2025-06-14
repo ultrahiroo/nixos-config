@@ -1,0 +1,3 @@
+#!/bin/sh
+LINUX_PAM_PATH="${LINUX_PAM_PATH:-/nix/store/vrdwlbzr74ibnzcli2yl1nxg9jqmr237-linux-pam-1.6.1}"
+${LINUX_PAM_PATH}/lib/security/pam_env.so envfile=/etc/pam/environment
