@@ -31,7 +31,7 @@
 ## Case
     ML07-5(Mini-ITX,USB3.0x2,w/oKB,MS,PSU,OCP)KTC
 
-## Cooling Case Fan
+## Case Fan
     SilverStone SST-FN123 V2.0 (12cm 15mm 2000rpm)
 
 ## Misc
