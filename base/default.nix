@@ -13,14 +13,12 @@
     ./flatpak
 
     ./android
-    ./windows
 
     ./fcitx5
     ./gnome-keyring
     ./gnupg
     ./keyd
     ./openssh
-    ./steam
     ./caddy
     ./obs-studio
 
@@ -30,7 +28,6 @@
     ./maomaowm
 
     ./distrobox
-    ./virtualbox
     ./virt-manager
   ];
 

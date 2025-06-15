@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }: {
+{ pkgs, ... }: {
   imports = [
     ./bat
     ./btop
@@ -84,14 +84,6 @@
       # lutris
       mangohud
       # rare
-    ] ++ lib.optionals stdenv.isx86_64 (with pkgs; [
-      custom.codon
-      davinci-resolve
-
-      cpu-x
-      looking-glass-client
-      protonup-qt
-      unityhub
-    ]);
+    ];
   };
 }
