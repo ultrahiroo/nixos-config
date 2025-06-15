@@ -88,7 +88,7 @@
       commom_module = [
         ./overlay
         ./generator
-        ./nixos
+        ./base
         ./user
       ];
 
