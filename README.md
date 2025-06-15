@@ -54,7 +54,7 @@ nix-collect-garbage --delete-old
 
 ## Repl
 ```sh
-nix repl '.#nixosConfigurations.main'
+nix repl .#nixosConfigurations.main
 ```
 
 ## Generate image
