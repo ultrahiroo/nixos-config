@@ -17,7 +17,7 @@ systemctl list-timers
 sudo nixos-rebuild switch --flake .#main
 ```
 ```sh
-sudo nixos-rebuild-ng switch --flake .#main --option sandbox false
+sudo nixos-rebuild-ng switch --flake .#main --option sandbox true
 ```
 ```sh
 sudo nixos-rebuild switch --flake .#rpi4-disko
