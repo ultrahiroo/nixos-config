@@ -1,5 +1,6 @@
 { ... }: {
   imports = [
+    ../../arch/x86_64
     ./hardware-configuration.nix
     ./boot
     ./filesystem

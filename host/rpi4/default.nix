@@ -1,6 +1,7 @@
 { inputs, lib, pkgs, ... }: {
   imports = [
     inputs.nixos-hardware.nixosModules.raspberry-pi-4
+    ../../arch/aarch64
     ./audio
     ./gpu
     ./networking
