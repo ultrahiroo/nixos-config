@@ -8,6 +8,9 @@ nix flake update
 ```sh
 nix flake check
 ```
+```sh
+systemctl list-timers
+```
 
 ## Install
 ```sh
