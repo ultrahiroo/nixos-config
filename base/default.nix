@@ -8,6 +8,7 @@
     ./nix-ld
     ./v4l2loopback
     ./mumble
+    ./overlay
 
     ./appimage
     ./flatpak

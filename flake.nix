@@ -86,7 +86,6 @@
       };
 
       commom_module = [
-        ./overlay
         ./generator
         ./base
         ./user
