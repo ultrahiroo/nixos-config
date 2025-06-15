@@ -1,0 +1,16 @@
+#!/bin/sh
+set -ex
+
+HOSTNAME=$(hostname)
+
+cd /var/lib/
+if test ! -d nixos-config/; then
+    git clone https://github.com/ultrahiroo/nixos-config --depth=1
+fi
+cd nixos-config/
+git pull
+nixos-rebuild-ng switch    \
+    --flake .#${HOSTNAME}  \
+    --option sandbox false \
+    --print-build-logs     \
+    --log-format raw       \

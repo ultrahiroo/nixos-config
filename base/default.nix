@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ./auto-upgrade
     ./common
     ./display_manager
     ./plymouth
