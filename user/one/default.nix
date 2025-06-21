@@ -61,6 +61,7 @@
       meson
       neofetch
       nodejs
+      kdePackages.discover
       kdePackages.filelight
       kdePackages.kdeconnect-kde
       kdePackages.kdenlive
