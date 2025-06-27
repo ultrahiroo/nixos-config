@@ -14,7 +14,7 @@
     let
       pkgs = nixpkgs.legacyPackages.${system};
       packageName = "codon";
-      version = "v0.18.2";
+      version = "v0.19.0";
     in {
       packages.default = pkgs.stdenv.mkDerivation {
         name = packageName;
