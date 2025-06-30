@@ -50,7 +50,7 @@
       cargo
       curl
       custom.clean
-      devenv
+      # devenv
       disko
       eza
       fd
