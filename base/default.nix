@@ -10,6 +10,9 @@
     ./printing
     ./user
 
+    ./home-manager
+    ./nixos-generators
+
     ./auto-upgrade
     ./display_manager
     ./plymouth
