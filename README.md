@@ -89,6 +89,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
   - [x] xfs
 
 # TODO
+1. nix build --option sandbox true
 1. config maomaowm
 1. fix rpi4-btrfs: does not boot: btrfs subvolume is not defined at boot?
 1. fix rpi4-btrfs: image generating is too slow
