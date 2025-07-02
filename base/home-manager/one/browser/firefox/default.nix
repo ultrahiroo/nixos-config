@@ -66,7 +66,12 @@
             "browser.uiCustomization.state" = {
               "placements" = {
                 "widget-overflow-fixed-list" = [];
-                "unified-extensions-area" = [];
+                "unified-extensions-area" = [
+                  "adguardadblocker_adguard_com-browser-action"
+                  "vimium-c_gdh1995_cn-browser-action"
+                  "_74145f27-f039-47ce-a470-a662b129930a_-browser-action"
+                  "firefox-extension_deepl_com-browser-action"
+                ];
                 "nav-bar" = [
                   "back-button"
                   "forward-button"
@@ -75,14 +80,12 @@
                   "vertical-spacer"
                   "urlbar-container"
                   "customizableui-special-spring2"
-                  # "save-to-pocket-button"
                   "downloads-button"
-                  # "fxa-toolbar-menu-button"
+                  "jid0-adyhmvsp91nuo8prv0mn2vkeb84_jetpack-browser-action"
+                  "extension_one-tab_com-browser-action"
                   "unified-extensions-button"
                   "firefox-view-button"
-                  # "new-tab-button"
                   "alltabs-button"
-                  # "sidebar-button"
                 ];
                 "toolbar-menubar" = [
                     "menubar-items"
@@ -99,6 +102,12 @@
               "seen" = [
                 "save-to-pocket-button"
                 "developer-button"
+                "adguardadblocker_adguard_com-browser-action"
+                "extension_one-tab_com-browser-action"
+                "vimium-c_gdh1995_cn-browser-action"
+                "_74145f27-f039-47ce-a470-a662b129930a_-browser-action"
+                "firefox-extension_deepl_com-browser-action"
+                "jid0-adyhmvsp91nuo8prv0mn2vkeb84_jetpack-browser-action"
               ];
               "dirtyAreaCache" = [
                   "nav-bar"
@@ -106,6 +115,7 @@
                   "PersonalToolbar"
                   "toolbar-menubar"
                   "TabsToolbar"
+                  "unified-extensions-area"
               ];
               "currentVersion" = 22;
               "newElementCount" = 2;
