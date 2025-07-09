@@ -175,4 +175,4 @@ alias reboot='systemctl reboot --no-wall'
 
 alias pulseaudio-control='pavucontrol'
 alias pipewire-control='qpwgraph'
-alias android-reverse-tethering='gnirehtet'
+alias android-reverse-tethering='sudo gnirehtet'

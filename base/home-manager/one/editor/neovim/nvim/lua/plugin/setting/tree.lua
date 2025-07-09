@@ -66,6 +66,7 @@ local function on_attach(bufnr)
     vim.keymap.set('n', '<2-RightMouse>', api.tree.change_root_to_node, opts('CD'))
 
     vim.keymap.set('n', 'p', function() end)
+    vim.keymap.set('n', 'r', api.fs.rename_full, opts('Rename: Full Path'))
     -- vim.keymap.set('n', '<C-e>', function() end)
 end
 
