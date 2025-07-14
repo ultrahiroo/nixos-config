@@ -2,7 +2,7 @@
 {
   programs = {
     steam = {
-      enable = pkgs.stdenv.isx86_64;
+      enable = true;
       package = pkgs.steam.override {
         extraPkgs =
           pkgs: with pkgs; [

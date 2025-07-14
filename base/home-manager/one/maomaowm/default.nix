@@ -3,7 +3,7 @@
     inputs.maomaowm.hmModules.maomaowm
   ];
   wayland.windowManager.maomaowm = {
-    enable = pkgs.stdenv.isx86_64;
+    enable = true;
     settings = (builtins.readFile ./maomao/config.conf);
     autostart_sh = (builtins.readFile ./maomao/autostart.sh) + ''
       swaybg -i ${../wallpaper/wallpaper.jpg} &
