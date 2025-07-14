@@ -39,6 +39,7 @@
     ./plasma
     ./niri
     ./maomaowm
+    ./i3
 
     ./distrobox
     ./virt-manager

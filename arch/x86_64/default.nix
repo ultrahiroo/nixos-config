@@ -8,7 +8,7 @@
   environment.systemPackages = with pkgs; [
       cpu-x
       custom.codon
-      davinci-resolve
+      # davinci-resolve
       looking-glass-client
       protonup-qt
       unityhub

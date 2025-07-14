@@ -1,0 +1,3 @@
+#!/bin/sh
+ln -sfvn ${PWD}/maomao/config.conf ~/.config/maomao/config.conf
+ln -sfvn ${PWD}/maomao/autostart.sh ~/.config/maomao/autostart.sh

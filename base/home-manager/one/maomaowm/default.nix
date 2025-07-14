@@ -4,12 +4,22 @@
   ];
   wayland.windowManager.maomaowm = {
     enable = pkgs.stdenv.isx86_64;
-    settings = ''
-      # see config.conf
+    settings = (builtins.readFile ./maomao/config.conf);
+    autostart_sh = (builtins.readFile ./maomao/autostart.sh) + ''
+      swaybg -i ${../wallpaper/wallpaper.jpg} &
+      waybar -c ${./waybar/config} -s ${./waybar/style.css} &
     '';
-    autostart_sh = ''
-      # see autostart.sh
-      # Note: here no need to add shebang
-    '';
+  };
+  home = {
+    packages = with pkgs; [
+      mmsg
+      rofi
+      swaynotificationcenter
+      waybar
+      wlsunset
+      wl-clipboard
+      wl-clip-persist
+      xdg-desktop-portal-wlr
+    ];
   };
 }

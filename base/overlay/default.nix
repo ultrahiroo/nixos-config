@@ -8,6 +8,7 @@
         terminal_emulator = inputs.terminal_emulator.packages.${prev.system}.default;
       };
       firefox-addons = inputs.firefox-addons.packages.${prev.system};
+      mmsg = inputs.mmsg.packages.${prev.system}.default;
     })
   ];
 }

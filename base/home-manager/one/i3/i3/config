@@ -1,0 +1,95 @@
+# This file is included from both i3 and Sway.
+# Sway is a extension of i3, so keep compatible with i3 syntax.
+# https://i3wm.org/docs/userguide.html
+
+set $Mod Mod1
+set $Terminal terminal_emulator
+# set $Terminal qterminal
+
+bindsym $Mod+Return    exec $Terminal
+bindsym $Mod+Shift+t   exec xterm
+bindsym $Mod+q         kill
+bindsym $Mod+Backspace kill
+bindsym $Mod+Shift+r   reload
+bindsym $Mod+Shift+q   exit
+
+bindsym $Mod+Left  focus left
+bindsym $Mod+Down  focus down
+bindsym $Mod+Up    focus up
+bindsym $Mod+Right focus right
+
+bindsym $Mod+n focus left
+bindsym $Mod+e focus down
+bindsym $Mod+i focus up
+bindsym $Mod+o focus right
+
+# bindsym $Mod+Tab       focus next
+# bindsym $Mod+Shift+Tab focus prev
+
+bindsym $Mod+Prior focus prev
+bindsym $Mod+Next  focus next
+
+bindsym $Mod+p focus parent
+bindsym $Mod+c focus child
+
+bindsym $Mod+Shift+Left  move left
+bindsym $Mod+Shift+Down  move down
+bindsym $Mod+Shift+Up    move up
+bindsym $Mod+Shift+Right move right
+
+workspace_layout tabbed
+bindsym $Mod+s layout stacking
+bindsym $Mod+t layout tabbed
+bindsym $Mod+h layout splith
+bindsym $Mod+v layout splitv
+
+# bindsym $Mod+Shift+p         exec warpd --normal
+
+# exec wl-paste --watch cliphist store
+# bindsym Ctrl+v exec cliphist list | rofi -dmenu | cliphist decode | wl-copy
+
+# exec wl-paste -t text --watch clipman store --no-persist
+# bindsym Ctrl+v exec clipman pick -t rofi
+
+font pango:DejaVu Sans Mono 11
+
+set $white      #ffffff
+set $red        #ff0000
+set $green      #00bb00
+set $blackgreen #002200
+set $gray       #999999
+set $skyblue    #445566
+set $grayblue   #334455
+set $blackgray  #111111
+set $blackblue  #223344
+set $black      #000000
+set $color_bar  #445566
+
+# bar {
+#     position top
+#     status_command while date +'%Y-%m-%d  %H:%M:%S                                                                                                        '; do sleep 1; done
+#     tray_output none
+
+#     colors {
+#         background $color_bar
+#         # <class>_workspace <border>   <background> <text>
+#         focused_workspace   $color_bar $color_bar   $color_bar
+#         inactive_workspace  $color_bar $color_bar   $color_bar
+#         urgent_workspace    $color_bar $color_bar   $color_bar
+#     }
+# }
+bar {
+    position top
+}
+
+default_border none
+default_floating_border none
+title_align center
+
+# client.<class>         <border>    <background>  <text>      [<indicator>  [<child_border>]]
+client.background                    $black
+client.focused           $grayblue   $grayblue     $white      $white        $white
+client.focused_inactive  $grayblue   $grayblue     $white      $white        $white
+client.unfocused         $blackblue  $blackblue    $blackblue  $black        $white
+client.urgent            $blackgray  $blackgray    $black      $red          $blackgray
+client.placeholder       $black      $black        $black      $black        $black
