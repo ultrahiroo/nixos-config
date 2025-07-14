@@ -10,7 +10,7 @@ xdg-desktop-portal-wlr &
 swaync &
 
 # night light
-# wlsunset -T 3501 -t 3500 &
+wlsunset -T 3501 -t 3500 &
 
 # keep clipboard content
 wl-clip-persist --clipboard regular --reconnect-tries 0 &
@@ -19,8 +19,8 @@ wl-clip-persist --clipboard regular --reconnect-tries 0 &
 wl-paste --type text --watch cliphist store & 
 
 # xwayland dpi scale
-echo "Xft.dpi: 140" | xrdb -merge #dpi缩放
-gsettings set org.gnome.desktop.interface text-scaling-factor 1.4
+echo "Xft.dpi: 140" | xrdb -merge
+# gsettings set org.gnome.desktop.interface text-scaling-factor 1.4
 
 # Permission authentication
 # /usr/lib/xfce-polkit/xfce-polkit &
