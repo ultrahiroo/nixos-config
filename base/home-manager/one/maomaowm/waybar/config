@@ -1,5 +1,8 @@
 {
-    "modules-left": ["dwl/tags","dwl/window"],
+    "modules-left": [
+        "dwl/tags",
+        "dwl/window",
+    ],
     "dwl/tags": {
         "num-tags":9,
     },
