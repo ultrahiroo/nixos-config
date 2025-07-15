@@ -10,3 +10,5 @@ nix eval --file ./test.nix
 - https://discourse.nixos.org/t/a-script-that-i-make-with-writescript-executes-when-i-enter-nix-shell/8960
 - https://ryantm.github.io/nixpkgs/functions/library/lists/#function-library-lib.lists.zipLists
 - https://ryantm.github.io/nixpkgs/functions/library/strings/#function-library-lib.strings.concatStringsSep
+- https://stackoverflow.com/questions/2930182/regex-to-not-match-anything
+- https://stackoverflow.com/questions/406230/regular-expression-to-match-a-line-that-doesnt-contain-a-word
