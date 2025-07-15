@@ -8,16 +8,11 @@
     "reload_style_on_change": true,
     "height": 45,
     "modules-left": [
-        "dwl/tags",
-        "wlr/taskbar",
-        "dwl/window"
+        "dwl/tags"
     ],
     "modules-right": [
         "tray",
-        "network",
         "pulseaudio",
-        "cpu",
-        "temperature",
         "backlight",
         "clock",
         "custom/notification",

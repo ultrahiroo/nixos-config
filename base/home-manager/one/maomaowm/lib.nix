@@ -5,13 +5,17 @@
     ''
   );
 
-  get_maomao_spawn = x: let
+  get_maomao_config_element = x: let
     command_path = "${x.snd}";
     number = "${x.fst.number}";
     alias_key = "${x.fst.alias_key}";
+    appid = "${x.fst.appid}";
+    title = "${x.fst.title}";
   in ''
     bind=ALT,${number},spawn_on_empty,${command_path},${number}
     bind=ALT,${alias_key},spawn_on_empty,${command_path},${number}
+    exec-once=${command_path}
+    windowrule=tags:${number},appid:${appid},title:${title}
   '';
 
   get_label = x: let
@@ -24,7 +28,7 @@
 in {
   get_maomao_spawn_config = x: let
     script_list = map get_script x;
-    maomao_spawn_list = map get_maomao_spawn (pkgs.lib.lists.zipLists x script_list);
+    maomao_spawn_list = map get_maomao_config_element (pkgs.lib.lists.zipLists x script_list);
     maomao_spawn_config = pkgs.lib.strings.concatStringsSep "\n" maomao_spawn_list;
   in maomao_spawn_config;
 
