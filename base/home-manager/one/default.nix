@@ -11,7 +11,6 @@
     ./i3
     ./plasma
     ./hyprland
-    ./waybar
     ./maomaowm
 
     ./terminal
@@ -74,7 +73,6 @@
       unixtools.quota
       unzip
       vlc
-      waybar
       wget
       wireproxy
       wl-clipboard

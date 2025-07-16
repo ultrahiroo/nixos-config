@@ -1,4 +1,7 @@
 { inputs, pkgs, ... }: {
+  imports = [
+    ./waybar
+  ];
   home = {
     file = {
       ".config/hypr/hyprland.conf".source = ./hypr/hyprland.conf;
@@ -15,6 +18,7 @@
     packages = with pkgs; [
       hyprpaper
       nwg-drawer
+      waybar
     ];
   };
 }
