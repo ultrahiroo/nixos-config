@@ -4,7 +4,6 @@ set +e
 
 # obs
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots
-xdg-desktop-portal-wlr &
 
 # notify
 swaync &

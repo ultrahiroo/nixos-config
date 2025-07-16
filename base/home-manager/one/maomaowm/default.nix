@@ -101,6 +101,7 @@ in {
   };
   home = {
     packages = with pkgs; [
+      dpms-off
       mmsg
       pamixer
       rofi
@@ -109,11 +110,9 @@ in {
       waybar
       wlsunset
       wlogout
+      wlr-randr
       wl-clipboard
       wl-clip-persist
-      xdg-desktop-portal
-      xdg-desktop-portal-wlr
-      xdg-desktop-portal-gtk
     ];
   };
 }
