@@ -4,9 +4,12 @@
       number = "1";
       alias_key = "L";
       name = "BTOP";
-      command = "alacritty --title BTOP --class BTOP --command btop";
-      appid = "BTOP";
-      title = "BTOP";
+      command = ''
+        alacritty --title BTOP --class TOP --command btop
+        alacritty --title NVTOP --class TOP --command nvtop
+      '';
+      appid = "TOP";
+      title = ".*";
     }
     {
       number = "2";
@@ -43,22 +46,22 @@
     {
       number = "6";
       alias_key = "I";
-      name = "Empty";
-      command = "";
-      appid = "(?!.*)";
-      title = ".*";
+      name = "Spotify";
+      command = "spotify";
+      appid = "Spotify";
+      title = "Spotify";
     }
     {
       number = "7";
-      alias_key = ":";
-      name = "Empty";
-      command = "";
-      appid = "(?!.*)";
+      alias_key = "O";
+      name = "Discord";
+      command = "discord";
+      appid = "discord";
       title = ".*";
     }
     {
       number = "8";
-      alias_key = "O";
+      alias_key = "K";
       name = "Empty";
       command = "";
       appid = "(?!.*)";
@@ -66,7 +69,7 @@
     }
     {
       number = "9";
-      alias_key = "[";
+      alias_key = "M";
       name = "Empty";
       command = "";
       appid = "(?!.*)";
