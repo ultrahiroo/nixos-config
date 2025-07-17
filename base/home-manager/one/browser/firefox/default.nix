@@ -60,6 +60,7 @@
             "sidebar.verticalTabs" = true;
             "sidebar.visibility" = "always-show";
             "ui.key.menuAccessKeyFocuses" = false;
+            "media.eme.enabled" = true; # DRM
 
             "extensions.webextensions.ExtensionStorageIDB.migrated.adguardadblocker@adguard.com" = true;
 

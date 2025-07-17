@@ -5,8 +5,8 @@
       alias_key = "L";
       name = "BTOP";
       command = ''
-        alacritty --title BTOP --class TOP --command btop
-        alacritty --title NVTOP --class TOP --command nvtop
+        alacritty --title BTOP --class TOP --command btop &
+        alacritty --title NVTOP --class TOP --command nvtop &
       '';
       appid = "TOP";
       title = ".*";
@@ -15,7 +15,9 @@
       number = "2";
       alias_key = "N";
       name = "Alacritty";
-      command = "alacritty";
+      command = ''
+        alacritty &
+      '';
       appid = "Alacritty";
       title = ".*";
     }
@@ -23,7 +25,9 @@
       number = "3";
       alias_key = "U";
       name = "FireFox";
-      command = "firefox";
+      command = ''
+        firefox &
+      '';
       appid = "firefox";
       title = ".*";
     }
@@ -31,7 +35,9 @@
       number = "4";
       alias_key = "E";
       name = "Steam";
-      command = "steam";
+      command = ''
+        steam &
+      '';
       appid = "steam.*";
       title = ".*";
     }
@@ -39,7 +45,9 @@
       number = "5";
       alias_key = "Y";
       name = "OBS";
-      command = "obs";
+      command = ''
+        obs &
+      '';
       appid = "com.obsproject.Studio";
       title = ".*";
     }
@@ -47,31 +55,40 @@
       number = "6";
       alias_key = "I";
       name = "Spotify";
-      command = "spotify";
-      appid = "Spotify";
-      title = "Spotify";
+      command = ''
+        # chromium-browser --kiosk https://open.spotify.com &
+      '';
+      # appid = "Spotify";
+      # title = "Spotify";
+      appid = "Chromium-browser";
+      title = "Spotify.*";
     }
     {
       number = "7";
       alias_key = "O";
       name = "Discord";
-      command = "discord";
+      command = ''
+        discord &
+      '';
       appid = "discord";
       title = ".*";
     }
     {
       number = "8";
       alias_key = "K";
-      name = "Empty";
-      command = "";
-      appid = "(?!.*)";
-      title = ".*";
+      name = "Youtube";
+      command = ''
+        # chromium-browser --kiosk https://youtube.com &
+      '';
+      appid = "Chromium-browser";
+      title = "Youtube.*";
     }
     {
       number = "9";
       alias_key = "M";
       name = "Empty";
-      command = "";
+      command = ''
+      '';
       appid = "(?!.*)";
       title = ".*";
     }
