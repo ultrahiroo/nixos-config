@@ -42,8 +42,9 @@
     ./i3
 
     ./distrobox
+    ./podman
     ./virt-manager
-  ];
+    ];
 
   environment.systemPackages = with pkgs; [
     clang
