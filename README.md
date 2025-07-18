@@ -14,9 +14,6 @@ systemctl list-timers
 
 ## Install
 ```sh
-sudo nixos-rebuild switch --flake .#main
-```
-```sh
 sudo nixos-rebuild-ng switch --flake .#main --option sandbox true
 ```
 ```sh
