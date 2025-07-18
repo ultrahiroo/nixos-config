@@ -3,7 +3,7 @@
   imports = [
     ./steam
     ./virtualbox
-    ./windows
+    ./wine
   ];
   environment.systemPackages = with pkgs; [
       cpu-x
