@@ -1,7 +1,8 @@
-# To get extension ids
-install and
-- check about:debugging
-- check about:support#addons
+# Get a extension short id
+check `https://addons.mozilla.org/ja/firefox/addon/{shortId}/`
+
+# Get extension ids
+install and check `about:debugging` or `about:support#addons`
 
 # Reference
 - https://support.mozilla.org/en-US/questions/1278533

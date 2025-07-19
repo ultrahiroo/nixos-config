@@ -27,6 +27,7 @@
             (extension "raindropio" "jid0-adyhmvsP91nUO8pRv0Mn2VKeB84@jetpack")
             # (extension "ublock-origin" "uBlock0@raymondhill.net")
             (extension "vimium-c" "vimium-c@gdh1995.cn")
+            (extension "adless-spotify" "62e31096-34e6-4503-8806-3d7a6004a1f4")
           ];
       };
       profiles = {
