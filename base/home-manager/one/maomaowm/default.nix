@@ -6,6 +6,7 @@
       name = "BTOP";
       command = ''
         alacritty --title BTOP --class TOP --command btop &
+        sleep 1
         alacritty --title NVTOP --class TOP --command nvtop &
       '';
       appid = "TOP";
@@ -54,6 +55,16 @@
     {
       number = "6";
       alias_key = "I";
+      name = "Discord";
+      command = ''
+        discord &
+      '';
+      appid = "discord";
+      title = ".*";
+    }
+    {
+      number = "7";
+      alias_key = "O";
       name = "Spotify";
       command = ''
         # chromium-browser --kiosk https://open.spotify.com &
@@ -62,16 +73,6 @@
       # title = "Spotify";
       appid = "Chromium-browser";
       title = "Spotify.*";
-    }
-    {
-      number = "7";
-      alias_key = "O";
-      name = "Discord";
-      command = ''
-        discord &
-      '';
-      appid = "discord";
-      title = ".*";
     }
     {
       number = "8";
@@ -120,6 +121,10 @@ in {
     '';
   };
   home = {
+    file = {
+      ".config/maomaowm/waybar/config".source = "${new_waybar_config_file}";
+      ".config/maomaowm/waybar/style.css".source = "${./waybar/style.css}";
+    };
     packages = with pkgs; [
       dpms-off
       mmsg
