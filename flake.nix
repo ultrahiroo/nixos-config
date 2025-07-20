@@ -40,7 +40,7 @@
       flake = false;
     };
     maomaowm = {
-      url = "github:DreamMaoMao/maomaowm?ref=0.7.2";
+      url = "github:DreamMaoMao/maomaowm?ref=0.7.3";
     };
     mmsg = {
       url = "github:DreamMaoMao/mmsg";
