@@ -3,7 +3,7 @@
     {
       number = "1";
       alias_key = "L";
-      name = "BTOP";
+      name = "BTOP|NVTOP";
       command = ''
         alacritty --title BTOP --class TOP --command btop &
         sleep 1
