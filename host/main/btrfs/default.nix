@@ -47,7 +47,7 @@
       hashTableSizeMB = 128;
       verbosity = "crit";
       extraOptions = [
-        # "--loadavg-target" "5.0"
+        "--loadavg-target" "1.0"
       ];
     };
     mount = {
@@ -55,7 +55,7 @@
       hashTableSizeMB = 128;
       verbosity = "crit";
       extraOptions = [
-        # "--loadavg-target" "5.0"
+        "--loadavg-target" "1.0"
       ];
     };
   };
