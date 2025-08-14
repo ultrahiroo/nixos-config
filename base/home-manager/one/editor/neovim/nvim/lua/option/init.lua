@@ -45,4 +45,6 @@ vim.opt.selectmode = 'mouse,key'
 -- transparency
 vim.opt.winblend = 20
 
+vim.opt.swapfile = false
+
 require('option.lsp')
