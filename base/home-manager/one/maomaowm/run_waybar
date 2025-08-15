@@ -1,3 +1,0 @@
-#!/bin/sh
-# waybar -c ./waybar/config -s ./waybar/style.css
-waybar -c ~/.config/maomaowm/waybar/config -s ~/.config/maomaowm/waybar/style.css

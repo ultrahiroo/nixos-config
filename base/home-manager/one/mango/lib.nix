@@ -5,7 +5,7 @@
     ''
   );
 
-  get_maomao_config_element = x: let
+  get_mango_config_element = x: let
     command_path = "${x.snd}";
     number = "${x.fst.number}";
     alias_key = "${x.fst.alias_key}";
@@ -26,10 +26,10 @@
   in label;
 
 in {
-  get_maomao_spawn_config = x: let
+  get_mango_spawn_config = x: let
     script_list = map get_script x;
-    maomao_spawn_list = map get_maomao_config_element (pkgs.lib.lists.zipLists x script_list);
-    maomao_spawn_config = pkgs.lib.strings.concatStringsSep "\n" maomao_spawn_list;
+    mango_spawn_list = map get_mango_config_element (pkgs.lib.lists.zipLists x script_list);
+    maomao_spawn_config = pkgs.lib.strings.concatStringsSep "\n" mango_spawn_list;
   in maomao_spawn_config;
 
   get_waybar_label = x: let

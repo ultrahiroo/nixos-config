@@ -39,7 +39,7 @@ let
   lib = (import ./lib.nix) { pkgs = pkgs; };
   results = pkgs.lib.debug.runTests {
     test_1 = {
-      expr = lib.get_maomao_spawn_config x;
+      expr = lib.get_mango_spawn_config x;
       expected = ''
         bind=ALT,1,spawn_on_empty,/nix/store/wirj049hjhjfg54yafnwhwwcmaxn5nkc-script-1.sh,1
         bind=ALT,L,spawn_on_empty,/nix/store/wirj049hjhjfg54yafnwhwwcmaxn5nkc-script-1.sh,1

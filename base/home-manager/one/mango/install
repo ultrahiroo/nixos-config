@@ -1,0 +1,3 @@
+#!/bin/sh
+ln -sfvn ${PWD}/mango/config.conf ~/.config/mango/config.conf
+ln -sfvn ${PWD}/mango/autostart.sh ~/.config/mango/autostart.sh

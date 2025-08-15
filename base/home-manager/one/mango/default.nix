@@ -96,7 +96,7 @@
   ];
 
   lib = (import ./lib.nix) { pkgs = pkgs; };
-  maomao_spawn_config = lib.get_maomao_spawn_config x;
+  mango_spawn_config = lib.get_mango_spawn_config x;
 
   waybar_label = lib.get_waybar_label x;
   waybar_config = builtins.fromJSON (builtins.readFile "${./waybar/config}");
@@ -111,19 +111,19 @@ in {
   wayland.windowManager.mango = {
     enable = true;
     settings = (
-      (builtins.readFile ./maomao/config.conf)
+      (builtins.readFile ./mango/config.conf)
       + "\n"
-      + maomao_spawn_config
+      + mango_spawn_config
     );
-    autostart_sh = (builtins.readFile ./maomao/autostart.sh) + ''
+    autostart_sh = (builtins.readFile ./mango/autostart.sh) + ''
       swaybg -i ${../wallpaper/wallpaper.jpg} &
       waybar -c ${new_waybar_config_file} -s ${./waybar/style.css} &
     '';
   };
   home = {
     file = {
-      ".config/maomaowm/waybar/config".source = "${new_waybar_config_file}";
-      ".config/maomaowm/waybar/style.css".source = "${./waybar/style.css}";
+      ".config/mangowc/waybar/config".source = "${new_waybar_config_file}";
+      ".config/mangowc/waybar/style.css".source = "${./waybar/style.css}";
     };
     packages = with pkgs; [
       dpms-off

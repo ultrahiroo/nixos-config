@@ -1,0 +1,3 @@
+#!/bin/sh
+# waybar -c ./waybar/config -s ./waybar/style.css
+waybar -c ~/.config/mangowc/waybar/config -s ~/.config/mangowc/waybar/style.css

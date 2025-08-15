@@ -11,7 +11,7 @@
     ./i3
     ./plasma
     ./hyprland
-    ./maomaowm
+    ./mango
 
     ./terminal
     ./editor

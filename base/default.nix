@@ -38,7 +38,7 @@
     ./hyprland
     ./plasma
     ./niri
-    ./maomaowm
+    ./mango
     ./i3
 
     ./distrobox
