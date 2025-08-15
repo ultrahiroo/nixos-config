@@ -39,8 +39,8 @@
       url = "github:catppuccin/bat";
       flake = false;
     };
-    maomaowm = {
-      url = "github:DreamMaoMao/maomaowm?ref=0.7.3";
+    mango = {
+      url = "github:DreamMaoMao/mangowc?ref=0.8.1";
     };
     mmsg = {
       url = "github:DreamMaoMao/mmsg";

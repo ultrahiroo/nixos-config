@@ -5,6 +5,6 @@
       enable = true;
       user = default_username;
     };
-    defaultSession = "maomao";
+    defaultSession = "mango";
   };
 }

@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   imports = [
-    inputs.maomaowm.nixosModules.maomaowm
+    inputs.mango.nixosModules.mango
   ];
-  programs.maomaowm.enable = true;
+  programs.mango.enable = true;
 }

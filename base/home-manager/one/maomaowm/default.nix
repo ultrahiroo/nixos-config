@@ -106,9 +106,9 @@
   new_waybar_config_file = pkgs.writeText "new_waybar_config" (builtins.toJSON new_waybar_config);
 in {
   imports = [
-    inputs.maomaowm.hmModules.maomaowm
+    inputs.mango.hmModules.mango
   ];
-  wayland.windowManager.maomaowm = {
+  wayland.windowManager.mango = {
     enable = true;
     settings = (
       (builtins.readFile ./maomao/config.conf)

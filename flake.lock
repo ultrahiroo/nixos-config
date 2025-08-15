@@ -90,11 +90,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1753140376,
-        "narHash": "sha256-7lrVrE0jSvZHrxEzvnfHFE/Wkk9DDqb+mYCodI5uuB8=",
+        "lastModified": 1754971456,
+        "narHash": "sha256-p04ZnIBGzerSyiY2dNGmookCldhldWAu03y0s3P8CB0=",
         "owner": "nix-community",
         "repo": "disko",
-        "rev": "545aba02960caa78a31bd9a8709a0ad4b6320a5c",
+        "rev": "8246829f2e675a46919718f9a64b71afe3bfb22d",
         "type": "github"
       },
       "original": {
@@ -111,11 +111,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1753675409,
-        "narHash": "sha256-cb6meO88jJxf4ebMKsLChp99nmXulGwqvwvxDoq3mIs=",
+        "lastModified": 1755002386,
+        "narHash": "sha256-5Q7o8nv1EQi7oYD1k1F8/d+3WUiNDg9JOH8KWgP/6WQ=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "57f5ec906ac02d55a0c5643d2029e7fc3929133b",
+        "rev": "170f218715e93fc36a9077a926eb8516d789138b",
         "type": "gitlab"
       },
       "original": {
@@ -586,7 +586,7 @@
         "type": "github"
       }
     },
-    "maomaowm": {
+    "mango": {
       "inputs": {
         "flake-parts": "flake-parts",
         "mmsg": "mmsg",
@@ -594,17 +594,17 @@
         "scenefx": "scenefx"
       },
       "locked": {
-        "lastModified": 1753353314,
-        "narHash": "sha256-kIMj8d4WbxJyisEcSjXEIsJ+B/cv17j5ghGnWMF9zO0=",
+        "lastModified": 1754711309,
+        "narHash": "sha256-Lr95X9Rjnxo6fipMbrbhrglKJOgV9qBjBRI0meBf7mY=",
         "owner": "DreamMaoMao",
-        "repo": "maomaowm",
-        "rev": "0fe0ce8530ec851387816230b65bceafb850cc68",
+        "repo": "mangowc",
+        "rev": "a89d999ad60fb8d8485ef49e5af88e317a33f4d2",
         "type": "github"
       },
       "original": {
         "owner": "DreamMaoMao",
-        "ref": "0.7.3",
-        "repo": "maomaowm",
+        "ref": "0.8.1",
+        "repo": "mangowc",
         "type": "github"
       }
     },
@@ -623,7 +623,7 @@
       "inputs": {
         "flake-parts": "flake-parts_2",
         "nixpkgs": [
-          "maomaowm",
+          "mango",
           "nixpkgs"
         ]
       },
@@ -647,11 +647,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1751417492,
-        "narHash": "sha256-vSnS4axFpytUlxXwKXf4Wnt871LaeFqIXINrrZZj9nQ=",
+        "lastModified": 1753859411,
+        "narHash": "sha256-xiQGpk987dCmeF29mClveaGJNIvljmJJ9FRHVPp92HU=",
         "owner": "DreamMaoMao",
         "repo": "mmsg",
-        "rev": "71dbcb910344aebebdf74ecb9d2f49bc277426db",
+        "rev": "6066d37d810bb16575c0b60e25852d1f6d50de60",
         "type": "github"
       },
       "original": {
@@ -698,11 +698,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1753122741,
-        "narHash": "sha256-nFxE8lk9JvGelxClCmwuJYftbHqwnc01dRN4DVLUroM=",
+        "lastModified": 1754564048,
+        "narHash": "sha256-dz303vGuzWjzOPOaYkS9xSW+B93PSAJxvBd6CambXVA=",
         "owner": "NixOS",
         "repo": "nixos-hardware",
-        "rev": "cc66fddc6cb04ab479a1bb062f4d4da27c936a22",
+        "rev": "26ed7a0d4b8741fe1ef1ee6fa64453ca056ce113",
         "type": "github"
       },
       "original": {
@@ -806,11 +806,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1753489912,
-        "narHash": "sha256-uDCFHeXdRIgJpYmtcUxGEsZ+hYlLPBhR83fdU+vbC1s=",
+        "lastModified": 1755078291,
+        "narHash": "sha256-Hu/gTDoi4uy6TAKISPHQusSMy8U6xUbLSDjKBYdhDIY=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "13e8d35b7d6028b7198f8186bc0347c6abaa2701",
+        "rev": "3385ca0cd7e14c1a1eb80401fe011705ff012323",
         "type": "github"
       },
       "original": {
@@ -887,7 +887,7 @@
         "hy3": "hy3",
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
-        "maomaowm": "maomaowm",
+        "mango": "mango",
         "merge-list": "merge-list",
         "mmsg": "mmsg_2",
         "nixos-generators": "nixos-generators",
@@ -901,7 +901,7 @@
     "scenefx": {
       "inputs": {
         "nixpkgs": [
-          "maomaowm",
+          "mango",
           "nixpkgs"
         ]
       },
