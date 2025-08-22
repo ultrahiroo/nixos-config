@@ -47,7 +47,7 @@
       alias_key = "Y";
       name = "OBS";
       command = ''
-        obs &
+        obs --disable-shutdown-check &
       '';
       appid = "com.obsproject.Studio";
       title = ".*";
