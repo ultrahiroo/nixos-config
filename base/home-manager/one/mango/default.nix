@@ -65,24 +65,22 @@
     {
       number = "7";
       alias_key = "O";
-      name = "Spotify";
+      name = "Brave";
       command = ''
-        # chromium-browser --kiosk https://open.spotify.com &
+        brave --password-store=gnome &
       '';
-      # appid = "Spotify";
-      # title = "Spotify";
-      appid = "Chromium-browser";
-      title = "Spotify.*";
+      appid = "Brave-browser";
+      title = ".*";
     }
     {
       number = "8";
       alias_key = "K";
-      name = "Youtube";
+      name = "VSCode";
       command = ''
-        # chromium-browser --kiosk https://youtube.com &
+        code &
       '';
-      appid = "Chromium-browser";
-      title = "Youtube.*";
+      appid = "Code";
+      title = ".*";
     }
     {
       number = "9";
