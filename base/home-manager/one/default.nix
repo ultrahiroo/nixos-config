@@ -71,6 +71,7 @@
       shotcut
       tmux
       unixtools.quota
+      unrar
       unzip
       vlc
       wget
