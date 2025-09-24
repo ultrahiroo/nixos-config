@@ -40,7 +40,7 @@
       flake = false;
     };
     mango = {
-      url = "github:DreamMaoMao/mangowc?ref=0.8.1";
+      url = "github:DreamMaoMao/mangowc?ref=0.8.8";
     };
     mmsg = {
       url = "github:DreamMaoMao/mmsg";
