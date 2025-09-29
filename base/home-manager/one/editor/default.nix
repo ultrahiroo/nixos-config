@@ -1,15 +1,11 @@
-{ pkgs, ... }: {
+{ ... }:
+{
   imports = [
     ./kate
+    ./micro
     ./neovim
- ];
-  home = {
-    packages = with pkgs; [
-      kdePackages.kate
-      micro
-      vscode
-    ];
-  };
+    ./vscode
+  ];
   home.sessionVariables = {
     EDITOR = "nvim";
   };
