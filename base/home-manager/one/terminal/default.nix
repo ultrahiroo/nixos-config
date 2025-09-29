@@ -1,14 +1,17 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ./alacritty
+    ./foot
+    ./ghostty
+    ./kitty
+    ./konsole
+    ./rio
+    ./warp
   ];
   home = {
     packages = with pkgs; [
       custom.terminal_emulator
-      foot
-      kdePackages.konsole
-      kitty
-      warp-terminal
     ];
   };
   home.sessionVariables = {
