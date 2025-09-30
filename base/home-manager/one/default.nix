@@ -24,13 +24,14 @@
 
   home = {
     packages = with pkgs; [
+      toybox
+
       bcachefs-tools
       btrfs-progs
       e2fsprogs
       xfsprogs
 
       compsize
-      killall
 
       cloc
       scc
