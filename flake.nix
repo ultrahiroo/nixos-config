@@ -25,14 +25,14 @@
       flake = false;
     };
     hyprland = {
-      url = "github:hyprwm/Hyprland?submodules=1&ref=v0.48.0";
+      url = "github:hyprwm/Hyprland?submodules=1&ref=v0.51.0";
     };
     hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins?ref=v0.48.0";
+      url = "github:hyprwm/hyprland-plugins?ref=v0.51.0";
       inputs.hyprland.follows = "hyprland";
     };
     hy3 = {
-      url = "github:outfoxxed/hy3?ref=hl0.48.0";
+      url = "github:outfoxxed/hy3?ref=hl0.51.0";
       inputs.hyprland.follows = "hyprland";
     };
     catppuccin-bat = {
@@ -40,10 +40,7 @@
       flake = false;
     };
     mango = {
-      url = "github:DreamMaoMao/mangowc?ref=0.8.8";
-    };
-    mmsg = {
-      url = "github:DreamMaoMao/mmsg";
+      url = "github:DreamMaoMao/mangowc?ref=0.10.4";
     };
     vgpu4nixos = {
       url = "github:mrzenc/vgpu4nixos";

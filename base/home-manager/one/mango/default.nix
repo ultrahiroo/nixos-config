@@ -69,7 +69,7 @@
       command = ''
         brave --password-store=gnome &
       '';
-      appid = "Brave-browser";
+      appid = "brave-browser";
       title = ".*";
     }
     {
@@ -125,7 +125,6 @@ in {
     };
     packages = with pkgs; [
       dpms-off
-      mmsg
       pamixer
       rofi
       swaybg
