@@ -31,8 +31,6 @@ local function is_quickfix(file)
     return file == ''
 end
 
--- arg = nil
-
 vim.api.nvim_create_autocmd(
     {
         'BufEnter',
@@ -40,7 +38,6 @@ vim.api.nvim_create_autocmd(
     {
         pattern = '/*',
         callback = function(args)
-            -- arg = args
             if is_quickfix(args.file) then
                 return
             end
@@ -85,26 +82,6 @@ vim.api.nvim_create_autocmd(
     }
 )
 
--- vim.api.nvim_create_autocmd(
---     { 'LspAttach' },
---     {
---         callback = function(args)
---             if args.filetype == 'NvimTree' or args.filetype == 'NeogitCommitMessage' then
---                 return
---             end
---             vim.api.nvim_set_option('updatetime', 1000)
---             vim.api.nvim_create_autocmd(
---                 { 'CursorHold', 'CursorHoldI' },
---                 {
---                     callback = function(args)
---                         vim.diagnostic.open_float(nil, { focus = false })
---                     end,
---                 }
---             )
---         end,
---     }
--- )
-
 vim.api.nvim_create_autocmd(
     { 'TextChangedI', 'TextChangedP' },
     {
@@ -116,7 +93,10 @@ vim.api.nvim_create_autocmd(
 )
 
 vim.filetype.add({
-    extension = { codon = 'codon', mojo = 'mojo' },
+    extension = {
+        codon = 'codon',
+        mojo = 'mojo',
+    },
 })
 
 vim.api.nvim_create_autocmd(
@@ -129,9 +109,6 @@ vim.api.nvim_create_autocmd(
     }
 )
 
--- https://github.com/ethanholz/nvim-lastplace
--- https://github.com/neovim/neovim/issues/16339
--- https://www.reddit.com/r/neovim/comments/1052d98/how_to_save_last_position_in_files/
 local ignore_buftype = {
     'quickfix',
     'nofile',
@@ -145,7 +122,10 @@ local ignore_filetype = {
     'hgcommit',
 }
 
-local last_cursor_position = vim.api.nvim_create_augroup('LastCursorPosition', { clear = true })
+local last_cursor_position = vim.api.nvim_create_augroup(
+    'LastCursorPosition',
+    { clear = true }
+)
 vim.api.nvim_create_autocmd('BufWinEnter', {
     group = last_cursor_position,
     pattern = { '*' },

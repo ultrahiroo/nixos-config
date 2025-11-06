@@ -1,53 +1,29 @@
--- require('keymap.undo')
-
--- From https://github.com/neovim/neovim/blob/master/runtime/mswin.vim
 vim.cmd([[
 if has("clipboard")
-    " vnoremap <C-X> "+x
-    " vnoremap <S-Del> "+x
-    vnoremap <C-c> "+y
+    " vnoremap <C-c> "+y
     " map <C-V> "+gP
     cmap <C-V> <C-R>+
  endif
+
 " Pasting blockwise and linewise selections is not possible in Insert and
-" Visual mode without the +virtualedit feature.  They are pasted as if they
-" were characterwise instead.
+" Visual mode without the +virtualedit feature.
+" They are pasted as if they were characterwise instead.
 " Uses the paste.vim autoload script.
 " Use CTRL-G u to have CTRL-Z only undo the paste.
-exe 'inoremap <script> <C-V> <C-G>u' . paste#paste_cmd['i']
-exe 'vnoremap <script> <C-V> ' . paste#paste_cmd['v']
-" Use CTRL-S for saving, also in Insert mode (<C-O> doesn't work well when
-" using completions).
-" noremap <C-S>		:update<CR>
-" vnoremap <C-S>		<C-C>:update<CR>
-" inoremap <C-S>		<Esc>:update<CR>gi
+if has('clipboard')
+    exe 'inoremap <script> <C-V> <C-G>u' . paste#paste_cmd['i']
+    exe 'vnoremap <script> <C-V> ' . paste#paste_cmd['v']
+endif
+
 " For CTRL-V to work autoselect must be off.
 " On Unix we have two selections, autoselect can be used.
-
 if !has('unix')
     set guioptions-=a
 endif
-" CTRL-A is Select all
-"noremap <C-A> gggH<C-O>G
-"inoremap <C-A> <C-O>gg<C-O>gH<C-O>Gnoremanoremanoremap
-"cnoremap <C-A> <C-C>gggH<C-O>G
-"onoremap <C-A> <C-C>gggH<C-O>G
-"snoremap <C-A> <C-C>gggH<C-O>G
-"xnoremap <C-A> <C-C>ggVG
-" CTRL-Tab is Next window
-"noremap <C-Tab> <C-W>w
-"inoremap <C-Tab> <C-O><C-W>w
-"cnoremap <C-Tab> <C-C><C-W>w
-"onoremap <C-Tab> <C-C><C-W>w
 ]])
-
--- vim.keymap.set({ 'n', 'i' }, '<C-t><C-v>', '<C-\\><C-n>:split | wincmd j | resize 20 | terminal<CR>')
--- vim.keymap.set({ 'n', 'i', 's', 't' }, '<C-w>', '<C-\\><C-n><C-w>wgi', { silent = true })
 
 local keymap = {}
 function keymap.set(lhs, rhs, mode, opts)
-    -- https://neovim.io/doc/user/map.html#map-overview
-    -- https://neovim.io/doc/user/builtin.html#mode()
     mode = mode or {
         'n', -- Normal
         'i', -- Insert, Replace
@@ -64,7 +40,6 @@ function keymap.set(lhs, rhs, mode, opts)
     if opts.silent == nil then
         opts.silent = true
     end
-    -- https://github.com/neovim/neovim/pull/16594
     vim.keymap.set(mode, lhs, rhs, opts)
 end
 
@@ -76,9 +51,14 @@ local function smode_to_xmode()
     vim.api.nvim_input('<C-g>')
 end
 
--- ISSUE
--- https://github.com/vim/vim/pull/11579
--- https://github.com/neovim/neovim/pull/21115
+local function vmode_to_smode()
+    vim.api.nvim_input('<C-g>')
+end
+
+local function imode_to_nmode()
+    vim.api.nvim_input('<C-\\><C-n>')
+end
+
 local function get_visual_selection()
     local _, begin_y, begin_x = unpack(vim.fn.getpos('v'))
     local _, end_y, end_x = unpack(vim.fn.getpos('.'))
@@ -90,7 +70,16 @@ local function get_visual_selection()
         end_y = begin_y_old
         end_x = begin_x_old
     end
-    return vim.api.nvim_buf_get_text(0, begin_y - 1, begin_x - 1, end_y - 1, end_x - 1, {})[1]
+    local string_list = vim.api.nvim_buf_get_text(
+        0,
+        begin_y - 1,
+        begin_x - 1,
+        end_y - 1,
+        end_x - 1,
+        {}
+    )
+    local y = table.concat(string_list, '\n')
+    return y
 end
 
 local function save_mode()
@@ -128,8 +117,6 @@ local function indent_end_x()
     if string.sub(line, 1, 1) ~= ' ' then
         return 0
     end
-    -- https://www.lua.org/manual/5.4/manual.html#string.find
-    -- https://www.lua.org/manual/5.4/manual.html#6.4.1
     return string.find(line, '%f[^ ]') - 1
 end
 
@@ -142,46 +129,56 @@ local function page_movement_size()
     end
 end
 
--- keymap.set('<Up>', function()
---     vim.cmd('normal k')
--- end, { 'i' })
-
--- keymap.set('<Down>', function()
---     vim.cmd('normal j')
--- end, { 'i' })
-
--- vim.keymap.set({ 'n', 'i' }, '<C-a>', '<C-\\><C-n>gg0vG$<C-g>')
 keymap.set('<C-a>', function()
-    vim.api.nvim_input('<C-\\><C-n>gg0vG$<C-g>')
+    vim.api.nvim_input('gg0vG$')
+    vmode_to_smode()
+end, { 'n' })
+
+keymap.set('<C-a>', function()
+    vim.cmd('normal gg0vG$')
+    vmode_to_smode()
+end, { 'i' })
+
+-- keymap.set('<C-c>', function()
+--     vim.cmd('yank')
+-- end, { 'n', 'i' })
+
+keymap.set('<C-c>', function()
+    local string_selection = vim.api.nvim_get_current_line() .. '\n'
+    local return_value = vim.fn.setreg('+', string_selection, 'c')
+    if return_value == 0 then
+        vim.api.nvim_command('echo "Copied"')
+    else
+        vim.api.nvim_command('echo "Failed to copy"')
+    end
 end, { 'n', 'i' })
 
-keymap.set('<CR>', function()
-    vim.api.nvim_input('i<CR>')
+keymap.set('<C-c>', function()
+    local string_selection = get_visual_selection()
+    local return_value = vim.fn.setreg('+', string_selection, 'c')
+    if return_value == 0 then
+        vim.api.nvim_command('echo "Copied"')
+    else
+        vim.api.nvim_command('echo "Failed to copy"')
+    end
+end, { 's' })
+
+keymap.set('<C-d>', function()
+    vim.cmd('copy .')
+end, { 'n', 'i' })
+
+keymap.set('<C-e>', function()
+    vim.api.nvim_input(':')
 end, { 'n' })
 
-keymap.set('<Esc>', function()
-    start_insert()
-    request_save_mode()
-end, { 'n' })
-
-keymap.set('<Esc>', function()
+keymap.set('<C-e>', function()
     stop_insert()
-    request_save_mode()
+    vim.api.nvim_input(':')
 end, { 'i', 't' })
 
-keymap.set('<C-w>', function()
-    -- vim.cmd('confirm bdelete | silent! only')
-    vim.cmd('bdelete')
-    -- vim.cmd('BufferClose')
-end, { 'n', 'i', 's', 't' })
-
-keymap.set('<C-w>', function()
-    vim.cmd('confirm bdelete | silent! only')
-end, { 't' })
-
-keymap.set('<C-q>', function()
-    vim.cmd('confirm quitall')
-end, { 'n', 'i', 's', 't' })
+keymap.set('<C-e>', function()
+    smode_to_cmode()
+end, { 's' })
 
 keymap.set('<C-f>', function()
     vim.api.nvim_input('/')
@@ -195,53 +192,6 @@ end, { 'i' })
 keymap.set('<C-f>', function()
     local string_selection = get_visual_selection()
     vim.api.nvim_input('<C-\\><C-n>/' .. string_selection)
-end, { 's' })
-
-keymap.set('<C-y>', function()
-    vim.cmd('redo')
-end, { 'n', 'i' })
-
-keymap.set('<C-r>', function()
-    vim.cmd('source')
-end, { 'n', 'i' })
-
-keymap.set('<C-d>', function()
-    vim.cmd('copy .')
-end, { 'n', 'i' })
-
--- keymap.set('<C-t>', function()
--- end, { 'n', 'i', 'c', 'x', 's', 'o', 't' })
-
-local function terminal()
-    vim.cmd('enew | terminal')
-    vim.opt_local.number = false
-    vim.cmd('startinsert')
-end
-
-vim.api.nvim_create_user_command(
-    'Terminal',
-    function()
-        terminal()
-    end,
-    {}
-)
-
--- keymap.set('<C-t>', function()
---     Terminal()
---     -- vim.cmd('sleep 1 | startinsert')
--- end, { 'n', 'i' })
-
-keymap.set('<C-e>', function()
-    vim.api.nvim_input(':')
-end, { 'n' })
-
-keymap.set('<C-e>', function()
-    stop_insert()
-    vim.api.nvim_input(':')
-end, { 'i', 't' })
-
-keymap.set('<C-e>', function()
-    smode_to_cmode()
 end, { 's' })
 
 -- keymap.set('<C-o>', function()
@@ -258,17 +208,47 @@ end, { 's' })
 --     vim.api.nvim_input('badd ')
 -- end, { 's' })
 
-
 keymap.set('<C-p>', function()
     vim.cmd('wincmd w')
 end, { 'n', 'i', 's', 't' })
 
-keymap.set('<C-z>', function()
-    vim.cmd('undo')
-end, { 'n', 'i', 's' })
+keymap.set('<C-q>', function()
+    vim.cmd('confirm quitall')
+end, { 'n', 'i', 's', 't' })
 
-keymap.set('<C-z>', function()
-end, { 'c', 'x', 'o', 't' })
+keymap.set('<C-r>', function()
+    vim.cmd('source')
+end, { 'n', 'i' })
+
+-- keymap.set('<C-t>', function()
+-- end, { 'n', 'i', 'c', 'x', 's', 'o', 't' })
+
+local function terminal()
+    vim.cmd('enew | terminal')
+    vim.opt_local.number = false
+    vim.cmd('startinsert')
+end
+
+-- keymap.set('<C-t>', function()
+--     Terminal()
+--     -- vim.cmd('sleep 1 | startinsert')
+-- end, { 'n', 'i' })
+
+keymap.set('<C-v>', function()
+    vim.api.nvim_input('<C-g>P')
+end, { 's' })
+
+keymap.set('<C-v>', function()
+    vim.api.nvim_input('P')
+end, { 'n' })
+
+keymap.set('<C-w>', function()
+    vim.cmd('confirm bdelete | silent! only')
+end, { 'n', 'i', 's', 't' })
+
+keymap.set('<C-w>', function()
+    vim.cmd('confirm bdelete | silent! only')
+end, { 't' })
 
 keymap.set('<C-x>', function()
     vim.cmd('delete')
@@ -278,21 +258,24 @@ keymap.set('<C-x>', function()
     vim.api.nvim_input('<C-g>x')
 end, { 's' })
 
-keymap.set('<C-c>', function()
-    vim.cmd('yank')
+keymap.set('<C-y>', function()
+    vim.cmd('redo')
 end, { 'n', 'i' })
 
--- keymap.set('<C-c>', function()
--- vim.api.nvim_input('<C-g>ygv<C-g>')
--- end, { 's' })
+keymap.set('<C-z>', function()
+    vim.cmd('undo')
+end, { 'n', 'i', 's' })
 
-keymap.set('<C-v>', function()
-    vim.api.nvim_input('<C-g>P')
-end, { 's' })
+keymap.set('<C-z>', function()
+end, { 'c', 'x', 'o', 't' })
 
-keymap.set('<C-v>', function()
-    vim.api.nvim_input('P')
-end, { 'n' })
+vim.api.nvim_create_user_command(
+    'Terminal',
+    function()
+        terminal()
+    end,
+    {}
+)
 
 keymap.set('<BS>', function()
     vim.api.nvim_input('"_X')
@@ -320,6 +303,28 @@ end
 keymap.set('<BS>', function()
     vim.api.nvim_input('<C-g>"_d')
 end, { 's' })
+
+keymap.set('<CR>', function()
+    vim.api.nvim_input('i<CR>')
+end, { 'n' })
+
+-- keymap.set('<Down>', function()
+--     vim.cmd('normal j')
+-- end, { 'i' })
+
+keymap.set('<Esc>', function()
+    start_insert()
+    request_save_mode()
+end, { 'n' })
+
+keymap.set('<Esc>', function()
+    stop_insert()
+    request_save_mode()
+end, { 'i', 't' })
+
+-- keymap.set('<Up>', function()
+--     vim.cmd('normal k')
+-- end, { 'i' })
 
 keymap.set('<S-BS>', function()
 end, { 'n', 'i' })

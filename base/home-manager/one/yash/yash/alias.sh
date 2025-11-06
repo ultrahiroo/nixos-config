@@ -23,7 +23,7 @@ alias du='
         else
             TARGET='.'
         fi
-        du --human-readable --max-depth=1 "${TARGET}" | sort --human-numeric-sort --reverse
+        du -b -d 1 "${TARGET}" | sort -g -r | numfmt --to=iec-i | column -t
     }
     _du'
 alias du-btrfs='sudo btrfs filesystem du --summarize'
@@ -176,3 +176,4 @@ alias reboot='systemctl reboot --no-wall'
 alias pulseaudio-control='pavucontrol'
 alias pipewire-control='qpwgraph'
 alias android-reverse-tethering='sudo gnirehtet'
+alias iotop='LINES= iotop'
