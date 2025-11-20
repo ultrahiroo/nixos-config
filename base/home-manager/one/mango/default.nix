@@ -8,6 +8,8 @@
         alacritty --title BTOP --class TOP --command btop &
         sleep 1
         alacritty --title NVTOP --class TOP --command nvtop &
+        sleep 1
+        alacritty --title IOTOP --class TOP --command iotop &
       '';
       appid = "TOP";
       title = ".*";

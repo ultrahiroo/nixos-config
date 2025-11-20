@@ -59,7 +59,7 @@ mouse = "Middle"
 [keyboard]
 
 [font]
-size = 11.0
+size = 12.0
 
 [font.normal]
 family = "Plemol JP Console"
