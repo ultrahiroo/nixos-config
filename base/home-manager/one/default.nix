@@ -69,6 +69,7 @@
       python3Packages.pip
       python3Packages.virtualenv
       ripgrep
+      rofi
       shotcut
       tmux
       unixtools.quota

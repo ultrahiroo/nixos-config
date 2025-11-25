@@ -7,6 +7,7 @@ local opts = {
         'lua',
         'markdown',
         'python',
+        'typescript',
     },
     highlight = {
         enable = true,

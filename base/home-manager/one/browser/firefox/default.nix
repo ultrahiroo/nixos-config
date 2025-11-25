@@ -1,10 +1,13 @@
 { lib, pkgs, ... }: {
-  home.file.".mozilla/firefox/default/search.json.mozlz4" = {
-    force = lib.mkForce true;
+  home = {
+    file.".mozilla/firefox/default/search.json.mozlz4" = {
+      force = lib.mkForce true;
+    };
   };
   programs = {
     firefox = {
       enable = true;
+      nativeMessagingHosts = [ pkgs.firefoxpwa ];
       languagePacks = [
         "ja"
       ];

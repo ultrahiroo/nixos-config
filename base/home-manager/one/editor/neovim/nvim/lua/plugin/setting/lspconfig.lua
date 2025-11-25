@@ -55,6 +55,7 @@ local function config()
             },
         },
         pyright = {},
+        ts_ls = {},
     }
 
     for server_name, _ in pairs(server) do

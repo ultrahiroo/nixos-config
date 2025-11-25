@@ -17,6 +17,7 @@
       nixd
       nixfmt-rfc-style
       pyright
+      typescript-language-server
     ];
   };
 }
