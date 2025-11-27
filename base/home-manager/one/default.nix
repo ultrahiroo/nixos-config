@@ -1,25 +1,38 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
+    ./alacritty
     ./bat
-    ./btop
-    ./gh
-    ./git
-    ./yash
-    ./xdg
-    ./linux-pam
-
-    ./i3
-    ./plasma
-    ./hyprland
-    ./mango
-
-    ./terminal
-    ./editor
-    ./browser
-
-    ./mydns
-    ./web_server
+    ./brave
     ./bottles
+    ./browser
+    ./btop
+    ./chromium
+    ./editor
+    ./firefox
+    ./foot
+    ./gh
+    ./ghostty
+    ./git
+    ./hyprland
+    ./i3
+    ./kate
+    ./kitty
+    ./konsole
+    ./linux-pam
+    ./mango
+    ./micro
+    ./mydns
+    ./neovim
+    ./plasma
+    ./quickshell
+    ./rio
+    ./terminal
+    ./vscode
+    ./warp
+    ./web_server
+    ./xdg
+    ./yash
   ];
 
   home = {
