@@ -1,12 +1,15 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.neovim = {
     enable = true;
   };
-  home.file = {
-    ".config/nvim/init.lua".source = ./nvim/init.lua;
-    ".config/nvim/lua" = { source = ./nvim/lua; recursive = true; };
-  };
   home = {
+    file = {
+      ".config/nvim" = {
+        source = ./nvim;
+        force = true;
+      };
+    };
     packages = with pkgs; [
       gnused
       grip-grab
