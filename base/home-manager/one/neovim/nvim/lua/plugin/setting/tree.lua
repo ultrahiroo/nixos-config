@@ -7,7 +7,6 @@ local function on_attach(bufnr)
 
   -- api.config.mappings.default_on_attach(bufnr)
   vim.keymap.set('n', '<C-]>', api.tree.change_root_to_node, opts('CD'))
-  vim.keymap.set('n', '<C-e>', api.node.open.replace_tree_buffer, opts('Open: In Place'))
   vim.keymap.set('n', '<C-k>', api.node.show_info_popup, opts('Info'))
   vim.keymap.set('n', '<C-r>', api.fs.rename_sub, opts('Rename: Omit Filename'))
   vim.keymap.set('n', '<C-t>', api.node.open.tab, opts('Open: New Tab'))
@@ -67,7 +66,9 @@ local function on_attach(bufnr)
 
   vim.keymap.set('n', 'p', function() end)
   vim.keymap.set('n', 'r', api.fs.rename_full, opts('Rename: Full Path'))
-  -- vim.keymap.set('n', '<C-e>', function() end)
+
+  vim.keymap.del('n', '<C-e>')
+  vim.keymap.set('n', '<C-e>', function() end)
 end
 
 return {
@@ -89,6 +90,13 @@ return {
     },
     -- prefer_startup_root = true,
     on_attach = on_attach,
+    filters = {
+      git_ignored = false,
+      custom = {
+        '^\\.git',
+        '^node_modules',
+      },
+    },
   },
   config = function(_, opts)
     vim.g.loaded_netrw = 1

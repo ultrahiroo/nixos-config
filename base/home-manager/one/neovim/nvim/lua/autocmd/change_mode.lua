@@ -9,6 +9,15 @@ end
 local function set_initial_mode(buf)
   local filetype = vim.bo.filetype
   local buftype = vim.bo.buftype
+  if false then
+    vim.notify('filetype: ' .. filetype .. ', buftype: ' .. buftype, 'info')
+  end
+  if filetype == '' then
+    return
+  end
+  if filetype == 'qf' then
+    return
+  end
   if filetype == 'NvimTree' and buftype == 'nofile' then
     set_saved_mode(buf, 'n')
   end
@@ -66,21 +75,21 @@ vim.api.nvim_create_autocmd(
         vim.b[args.buf].request_save_mode = false
       end
 
-      local request_change_mode = vim.b[args.buf].request_change_mode
-      if (request_change_mode == nil or request_change_mode == true) then
-        local saved_mode = vim.b[args.buf].current_mode
-        local current_mode = vim.fn.mode()
-        change_mode(current_mode, saved_mode)
-        if false then
-          vim.notify(
-            'changed mode'
-            .. ', current_mode: ' .. current_mode
-            .. ', saved_mode: ' .. saved_mode,
-            'info'
-          )
-        end
-        vim.b[args.buf].request_change_mode = false
-      end
+      -- local request_change_mode = vim.b[args.buf].request_change_mode
+      -- if (request_change_mode == nil or request_change_mode == true) then
+      --   local saved_mode = vim.b[args.buf].current_mode
+      --   local current_mode = vim.fn.mode()
+      --   change_mode(current_mode, saved_mode)
+      --   if false then
+      --     vim.notify(
+      --       'changed mode'
+      --       .. ', current_mode: ' .. current_mode
+      --       .. ', saved_mode: ' .. saved_mode,
+      --       'info'
+      --     )
+      --   end
+      --   vim.b[args.buf].request_change_mode = false
+      -- end
 
       if args.match == 'n:i' then
         local _, lnum, col, off, _ = unpack(vim.fn.getcurpos('.'))
@@ -106,66 +115,15 @@ vim.api.nvim_create_autocmd(
         local cursor_y = lnum
         vim.api.nvim_win_set_cursor(0, { cursor_y, cursor_x })
       end
-
-
-      -- local screencol = vim.fn.screencol()
-      -- vim.notify('screencol: ' .. screencol, 'info')
-
-      -- local saved_column = get_saved_column(args.buf)
-      -- local _, lnum, col, off, _ = unpack(vim.fn.getcurpos('.'))
-      -- local current_column = col + off
-      -- vim.notify('current_column: ' .. current_column, 'info')
-      -- vim.notify('saved_column: ' .. saved_column, 'info')
-
-      -- if saved_column ~= nil and current_column ~= saved_column then
-      --   vim.api.nvim_win_set_cursor(0, { lnum, current_column })
-      -- end
     end,
   }
 )
-
--- local function is_quickfix(file)
---   return file == ''
--- end
 
 vim.api.nvim_create_autocmd(
   { 'BufEnter' },
   {
     callback = function(args)
-      -- local buftype = vim.bo.buftype
-      -- vim.notify('buftype: ' .. buftype, 'info')
-
-      -- if buftype ~= '' then
-      --   return
-      -- end
-
-      -- local filetype = vim.bo.filetype
-      -- vim.notify('filetype: ' .. filetype, 'info')
-
-      -- if is_quickfix(args.file) then
-      --   return
-      -- end
-      -- if filetype == '' then
-      --   return
-      -- end
-      -- if filetype == 'help' then
-      --   return
-      -- end
-      -- if filetype == 'toggleterm' then
-      --   return
-      -- end
-      -- if filetype == 'NvimTree' then
-      --   vim.cmd('stopinsert')
-      --   return
-      -- end
-
       local saved_mode = get_saved_mode(args.buf)
-      -- if saved_mode ~= nil then
-      --   vim.notify('saved_mode: ' .. saved_mode, 'info')
-      -- else
-      --   vim.notify('saved_mode: nil', 'info')
-      -- end
-
       if saved_mode == nil then
         set_initial_mode(args.buf)
       end
@@ -174,14 +132,12 @@ vim.api.nvim_create_autocmd(
         return
       end
 
-      -- if saved_mode == nil then
-      --   -- vim.cmd('startinsert')
-      --   vim.b[args.buf].current_mode = 'i'
-      -- end
-
       local current_mode = vim.fn.mode()
-      -- vim.notify('current_mode: ' .. current_mode, 'info')
-      -- vim.notify('saved_mode: ' .. saved_mode, 'info')
+      if false then
+        vim.notify(
+          'current_mode: ' .. current_mode .. ', saved_mode: ' .. saved_mode, 'info'
+        )
+      end
       change_mode(current_mode, saved_mode)
     end,
   }

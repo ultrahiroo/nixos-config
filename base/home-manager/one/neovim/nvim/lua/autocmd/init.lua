@@ -13,35 +13,11 @@ vim.api.nvim_create_autocmd(
 )
 
 vim.api.nvim_create_autocmd(
-  { 'TextYankPost' },
-  {
-    callback = function()
-      vim.hl.on_yank()
-    end,
-  }
-)
-
-vim.api.nvim_create_autocmd(
-  { 'LspAttach' },
-  {
-    callback = function(args)
-      local bufnr = args.buf
-      local client_id = args.data.client_id
-      local client = vim.lsp.get_client_by_id(client_id)
-      if client:supports_method('textDocument/semanticTokens/full') then
-        vim.lsp.semantic_tokens.start(bufnr, client_id)
-      end
-    end,
-  }
-)
-
-vim.api.nvim_create_autocmd(
   { 'TextChangedI', 'TextChangedP' },
   {
     callback = function()
       vim.api.nvim_input('<C-g>u')
     end,
-    pattern = '*',
   }
 )
 
@@ -105,3 +81,5 @@ vim.api.nvim_create_autocmd(
 )
 
 require('autocmd.change_mode')
+require('autocmd.lsp')
+require('autocmd.yank')
