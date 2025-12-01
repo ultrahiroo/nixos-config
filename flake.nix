@@ -3,13 +3,13 @@
 
   inputs = {
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-25.05";
+      url = "github:NixOS/nixpkgs/nixos-25.11";
     };
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-generators = {
@@ -25,14 +25,14 @@
       flake = false;
     };
     hyprland = {
-      url = "github:hyprwm/Hyprland?submodules=1&ref=v0.51.0";
+      url = "github:hyprwm/Hyprland?submodules=1&ref=v0.52.0";
     };
     hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins?ref=v0.51.0";
+      url = "github:hyprwm/hyprland-plugins?ref=v0.52.0";
       inputs.hyprland.follows = "hyprland";
     };
     hy3 = {
-      url = "github:outfoxxed/hy3?ref=hl0.51.0";
+      url = "github:outfoxxed/hy3?ref=hl0.52.0";
       inputs.hyprland.follows = "hyprland";
     };
     catppuccin-bat = {
@@ -40,7 +40,7 @@
       flake = false;
     };
     mango = {
-      url = "github:DreamMaoMao/mangowc?ref=0.10.4";
+      url = "github:DreamMaoMao/mangowc?ref=0.10.6";
     };
     vgpu4nixos = {
       url = "github:mrzenc/vgpu4nixos";
@@ -72,7 +72,7 @@
 
   outputs = inputs @ { self, ... }: {
     nixosConfigurations = let
-      nixos_version = "25.05";
+      nixos_version = "25.11";
       all_username = [
         "root"
         "one"

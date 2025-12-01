@@ -1,4 +1,5 @@
-{ pkgs, all_username, ... }: {
+{ pkgs, all_username, ... }:
+{
   programs.virt-manager.enable = true;
   virtualisation = {
     spiceUSBRedirection.enable = true;
@@ -8,13 +9,6 @@
         package = pkgs.qemu_kvm;
         runAsRoot = true;
         swtpm.enable = true;
-        ovmf = {
-          enable = true;
-          packages = [(pkgs.OVMF.override {
-            secureBoot = true;
-            tpmSupport = true;
-          }).fd];
-        };
         vhostUserPackages = [ pkgs.virtiofsd ];
       };
       onBoot = "ignore";

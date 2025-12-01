@@ -6,7 +6,7 @@ nix flake update
 
 ## Check
 ```sh
-nix flake check
+nix flake check --abort-on-warn --show-trace
 ```
 ```sh
 systemctl list-timers

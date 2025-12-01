@@ -37,6 +37,8 @@
             python.pkgs.buildPythonApplication {
               name = packageName;
               src = ./.;
+              pyproject = true;
+              build-system = [ python.pkgs.setuptools ];
             };
         }
       );

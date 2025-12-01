@@ -67,8 +67,8 @@ local function on_attach(bufnr)
   vim.keymap.set('n', 'p', function() end)
   vim.keymap.set('n', 'r', api.fs.rename_full, opts('Rename: Full Path'))
 
-  vim.keymap.del('n', '<C-e>')
-  vim.keymap.set('n', '<C-e>', function() end)
+  -- vim.keymap.del('n', '<C-e>')
+  -- vim.keymap.set('n', '<C-e>', function() end)
 end
 
 return {
