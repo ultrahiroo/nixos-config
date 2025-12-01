@@ -2,6 +2,7 @@
 {
   imports = [
     ./alacritty
+    ./antigravity
     ./bat
     ./brave
     ./bottles

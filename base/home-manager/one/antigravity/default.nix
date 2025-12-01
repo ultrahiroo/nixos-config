@@ -5,7 +5,7 @@ in
 {
   home = {
     packages = [
-      inputs.quickshell.packages.${system}.default
+      inputs.antigravity-nix.packages.${system}.default
     ];
   };
 }
