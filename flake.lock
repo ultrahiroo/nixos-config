@@ -881,7 +881,7 @@
         "nixpkgs": "nixpkgs_3",
         "quickshell": "quickshell",
         "raspberrypi-firmware": "raspberrypi-firmware",
-        "terminal_emulator": "terminal_emulator",
+        "terminal": "terminal",
         "vgpu4nixos": "vgpu4nixos"
       }
     },
@@ -966,18 +966,18 @@
         "type": "github"
       }
     },
-    "terminal_emulator": {
+    "terminal": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "path": "./package/terminal_emulator",
+        "path": "./package/terminal",
         "type": "path"
       },
       "original": {
-        "path": "./package/terminal_emulator",
+        "path": "./package/terminal",
         "type": "path"
       },
       "parent": []

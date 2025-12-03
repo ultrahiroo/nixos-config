@@ -60,8 +60,8 @@
       url = "path:./package/codon";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    terminal_emulator = {
-      url = "path:./package/terminal_emulator";
+    terminal = {
+      url = "path:./package/terminal";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     quickshell = {

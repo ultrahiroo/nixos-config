@@ -2,7 +2,7 @@
 {
   home = {
     packages = with pkgs; [
-      custom.terminal_emulator
+      custom.terminal
     ];
   };
   home.sessionVariables = {

@@ -2,12 +2,12 @@
 requires = ['setuptools>=45', 'wheel']
 
 [project]
-name = 'terminal_emulator'
+name = 'terminal'
+version = '1.0'
 readme = 'README.md'
 license = { text = 'MIT License' }
 authors = [{ name = 'Inoue Hiroo', email = 'ultrahiroo2000@gmail.com' }]
-dynamic = ['version']
 requires-python = '>=3.11'
 
 # [project.scripts]
-# terminal_emulator = 'terminal_emulator'
+# terminal = 'terminal'

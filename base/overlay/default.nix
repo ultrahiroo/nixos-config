@@ -10,7 +10,7 @@
         custom = {
           clean = inputs.clean.packages.${system}.default;
           codon = inputs.codon.packages.${system}.default;
-          terminal_emulator = inputs.terminal_emulator.packages.${system}.default;
+          terminal = inputs.terminal.packages.${system}.default;
         };
         firefox-addons = inputs.firefox-addons.packages.${system};
       }

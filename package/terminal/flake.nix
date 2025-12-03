@@ -2,33 +2,28 @@
   description = "Terminal emulator laucher";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs";
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    };
   };
 
   outputs =
     { self, nixpkgs }:
     let
-      packageName = "terminal_emulator";
-      pythonVersion = "python312";
-      allSystems = [
+      packageName = "terminal";
+      pythonVersion = "python313";
+      allSystem = [
         "x86_64-linux"
         "aarch64-linux"
         "x86_64-darwin"
         "aarch64-darwin"
       ];
-      forAllSystems =
-        f:
-        nixpkgs.lib.genAttrs allSystems (
-          system:
-          f {
-            pkgs = import nixpkgs { inherit system; };
-            inherit system;
-          }
-        );
+      forAllSystem =
+        f: nixpkgs.lib.genAttrs allSystem (system: f { pkgs = import nixpkgs { inherit system; }; });
     in
     {
-      packages = forAllSystems (
-        { pkgs, system }:
+      packages = forAllSystem (
+        { pkgs }:
         {
           default =
             let

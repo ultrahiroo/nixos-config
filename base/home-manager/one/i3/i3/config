@@ -3,7 +3,7 @@
 # https://i3wm.org/docs/userguide.html
 
 set $Mod Mod1
-set $Terminal terminal_emulator
+set $Terminal terminal
 # set $Terminal qterminal
 
 bindsym $Mod+Return    exec $Terminal

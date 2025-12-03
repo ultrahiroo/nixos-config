@@ -2,7 +2,7 @@
   services.displayManager = {
     sddm.enable = true;
     autoLogin = {
-      enable = true;
+      enable = false;
       user = default_username;
     };
     defaultSession = "mango";

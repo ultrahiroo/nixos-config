@@ -2,26 +2,25 @@
 import os
 import shutil
 import subprocess
-from typing import Dict, List
 
 
 class Command:
-    value: List[str]
-    env: Dict[str, str]
+    value: list[str]
+    env: dict[str, str]
 
     def __init__(
         self,
-        value: List[str],
-        env: Dict[str, str] | None = None,
+        value: list[str],
+        env: dict[str, str] | None = None,
     ) -> None:
         self.value = value
         self.env = env if env is not None else {}
 
 
 class Config:
-    command_list: List[Command]
+    command_list: list[Command]
 
-    def __init__(self, command_list: List[Command]) -> None:
+    def __init__(self, command_list: list[Command]) -> None:
         self.command_list = command_list
 
 
