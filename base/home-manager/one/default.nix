@@ -25,6 +25,7 @@
     ./micro
     ./mydns
     ./neovim
+    ./niri
     ./plasma
     ./quickshell
     ./rio

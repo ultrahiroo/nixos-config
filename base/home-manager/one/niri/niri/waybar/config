@@ -1,0 +1,22 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 20,
+    "modules-left": [
+        "niri/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+    ],
+    "niri/workspaces": {
+        "format": "{value}",
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:L%Y-%m-%d %H:%M:%S %a}",
+        "timezone": "Asia/Tokyo",
+        "locale": "ja_JP.UTF-8",
+    },
+}

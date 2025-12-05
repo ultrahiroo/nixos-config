@@ -5,6 +5,6 @@
       enable = false;
       user = default_username;
     };
-    defaultSession = "mango";
+    defaultSession = "niri";
   };
 }
