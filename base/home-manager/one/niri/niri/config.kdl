@@ -257,7 +257,7 @@ layout {
 }
 
 overview {
-    zoom 0.3
+    zoom 0.4
     backdrop-color "#262626"
 
     workspace-shadow {
