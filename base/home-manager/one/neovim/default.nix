@@ -19,6 +19,7 @@
       nil
       nixd
       nixfmt-rfc-style
+      pyrefly
       pyright
       typescript-language-server
     ];
