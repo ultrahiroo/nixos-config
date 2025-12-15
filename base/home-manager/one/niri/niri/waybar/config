@@ -2,14 +2,11 @@
     "layer": "top",
     "position": "top",
     "height": 20,
-    "modules-left": [
-        "niri/workspaces"
-    ],
+    "modules-left": [],
     "modules-center": [
         "clock"
     ],
-    "modules-right": [
-    ],
+    "modules-right": [],
     "niri/workspaces": {
         "format": "{value}",
     },
