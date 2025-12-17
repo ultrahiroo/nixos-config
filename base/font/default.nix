@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   fonts = {
+    enableDefaultPackages = true;
     packages = with pkgs; [
       dejavu_fonts
       material-design-icons
@@ -16,8 +17,6 @@
       source-code-pro
       source-han-code-jp
     ];
-
-    enableDefaultPackages = false;
     fontconfig = {
       enable = true;
       defaultFonts = {
