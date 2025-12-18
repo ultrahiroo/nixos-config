@@ -17,6 +17,7 @@
       source-code-pro
       source-han-code-jp
     ];
+    fontDir.enable = true;
     fontconfig = {
       enable = true;
       defaultFonts = {
@@ -29,7 +30,7 @@
           "Noto Color Emoji"
         ];
         monospace = [
-          "JetBrainsMono Nerd Font"
+          "DejaVu Sans Mono"
           "Noto Color Emoji"
         ];
         emoji = [
