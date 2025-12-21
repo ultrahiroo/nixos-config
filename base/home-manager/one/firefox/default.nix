@@ -1,4 +1,5 @@
-{ lib, pkgs, ... }: {
+{ lib, pkgs, ... }:
+{
   home = {
     file.".mozilla/firefox/default/search.json.mozlz4" = {
       force = lib.mkForce true;
@@ -12,17 +13,18 @@
         "ja"
       ];
       policies = {
-        ExtensionSettings = with builtins;
-          let extension = shortId: uuid: {
-            name = uuid;
-            value = {
-              install_url = (
-                "https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi"
-              );
-              installation_mode = "normal_installed";
+        ExtensionSettings =
+          with builtins;
+          let
+            extension = shortId: uuid: {
+              name = uuid;
+              value = {
+                install_url = ("https://addons.mozilla.org/en-US/firefox/downloads/latest/${shortId}/latest.xpi");
+                installation_mode = "normal_installed";
+              };
             };
-          };
-          in listToAttrs [
+          in
+          listToAttrs [
             (extension "adguard-adblocker" "adguardadblocker@adguard.com")
             (extension "clearurls" "{74145f27-f039-47ce-a470-a662b129930a}")
             (extension "deepl-translate" "firefox-extension@deepl.com")
@@ -71,7 +73,7 @@
 
             "browser.uiCustomization.state" = {
               "placements" = {
-                "widget-overflow-fixed-list" = [];
+                "widget-overflow-fixed-list" = [ ];
                 "unified-extensions-area" = [
                   "adguardadblocker_adguard_com-browser-action"
                   "vimium-c_gdh1995_cn-browser-action"
@@ -94,15 +96,15 @@
                   "alltabs-button"
                 ];
                 "toolbar-menubar" = [
-                    "menubar-items"
+                  "menubar-items"
                 ];
-                "TabsToolbar" = [];
+                "TabsToolbar" = [ ];
                 "vertical-tabs" = [
-                    "tabbrowser-tabs"
+                  "tabbrowser-tabs"
                 ];
                 "PersonalToolbar" = [
-                    "import-button"
-                    "personal-bookmarks"
+                  "import-button"
+                  "personal-bookmarks"
                 ];
               };
               "seen" = [
@@ -116,37 +118,50 @@
                 "jid0-adyhmvsp91nuo8prv0mn2vkeb84_jetpack-browser-action"
               ];
               "dirtyAreaCache" = [
-                  "nav-bar"
-                  "vertical-tabs"
-                  "PersonalToolbar"
-                  "toolbar-menubar"
-                  "TabsToolbar"
-                  "unified-extensions-area"
+                "nav-bar"
+                "vertical-tabs"
+                "PersonalToolbar"
+                "toolbar-menubar"
+                "TabsToolbar"
+                "unified-extensions-area"
               ];
               "currentVersion" = 22;
               "newElementCount" = 2;
             };
           };
-          search.engines = {
-            "Nix Packages" = {
-              definedAliases = [ "@np" ];
-              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              urls = [{
-                template = "https://search.nixos.org/packages";
-                params = [
-                  { name = "query"; value = "{searchTerms}"; }
+          search = {
+            default = "duckduckgo";
+            engines = {
+              "Nix Packages" = {
+                definedAliases = [ "@np" ];
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                urls = [
+                  {
+                    template = "https://search.nixos.org/packages";
+                    params = [
+                      {
+                        name = "query";
+                        value = "{searchTerms}";
+                      }
+                    ];
+                  }
                 ];
-              }];
-            };
-            "Nix Options" = {
-              definedAliases = [ "@no" ];
-              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              urls = [{
-                template = "https://search.nixos.org/options";
-                params = [
-                  { name = "query"; value = "{searchTerms}"; }
+              };
+              "Nix Options" = {
+                definedAliases = [ "@no" ];
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                urls = [
+                  {
+                    template = "https://search.nixos.org/options";
+                    params = [
+                      {
+                        name = "query";
+                        value = "{searchTerms}";
+                      }
+                    ];
+                  }
                 ];
-              }];
+              };
             };
           };
         };
