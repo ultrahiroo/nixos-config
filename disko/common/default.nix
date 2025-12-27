@@ -1,6 +1,13 @@
-{ inputs, lib, pkgs, ... }: let
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
+let
   enable_compression = false;
-in{
+in
+{
   imports = [
     inputs.disko.nixosModules.disko
     ./make-disk-image.nix

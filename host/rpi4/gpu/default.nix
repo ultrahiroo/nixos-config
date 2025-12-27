@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   hardware.graphics.enable32Bit = false;
 
   hardware = {

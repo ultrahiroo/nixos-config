@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-   imports = [
+  imports = [
     ./keep-input.nix
   ];
 

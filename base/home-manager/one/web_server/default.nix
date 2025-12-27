@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   systemd.user.services = {
     web_server = {
       Unit = {

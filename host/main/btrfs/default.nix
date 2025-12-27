@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   # systemd.timers."btrfs-balance" = {
   #   wantedBy = [ "timers.target" ];
   #   timerConfig = {
@@ -19,22 +20,24 @@
 
   systemd.services."btrfs-balance-auto" = {
     wantedBy = [ "sysinit.target" ];
-    script = let
-      uuid_list = [
-        "ddacd9bc-110f-4621-aa1b-f257830ee5ec"
-        "bb99279a-1612-4641-ab80-8320893cadd2"
-      ];
-      value = 10;
-    in ''
-      UUID_LIST='${toString uuid_list}'
-      for UUID in $UUID_LIST; do
-          TARGET="/sys/fs/btrfs/$UUID/allocation/data/bg_reclaim_threshold"
-          BEFORE_VALUE=$(cat $TARGET)
-          echo ${toString value} > $TARGET
-          AFTER_VALUE=$(cat $TARGET)
-          echo "$TARGET: set $BEFORE_VALUE to $AFTER_VALUE"
-      done
-    '';
+    script =
+      let
+        uuid_list = [
+          "ddacd9bc-110f-4621-aa1b-f257830ee5ec"
+          "bb99279a-1612-4641-ab80-8320893cadd2"
+        ];
+        value = 10;
+      in
+      ''
+        UUID_LIST='${toString uuid_list}'
+        for UUID in $UUID_LIST; do
+            TARGET="/sys/fs/btrfs/$UUID/allocation/data/bg_reclaim_threshold"
+            BEFORE_VALUE=$(cat $TARGET)
+            echo ${toString value} > $TARGET
+            AFTER_VALUE=$(cat $TARGET)
+            echo "$TARGET: set $BEFORE_VALUE to $AFTER_VALUE"
+        done
+      '';
     serviceConfig = {
       Type = "oneshot";
       User = "root";
@@ -47,7 +50,8 @@
       hashTableSizeMB = 128;
       verbosity = "crit";
       extraOptions = [
-        "--loadavg-target" "1.0"
+        "--loadavg-target"
+        "1.0"
       ];
     };
     mount = {
@@ -55,7 +59,8 @@
       hashTableSizeMB = 128;
       verbosity = "crit";
       extraOptions = [
-        "--loadavg-target" "1.0"
+        "--loadavg-target"
+        "1.0"
       ];
     };
   };

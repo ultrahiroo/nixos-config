@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   networking = {
     hostName = "main";
     interfaces.eth0.ipv4.addresses = [

@@ -75,6 +75,7 @@
       gptfdisk
       meson
       neofetch
+      nixfmt-tree
       nodejs
       kdePackages.discover
       kdePackages.filelight

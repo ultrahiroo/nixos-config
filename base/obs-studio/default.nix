@@ -13,7 +13,7 @@
       wlrobs
       obs-backgroundremoval
       obs-pipewire-audio-capture
-      obs-vkcapture  # add obs-gamecapture command
+      obs-vkcapture # add obs-gamecapture command
     ];
   };
   environment.systemPackages = with pkgs; [

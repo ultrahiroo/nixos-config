@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ./audio
     ./boot
@@ -44,7 +45,7 @@
     ./distrobox
     ./podman
     ./virt-manager
-    ];
+  ];
 
   environment.systemPackages = with pkgs; [
     clang
@@ -59,7 +60,7 @@
     # XDG_STATE_HOME  = "$HOME/.local/state";
 
     # XDG_BIN_HOME    = "$HOME/.local/bin";
-    # PATH = [ 
+    # PATH = [
     #   "${XDG_BIN_HOME}"
     # ];
   };

@@ -1,4 +1,5 @@
-{ pkgs, all_username, ... }: {
+{ pkgs, all_username, ... }:
+{
   systemd.services.keyd = {
     description = "key remapping daemon";
     enable = true;

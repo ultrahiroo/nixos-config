@@ -1,7 +1,8 @@
 { ... }:
 let
-  platform = "intel";  # intel or amd
-in {
+  platform = "intel"; # intel or amd
+in
+{
   boot = {
     kernelModules = [
       "kvm-${platform}"

@@ -1,5 +1,5 @@
 let
-  pkgs = import <nixpkgs> {};
+  pkgs = import <nixpkgs> { };
   set_1 = {
     nested_set = {
       list_value = [ "a" ];
@@ -21,14 +21,22 @@ let
       value = "same";
     };
   };
-  x = [ set_1 set_2 set_3 ];
+  x = [
+    set_1
+    set_2
+    set_3
+  ];
 
   func_out = (import ./flake.nix).outputs;
-  out = func_out {};
+  out = func_out { };
   mergeList = out.lib.mergeList;
   expected = {
     nested_set = {
-      list_value = [ "a" "b" "b" ];
+      list_value = [
+        "a"
+        "b"
+        "b"
+      ];
       unique_value = "3";
       value = "same";
     };
@@ -40,7 +48,4 @@ let
     };
   };
 in
-  if results == [ ] then
-    "all tests passed"
-  else
-    "failed test: ${builtins.toJSON results}"
+if results == [ ] then "all tests passed" else "failed test: ${builtins.toJSON results}"

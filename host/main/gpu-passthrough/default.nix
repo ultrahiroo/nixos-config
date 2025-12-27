@@ -5,7 +5,8 @@ let
     "10de:1aeb"
   ];
   vfio_id_string = "${builtins.concatStringsSep "," vfio_id}";
-in {
+in
+{
   # boot = {
   #   kernelParams = [
   #     "vfio-pci.ids=${vfio_id_string}"

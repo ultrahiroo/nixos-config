@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   imports = [
     ../../arch/x86_64-linux
     ./hardware-configuration.nix
@@ -19,7 +20,7 @@
   swapDevices = [
     {
       device = "/var/lib/swapfile";
-      size = 16 * 1024;  # MiB
+      size = 16 * 1024; # MiB
     }
   ];
 }

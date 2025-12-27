@@ -1,4 +1,10 @@
-{ inputs, lib, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
+{
   imports = [
     inputs.nixos-hardware.nixosModules.raspberry-pi-4
     ../../arch/aarch64-linux
@@ -9,8 +15,7 @@
 
   nixpkgs.overlays = [
     (final: super: {
-      makeModulesClosure = x:
-        super.makeModulesClosure (x // { allowMissing = true; });
+      makeModulesClosure = x: super.makeModulesClosure (x // { allowMissing = true; });
     })
   ];
 
@@ -60,7 +65,7 @@
   swapDevices = [
     {
       device = "/var/lib/swapfile";
-      size = 4 * 1024;  # MiB
+      size = 4 * 1024; # MiB
     }
   ];
 }

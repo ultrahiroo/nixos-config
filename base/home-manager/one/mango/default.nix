@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... }: let
+{ inputs, pkgs, ... }:
+let
   x = [
     {
       number = "1";
@@ -88,8 +89,7 @@
       number = "9";
       alias_key = "M";
       name = "Empty";
-      command = ''
-      '';
+      command = '''';
       appid = "(?!.*)";
       title = ".*";
     }
@@ -102,19 +102,19 @@
   waybar_config = builtins.fromJSON (builtins.readFile "${./waybar/config}");
   additional_waybar_config."dwl/tags"."tag-labels" = waybar_label;
   mergeList = inputs.merge-list.lib.mergeList;
-  new_waybar_config = mergeList [waybar_config additional_waybar_config];
+  new_waybar_config = mergeList [
+    waybar_config
+    additional_waybar_config
+  ];
   new_waybar_config_file = pkgs.writeText "new_waybar_config" (builtins.toJSON new_waybar_config);
-in {
+in
+{
   imports = [
     inputs.mango.hmModules.mango
   ];
   wayland.windowManager.mango = {
     enable = true;
-    settings = (
-      (builtins.readFile ./mango/config.conf)
-      + "\n"
-      + mango_spawn_config
-    );
+    settings = ((builtins.readFile ./mango/config.conf) + "\n" + mango_spawn_config);
     autostart_sh = (builtins.readFile ./mango/autostart.sh) + ''
       swaybg -i ${../wallpaper/wallpaper.jpg} &
       waybar -c ${new_waybar_config_file} -s ${./waybar/style.css} &

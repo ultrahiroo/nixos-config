@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   home.file = {
     ".yashrc".source = ./yashrc;
     ".config/yash/initialization/common".source = ./yash/initialization/common;

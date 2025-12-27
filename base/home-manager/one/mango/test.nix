@@ -64,7 +64,12 @@ let
     };
     test_2 = {
       expr = lib.get_waybar_label x;
-      expected = ["1 L BTOP" "2 N FireFox" "3 U Alacritty" "9 [ Empty"];
+      expected = [
+        "1 L BTOP"
+        "2 N FireFox"
+        "3 U Alacritty"
+        "9 [ Empty"
+      ];
     };
   };
 in

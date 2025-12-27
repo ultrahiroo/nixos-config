@@ -1,4 +1,5 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, ... }:
+{
   imports = [
     inputs.vgpu4nixos.nixosModules.host
   ];
@@ -12,7 +13,7 @@
   # ];
   hardware.nvidia.vgpu.patcher.profileOverrides = {
     "331" = {
-      vramAllocation = 2048;  # MiB
+      vramAllocation = 2048; # MiB
       heads = 1;
       enableCuda = true;
       display.width = 1920;
@@ -23,7 +24,7 @@
       };
     };
     "334" = {
-      vramAllocation = 2048;  # MiB
+      vramAllocation = 2048; # MiB
       heads = 1;
       enableCuda = true;
       display.width = 1920;

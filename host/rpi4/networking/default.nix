@@ -1,4 +1,5 @@
-{ ... }: {
+{ ... }:
+{
   networking = {
     hostName = "rpi4";
     interfaces.eth0.ipv4.addresses = [

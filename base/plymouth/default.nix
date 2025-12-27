@@ -1,6 +1,8 @@
-{ pkgs, ... }: let
+{ pkgs, ... }:
+let
   delay = "4";
-in {
+in
+{
   boot = {
     plymouth = {
       enable = true;

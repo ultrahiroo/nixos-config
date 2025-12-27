@@ -1,4 +1,5 @@
-{ nixos_version, ... }: {
+{ nixos_version, ... }:
+{
   programs = {
     home-manager = {
       enable = true;

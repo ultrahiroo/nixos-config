@@ -1,4 +1,5 @@
-{ all_username, ... }: {
+{ all_username, ... }:
+{
   programs.ydotool = {
     enable = true;
     group = "ydotool";
