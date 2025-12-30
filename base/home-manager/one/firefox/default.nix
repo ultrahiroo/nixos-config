@@ -57,6 +57,8 @@
             "browser.toolbars.bookmarks.visibility" = "never";
             "browser.translations.mostRecentTargetLanguages" = "ja";
             "browser.translations.automaticallyPopup" = false;
+            "browser.urlbar.placeholderName" = "DuckDuckGo";
+            "browser.urlbar.placeholderName.private" = "DuckDuckGo";
             "browser.urlbar.quicksuggest.enabled" = true;
             "browser.urlbar.suggest.quicksuggest.nonsponsored" = true;
             # "browser.urlbar.showSearchSuggestionsFirst" = false;
