@@ -102,6 +102,10 @@
       # lutris
       mangohud
       # rare
+
+      ardour
+      reaper
+      rosegarden
     ];
   };
 }

@@ -57,14 +57,19 @@
             "browser.toolbars.bookmarks.visibility" = "never";
             "browser.translations.mostRecentTargetLanguages" = "ja";
             "browser.translations.automaticallyPopup" = false;
+
             "browser.urlbar.placeholderName" = "DuckDuckGo";
             "browser.urlbar.placeholderName.private" = "DuckDuckGo";
             "browser.urlbar.quicksuggest.enabled" = true;
+            "browser.urlbar.showSearchSuggestionsFirst" = false;
+            "browser.urlbar.suggest.quicksuggest.all" = true;
             "browser.urlbar.suggest.quicksuggest.nonsponsored" = true;
-            # "browser.urlbar.showSearchSuggestionsFirst" = false;
+            "browser.urlbar.suggest.quicksuggest.sponsored" = false;
             "browser.urlbar.suggest.recentsearches" = true;
             "browser.urlbar.suggest.topsites" = false;
             "browser.urlbar.suggest.trending" = false;
+            "browser.urlbar.update2.engineAliasRefresh" = true;
+
             "intl.locale.requested" = "ja,en-US";
             "sidebar.verticalTabs" = true;
             "sidebar.visibility" = "always-show";
@@ -134,7 +139,7 @@
           search = {
             default = "duckduckgo";
             engines = {
-              "Nix Packages" = {
+              "Nix Package Search" = {
                 definedAliases = [ "@np" ];
                 icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
                 urls = [
@@ -149,12 +154,27 @@
                   }
                 ];
               };
-              "Nix Options" = {
+              "Nix Option Search" = {
                 definedAliases = [ "@no" ];
                 icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
                 urls = [
                   {
                     template = "https://search.nixos.org/options";
+                    params = [
+                      {
+                        name = "query";
+                        value = "{searchTerms}";
+                      }
+                    ];
+                  }
+                ];
+              };
+              "Nix Home Manager Option Search" = {
+                definedAliases = [ "@hm" ];
+                icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+                urls = [
+                  {
+                    template = "https://home-manager-options.extranix.com/";
                     params = [
                       {
                         name = "query";
