@@ -169,7 +169,9 @@ alias nix-repl-flake='nix repl --expr "builtins.getFlake \"$PWD\""'
 
 alias nvtop='LINES= nvtop'
 alias gparted='sudo -EH gparted'
-alias kde-partition-manager='sudo partitionmanager'
+alias gnome-disks='sudo -EH gnome-disks'
+alias kdiskmark='sudo -EH kdiskmark'
+alias partition-manager='sudo -EH partitionmanager'
 alias compsize='sudo compsize'
 alias reboot='systemctl reboot --no-wall'
 

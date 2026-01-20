@@ -81,7 +81,6 @@
       kdePackages.filelight
       kdePackages.kdeconnect-kde
       kdePackages.kdenlive
-      kdiskmark
       python3
       python3Packages.pip
       python3Packages.virtualenv
