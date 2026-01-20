@@ -45,13 +45,14 @@
     ./distrobox
     ./podman
     ./virt-manager
+
+    ./partition-manager
   ];
 
   environment.systemPackages = with pkgs; [
     clang
     gcc
     gparted
-    kdePackages.partitionmanager
   ];
   environment.sessionVariables = rec {
     # XDG_CACHE_HOME  = "$HOME/.cache";

@@ -137,7 +137,7 @@
             };
           };
           search = {
-            default = "duckduckgo";
+            default = "ddg";
             engines = {
               "Nix Package Search" = {
                 definedAliases = [ "@np" ];
