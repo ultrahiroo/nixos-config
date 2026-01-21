@@ -1,11 +1,8 @@
-{ inputs, pkgs, ... }:
-let
-  system = pkgs.stdenv.hostPlatform.system;
-in
+{ pkgs, ... }:
 {
   home = {
-    packages = [
-      inputs.quickshell.packages.${system}.default
+    packages = with pkgs; [
+      quickshell
     ];
   };
 }
