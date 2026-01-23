@@ -48,6 +48,7 @@
 
     ./gnome-disks
     ./partition-manager
+    ./hd-idle
   ];
 
   environment.systemPackages = with pkgs; [

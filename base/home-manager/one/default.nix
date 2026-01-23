@@ -73,6 +73,7 @@
       gimp3
       gnumake
       gptfdisk
+      hdparm
       meson
       neofetch
       nixfmt-tree
