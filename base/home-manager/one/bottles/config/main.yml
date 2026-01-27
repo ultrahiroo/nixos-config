@@ -1,13 +1,35 @@
 Arch: win64
 CompatData: ''
-Creation_Date: '2025-06-21 09:14:55.696285'
-Custom_Path: false
+Creation_Date: '2026-01-27 18:41:25.402640'
+Custom_Path: true
 DLL_Overrides:
-    icu.dll: d
-DXVK: dxvk-2.6.2
+    icu.dll: n,b
+DXVK: dxvk-2.7.1-9-d6c19f9
 Environment: Custom
 Environment_Variables: {}
-External_Programs: {}
+External_Programs:
+    27620ba1-3382-4402-9514-af11b09303c4:
+        executable: launcher.exe
+        folder: /home/one/mount2/HoYoPlay
+        id: 27620ba1-3382-4402-9514-af11b09303c4
+        name: launcher
+        path: /home/one/mount2/HoYoPlay/launcher.exe
+Inherited_Environment_Variables:
+- DBUS_SESSION_BUS_ADDRESS
+- DISPLAY
+- HOME
+- LANG
+- LC_ALL
+- LC_CTYPE
+- LC_MESSAGES
+- PATH
+- PULSE_SERVER
+- TERM
+- TZ
+- USER
+- WAYLAND_DISPLAY
+- XAUTHORITY
+- XDG_RUNTIME_DIR
 Installed_Dependencies:
 - d3dx9
 - msls31
@@ -21,8 +43,9 @@ Installed_Dependencies:
 - cjkfonts
 Language: sys
 LatencyFleX: latencyflex-v0.1.1-2-3bc9636
+Limit_System_Environment: true
 NVAPI: dxvk-nvapi-v0.9.0
-Name: Main
+Name: main2
 Parameters:
     custom_dpi: 96
     decorated: true
@@ -68,19 +91,23 @@ Parameters:
     vkd3d: true
     vmtouch: false
     vmtouch_cache_cwd: false
-Path: Main__162
-Runner: ge-proton10-4
+    wayland: false
+    winebridge: false
+Path: /home/one/Bottles/main2
+Registry_Rules: []
+Runner: ge-proton10-28
 RunnerPath: ''
 Sandbox:
     share_net: false
     share_sound: false
 State: 0
 Uninstallers: {}
-Update_Date: '2025-06-21 09:23:47.986780'
-VKD3D: vkd3d-proton-2.14.1-10-e8ab710
+Update_Date: '2026-01-27 21:07:42.919998'
+VKD3D: vkd3d-proton-3.0
 Versioning: false
 Versioning_Exclusion_Patterns: []
 Windows: win10
+Winebridge: false
 WorkingDir: ''
 data: {}
 run_in_terminal: false
