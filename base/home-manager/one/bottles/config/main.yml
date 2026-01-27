@@ -3,17 +3,68 @@ CompatData: ''
 Creation_Date: '2026-01-27 18:41:25.402640'
 Custom_Path: true
 DLL_Overrides:
-    icu.dll: n,b
+    icu.dll: n
 DXVK: dxvk-2.7.1-9-d6c19f9
 Environment: Custom
 Environment_Variables: {}
 External_Programs:
+    206b5acf-42fb-4127-bd4a-49c58195b34c:
+        executable: launcher.exe
+        folder: /home/one/mount2/Wuthering Waves
+        id: 206b5acf-42fb-4127-bd4a-49c58195b34c
+        name: Wuthering Waves
+        path: /home/one/mount2/Wuthering Waves/launcher.exe
     27620ba1-3382-4402-9514-af11b09303c4:
+        arguments: null
+        dxvk: null
+        dxvk_nvapi: null
         executable: launcher.exe
         folder: /home/one/mount2/HoYoPlay
+        fsr: null
+        gamescope: null
+        icon: com.usebottles.bottles-program
         id: 27620ba1-3382-4402-9514-af11b09303c4
-        name: launcher
+        name: HoYoPlay
         path: /home/one/mount2/HoYoPlay/launcher.exe
+        post_script: null
+        post_script_args: null
+        pre_script: null
+        pre_script_args: null
+        pulseaudio_latency: null
+        removed: null
+        virtual_desktop: null
+        vkd3d: null
+        winebridge: null
+    4fd6cdd3-c6d5-442a-b925-c64ec3b791b7:
+        executable: VSeeFace.exe
+        folder: /home/one/mount2/VSeeFace/VSeeFace
+        id: 4fd6cdd3-c6d5-442a-b925-c64ec3b791b7
+        name: VSeeFace
+        path: /home/one/mount2/VSeeFace/VSeeFace/VSeeFace.exe
+    55764eee-acc5-4833-97e6-d09170bf5155:
+        executable: GamePlay.exe
+        folder: /home/one/mount2/XZYJPGAME
+        id: 55764eee-acc5-4833-97e6-d09170bf5155
+        name: Starward
+        path: /home/one/mount2/XZYJPGAME/GamePlay.exe
+    922a1903-4f86-4ca7-9d2c-09b6bbd0191b:
+        executable: EMLauncher.exe
+        folder: /home/one/mount2/Duet Night Abyss
+        id: 922a1903-4f86-4ca7-9d2c-09b6bbd0191b
+        name: Duet Night Abyss
+        path: /home/one/mount2/Duet Night Abyss/EMLauncher.exe
+    e87414d6-d7ee-4e95-a693-5c9561fc5f90:
+        executable: majsoul_JP_Gamelauncher.exe
+        folder: /home/one/mount2/YostarGames/MajSoul_JP_Gamelauncher
+        id: e87414d6-d7ee-4e95-a693-5c9561fc5f90
+        name: Mahjong Soul
+        path: /home/one/mount2/YostarGames/MajSoul_JP_Gamelauncher/majsoul_JP_Gamelauncher.exe
+    ff2086d2-ce1f-4d73-a097-bc5d9001f5a2:
+        executable: Launcher.exe
+        folder: /home/one/mount2/COVER corp/Holoearth Launcher
+        id: ff2086d2-ce1f-4d73-a097-bc5d9001f5a2
+        name: Holoearth
+        path: /home/one/mount2/COVER corp/Holoearth Launcher/Launcher.exe
 Inherited_Environment_Variables:
 - DBUS_SESSION_BUS_ADDRESS
 - DISPLAY
@@ -102,7 +153,7 @@ Sandbox:
     share_sound: false
 State: 0
 Uninstallers: {}
-Update_Date: '2026-01-27 21:07:42.919998'
+Update_Date: '2026-01-27 22:26:01.379844'
 VKD3D: vkd3d-proton-3.0
 Versioning: false
 Versioning_Exclusion_Patterns: []
