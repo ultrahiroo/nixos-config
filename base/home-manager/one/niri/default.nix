@@ -13,6 +13,7 @@
     xdg-desktop-portal-gtk
     xdg-desktop-portal-gnome
     gnome-keyring
+    quickshell
     xwayland-satellite
     waybar
     # (pkgs.writeScriptBin "focus-window" (builtins.readFile ./bin/focus-window.fish))

@@ -27,7 +27,6 @@
     ./neovim
     ./niri
     ./plasma
-    ./quickshell
     ./rio
     ./terminal
     ./vscode

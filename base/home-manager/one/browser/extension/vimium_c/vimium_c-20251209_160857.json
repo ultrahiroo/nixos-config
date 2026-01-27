@@ -1,11 +1,11 @@
 {
 	"name": "Vimium C",
-	"@time": "2025/5/22 6:06:30",
-	"time": 1747861590238,
+	"@time": "2025/12/9 16:08:57",
+	"time": 1765264137199,
 	"environment": {
 		"extension": "2.12.3",
 		"platform": "linux",
-		"firefox": 138
+		"firefox": 145
 	},
 	"allBrowserUrls": true,
 	"exclusionRules": [],
@@ -17,6 +17,7 @@
 		"map u zoomOut",
 		"",
 		"unmap <f1>",
+		"unmap <c-e>",
 		""
 	],
 	"linkHintCharacters": "arstd",
