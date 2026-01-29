@@ -102,6 +102,7 @@
       # lutris
       mangohud
       # rare
+      protonplus
 
       ardour
       reaper
