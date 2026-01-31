@@ -26,5 +26,3 @@ wl-paste --type text --watch cliphist store &
 fcitx5 &
 
 waybar -c ~/.config/niri/waybar/config -s ~/.config/niri/waybar/style.css &
-
-swaybg -i ~/.config/niri/wallpaper/wallpaper.jpg &

@@ -13,7 +13,6 @@
       gnome-keyring
       mako
       quickshell
-      swaybg
       waybar
       wl-clipboard
       wl-clip-persist

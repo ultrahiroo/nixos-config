@@ -45,6 +45,7 @@ layout {
     gaps 0
     center-focused-column "always"
     empty-workspace-above-first
+    background-color "#112233"
 
     preset-column-widths {
         proportion 0.33333
@@ -85,6 +86,7 @@ overview {
     backdrop-color "#262626"
 
     workspace-shadow {
+        on
         softness 40
         spread 10
         offset x=0 y=10
