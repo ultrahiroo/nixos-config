@@ -43,14 +43,15 @@ gestures {
 
 layout {
     gaps 0
-    center-focused-column "always"
+    center-focused-column "never"
     empty-workspace-above-first
     background-color "#112233"
 
     preset-column-widths {
-        proportion 0.33333
-        proportion 0.5
         proportion 0.66667
+        proportion 0.5
+        proportion 0.33333
+        proportion 0.25
     }
 
     preset-window-heights {
@@ -73,6 +74,7 @@ layout {
     }
 }
 
+// misc
 spawn-sh-at-startup "sh ~/.config/niri/startup.sh"
 prefer-no-csd
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
@@ -97,17 +99,13 @@ overview {
 hotkey-overlay {
     skip-at-startup
 }
+// end of misc
 
 animations {
 }
 
 window-rule {
     open-floating false
-}
-
-window-rule {
-    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
-    open-floating true
 }
 
 binds {

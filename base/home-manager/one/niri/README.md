@@ -1,3 +1,9 @@
+# Snippet
+## Reload
+```sh
+niri msg action load-config-file
+```
+
 # Reference
 - https://github.com/YaLTeR/niri/blob/main/resources/default-config.kdl
 ## Documentation
