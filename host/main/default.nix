@@ -9,6 +9,7 @@
     ./networking
     ./iommu
     ./nvidia
+    ./home-manager
 
     # ./gpu-passthrough
     # ./vgpu

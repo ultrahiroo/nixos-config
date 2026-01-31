@@ -1,0 +1,6 @@
+{ ... }:
+{
+  imports = [
+    ./rss2email
+  ];
+}
