@@ -28,6 +28,7 @@
     ./niri
     ./plasma
     ./rio
+    ./rss2email
     ./terminal
     ./vscode
     ./warp
