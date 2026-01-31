@@ -21,7 +21,7 @@
     ./kitty
     ./konsole
     ./linux-pam
-    ./mango
+    ./mangowc
     ./micro
     ./mydns
     ./neovim
