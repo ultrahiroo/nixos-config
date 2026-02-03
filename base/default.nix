@@ -40,7 +40,6 @@
     ./plasma
     ./niri
     ./mango
-    ./i3
 
     ./distrobox
     ./podman
