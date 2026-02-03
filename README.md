@@ -17,7 +17,7 @@ systemctl list-timers
 sudo nixos-rebuild-ng switch --flake .#main --option sandbox true
 ```
 ```sh
-sudo nixos-rebuild switch --flake .#rpi4-btrfs-disko
+sudo nixos-rebuild switch --flake .#rpi4-btrfs
 ```
 
 ## If Error When Switch
@@ -64,7 +64,7 @@ nix build .#nixosConfigurations.rpi4.config.formats.sd-aarch64-btrfs
 ```
 ### disko
 ```sh
-nix build .#nixosConfigurations.rpi4-disko-btrfs.config.system.build.diskoImagesScript
+nix build .#nixosConfigurations.rpi4-btrfs-disko.config.system.build.diskoImagesScript
 sudo ./result
 ```
 ```sh

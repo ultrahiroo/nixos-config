@@ -92,7 +92,7 @@
             ];
           };
 
-          rpi4 = inputs.nixpkgs.lib.nixosSystem {
+          rpi4-btrfs = inputs.nixpkgs.lib.nixosSystem {
             inherit specialArgs;
             system = "aarch64-linux";
             modules = [
