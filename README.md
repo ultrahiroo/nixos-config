@@ -67,8 +67,9 @@ nix build .#nixosConfigurations.rpi4.config.formats.sd-aarch64-btrfs
 nix build .#nixosConfigurations.rpi4-btrfs-disko.config.system.build.diskoImagesScript
 ./result
 ```
+or
 ```sh
-sudo disko-install --flake .#rpi4-btrfs-disko --disk main /dev/sde
+sudo disko-install --flake .#rpi4-btrfs-disko --disk main /dev/sdx
 ```
 
 ## Add FlatHub
