@@ -112,15 +112,15 @@
             ];
           };
 
-          # rpi4-disko-bcachefs = inputs.nixpkgs.lib.nixosSystem {
-          #   inherit specialArgs;
-          #   system = "aarch64-linux";
-          #   modules = [
-          #     ./base
-          #     ./host/rpi4
-          #     ./disko/rpi4/bcachefs
-          #   ];
-          # };
+          rpi4-disko-bcachefs = inputs.nixpkgs.lib.nixosSystem {
+            inherit specialArgs;
+            system = "aarch64-linux";
+            modules = [
+              ./base
+              ./host/rpi4
+              ./disko/rpi4/bcachefs
+            ];
+          };
 
           rpi4-disko-xfs = inputs.nixpkgs.lib.nixosSystem {
             inherit specialArgs;

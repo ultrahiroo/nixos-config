@@ -21,7 +21,7 @@ in
     ../../common
   ];
   boot.postBootCommands = ''
-    if [ -f /{first_boot_filename} ]; then
+    if [ -f /${first_boot_filename} ]; then
       set -euxo pipefail
 
       rootPart=$(${pkgs.util-linux}/bin/findmnt -n -o SOURCE /)
@@ -32,13 +32,13 @@ in
       ${pkgs.parted}/bin/partprobe
       ${pkgs.bcachefs-tools}/bin/bcachefs device resize $rootPart
 
-      rm -f /{first_boot_filename}
+      rm -f /${first_boot_filename}
     fi
   '';
   disko = {
     devices = {
       disk = {
-        main-bcachefs = {
+        main = {
           imageSize = "20G";
           type = "disk";
           device = "/dev/mmcblk0";
@@ -77,9 +77,6 @@ in
                 content = {
                   type = "filesystem";
                   format = "bcachefs";
-                  # extraArgs = [
-                  #   "--compression=zstd"
-                  # ];
                   mountpoint = "/";
                   mountOptions = [
                     "compression=zstd"
