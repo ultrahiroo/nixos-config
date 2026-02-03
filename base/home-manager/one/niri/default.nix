@@ -12,6 +12,7 @@
     packages = with pkgs; [
       gnome-keyring
       mako
+      nwg-drawer
       quickshell
       waybar
       wl-clipboard

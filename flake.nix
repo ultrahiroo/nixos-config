@@ -24,17 +24,6 @@
       url = "github:raspberrypi/firmware?ref=1.20250430";
       flake = false;
     };
-    hyprland = {
-      url = "github:hyprwm/Hyprland?submodules=1&ref=v0.52.0";
-    };
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins?ref=v0.52.0";
-      inputs.hyprland.follows = "hyprland";
-    };
-    hy3 = {
-      url = "github:outfoxxed/hy3?ref=hl0.52.0";
-      inputs.hyprland.follows = "hyprland";
-    };
     catppuccin-bat = {
       url = "github:catppuccin/bat";
       flake = false;

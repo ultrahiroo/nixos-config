@@ -36,7 +36,6 @@
     ./caddy
     ./obs-studio
 
-    ./hyprland
     ./plasma
     ./niri
     ./mango

@@ -15,7 +15,6 @@
     ./gh
     ./ghostty
     ./git
-    ./hyprland
     ./kate
     ./kitty
     ./konsole

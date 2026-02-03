@@ -1,2 +1,0 @@
-#!/bin/sh
-ln -sfvn waybar ${HOME}/.config/waybar
