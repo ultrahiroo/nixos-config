@@ -1,69 +1,48 @@
-{ pkgs, ... }:
+{ ... }:
 {
   imports = [
-    ./audio
-    ./boot
-    ./font
-    ./keyboard
-    ./locale
-    ./networking
-    ./nix
-    ./printing
-    ./user
-
-    ./home-manager
-    ./nixos-generators
-
-    ./auto-upgrade
-    ./display_manager
-    ./plymouth
-    ./ydotool
-    ./nix-ld
-    ./v4l2loopback
-    ./mumble
-    ./overlay
-
-    ./appimage
-    ./flatpak
-
     ./android
-
+    ./appimage
+    ./audio
+    ./auto-upgrade
+    ./boot
+    ./caddy
+    ./display_manager
+    ./distrobox
     ./fcitx5
+    ./flatpak
+    ./font
+    ./gnome-disks
     ./gnome-keyring
     ./gnupg
-    ./keyd
-    ./openssh
-    ./caddy
-    ./obs-studio
-
-    ./plasma
-    ./niri
-    ./mango
-
-    ./distrobox
-    ./podman
-    ./virt-manager
-
-    ./gnome-disks
-    ./partition-manager
+    ./gparted
     ./hd-idle
+    ./home-manager
+    ./kdiskmark
+    ./keyboard
+    ./keyd
+    ./locale
+    ./mango
+    ./mumble
+    ./networking
+    ./niri
+    ./nix
+    ./nix-ld
+    ./nixos-generators
+    ./obs-studio
+    ./openssh
+    ./overlay
+    ./partition-manager
+    ./plasma
+    ./plymouth
+    ./podman
+    # ./power-profiles-daemon
+    ./printing
+    # ./tmux
+    ./user
+    ./v4l2loopback
+    ./virt-manager
+    # ./wireguard
+    ./ydotool
   ];
-
-  environment.systemPackages = with pkgs; [
-    clang
-    gcc
-    gparted
-    kdiskmark
-  ];
-  environment.sessionVariables = rec {
-    # XDG_CACHE_HOME  = "$HOME/.cache";
-    # XDG_CONFIG_HOME = "$HOME/.config";
-    # XDG_DATA_HOME   = "$HOME/.local/share";
-    # XDG_STATE_HOME  = "$HOME/.local/state";
-
-    # XDG_BIN_HOME    = "$HOME/.local/bin";
-    # PATH = [
-    #   "${XDG_BIN_HOME}"
-    # ];
-  };
 }
