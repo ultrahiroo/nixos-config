@@ -84,7 +84,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 - disko
   - [x] btrfs
   - [x] xfs
-  - [ ] bcachefs
+  - [x] bcachefs
 
 # TODO
 1. nix build --option sandbox true
@@ -93,6 +93,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 1. fix rpi4-btrfs: image generating is too slow
 1. submodule is too slow
 1. git server
+1. yash session variable
 
 # Reference
 ## Opened issue
