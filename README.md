@@ -17,7 +17,7 @@ systemctl list-timers
 sudo nixos-rebuild-ng switch --flake .#main --option sandbox true
 ```
 ```sh
-sudo nixos-rebuild switch --flake .#rpi4-btrfs
+sudo nixos-rebuild switch --flake .#rpi4-btrfs --option sandbox true
 ```
 
 ## If Error When Switch

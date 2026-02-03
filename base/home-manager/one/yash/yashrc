@@ -15,7 +15,7 @@ fi
 # Function
 . ${HOME}/.config/yash/function.sh
 
-. ${HOME}/.config/yash/home-manager.sh
+# . ${HOME}/.config/yash/home-manager.sh
 
 # Screen
 sleep 0.5
