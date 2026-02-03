@@ -68,7 +68,7 @@ nix build .#nixosConfigurations.rpi4-btrfs-disko.config.system.build.diskoImages
 ./result
 ```
 ```sh
-sudo disko-install --flake .#rpi4-disko-btrfs --disk main /dev/sde
+sudo disko-install --flake .#rpi4-btrfs-disko --disk main /dev/sde
 ```
 
 ## Add FlatHub
@@ -78,12 +78,12 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 
 # Feature
 - nixos-generators
-  - [ ] btrfs
   - [x] ext4
+  - [ ] btrfs
 - disko
   - [x] btrfs
-  - [ ] bcachefs
   - [x] xfs
+  - [ ] bcachefs
 
 # TODO
 1. nix build --option sandbox true
