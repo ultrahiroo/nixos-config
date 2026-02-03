@@ -102,7 +102,7 @@
             ];
           };
 
-          rpi4-disko-btrfs = inputs.nixpkgs.lib.nixosSystem {
+          rpi4-btrfs-disko = inputs.nixpkgs.lib.nixosSystem {
             inherit specialArgs;
             system = "aarch64-linux";
             modules = [
@@ -112,7 +112,7 @@
             ];
           };
 
-          rpi4-disko-bcachefs = inputs.nixpkgs.lib.nixosSystem {
+          rpi4-bcachefs-disko = inputs.nixpkgs.lib.nixosSystem {
             inherit specialArgs;
             system = "aarch64-linux";
             modules = [
@@ -122,7 +122,7 @@
             ];
           };
 
-          rpi4-disko-xfs = inputs.nixpkgs.lib.nixosSystem {
+          rpi4-xfs-disko = inputs.nixpkgs.lib.nixosSystem {
             inherit specialArgs;
             system = "aarch64-linux";
             modules = [
