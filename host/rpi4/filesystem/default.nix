@@ -6,6 +6,7 @@
       fsType = "btrfs";
       options = [
         "subvol=@"
+        "compress-force=zstd"
       ];
     };
   };

@@ -1,27 +1,20 @@
 { ... }:
 {
   imports = [
-    ../../arch/x86_64-linux
     ./hardware-configuration.nix
+
+    ../../arch/x86_64-linux
+    ./binfmt
     ./boot
-    ./filesystem
     ./btrfs
+    ./filesystem
+    # ./gpu-passthrough
     ./networking
     ./iommu
     ./nvidia
     ./home-manager
-
-    # ./gpu-passthrough
+    ./obs-studio
+    ./swap
     # ./vgpu
-  ];
-  boot.binfmt.emulatedSystems = [
-    "aarch64-linux"
-    "x86_64-windows"
-  ];
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 16 * 1024; # MiB
-    }
   ];
 }

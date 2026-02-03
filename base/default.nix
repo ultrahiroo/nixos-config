@@ -29,7 +29,6 @@
     ./nix
     ./nix-ld
     ./nixos-generators
-    ./obs-studio
     ./openssh
     ./overlay
     ./partition-manager
