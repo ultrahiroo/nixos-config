@@ -24,12 +24,12 @@ in
     if [ -f /${first_boot_filename} ]; then
       set -euxo pipefail
 
-      rootPart=$(${pkgs.util-linux}/bin/findmnt -n -o SOURCE /)
+      rootPart=$(${pkgs.util-linux}/bin/findmnt -nv -o SOURCE /)
       bootDevice=$(${pkgs.util-linux}/bin/lsblk -npo PKNAME $rootPart)
       partNum=$(${pkgs.util-linux}/bin/lsblk -npo MAJ:MIN $rootPart | ${pkgs.gawk}/bin/awk -F: '{print $2}')
 
       echo ",+," | ${pkgs.util-linux}/bin/sfdisk -N$partNum --no-reread $bootDevice
-      ${pkgs.parted}/bin/partprobe
+      ${pkgs.parted}/bin/partprobe $bootDevice
       ${pkgs.xfsprogs}/bin/xfs_growfs /
 
       rm -f /${first_boot_filename}

@@ -26,6 +26,7 @@
     ./niri
     ./plasma
     ./rio
+    ./ssh
     ./terminal
     ./vscode
     ./warp
