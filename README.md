@@ -131,3 +131,8 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 - https://journix.dev/posts/gaming-on-nixos/
 - https://discourse.nixos.org/t/nix-2-27-0-released/62003
 - https://discourse.nixos.org/t/use-repl-to-inspect-a-flake/28275/2
+
+# Commit message type
+- ADD
+- FIX
+- DEL
