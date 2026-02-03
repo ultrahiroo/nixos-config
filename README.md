@@ -65,7 +65,7 @@ nix build .#nixosConfigurations.rpi4.config.formats.sd-aarch64-btrfs
 ### disko
 ```sh
 nix build .#nixosConfigurations.rpi4-btrfs-disko.config.system.build.diskoImagesScript
-sudo ./result
+./result
 ```
 ```sh
 sudo disko-install --flake .#rpi4-disko-btrfs --disk main /dev/sde
