@@ -14,7 +14,7 @@ alias mkcd='
     }
     _mkcd'
 
-alias df='df --human-readable'
+alias df='df -h'
 alias df-btrfs='sudo btrfs filesystem usage -T'
 alias du='
     function _du(){
