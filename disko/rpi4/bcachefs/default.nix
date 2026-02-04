@@ -26,7 +26,7 @@ in
 
       rootPart=$(${pkgs.util-linux}/bin/findmnt -nv -o SOURCE /)
       bootDevice=$(${pkgs.util-linux}/bin/lsblk -npo PKNAME $rootPart)
-      partNum=$(${pkgs.util-linux}/bin/lsblk -npo MAJ:MIN $rootPart | ${pkgs.gawk}/bin/awk -F: '{print $2}')
+      partNum=$(${pkgs.util-linux}/bin/partx -rgo NR $rootPart)
 
       echo ",+," | ${pkgs.util-linux}/bin/sfdisk -N$partNum --no-reread $bootDevice
       ${pkgs.parted}/bin/partprobe $bootDevice

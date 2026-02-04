@@ -93,6 +93,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 1. fix rpi4-btrfs: image generating is too slow
 1. submodule is too slow
 1. git server
+1. rewrite rss2email module
 
 # Reference
 ## Opened issue
