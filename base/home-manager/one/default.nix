@@ -29,6 +29,7 @@
     ./plasma
     ./rio
     ./ssh
+    ./starship
     ./terminal
     ./vscode
     ./warp
