@@ -35,7 +35,7 @@
     ./plasma
     ./plymouth
     ./podman
-    # ./power-profiles-daemon
+    ./power-profiles-daemon
     ./printing
     # ./tmux
     ./user
