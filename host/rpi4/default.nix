@@ -11,6 +11,7 @@
     ./audio
     ./gpu
     ./networking
+    ./swap
   ];
 
   nixpkgs.overlays = [
@@ -60,12 +61,5 @@
   environment.systemPackages = with pkgs; [
     libraspberrypi
     raspberrypi-eeprom
-  ];
-
-  swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 4 * 1024; # MiB
-    }
   ];
 }

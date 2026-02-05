@@ -82,11 +82,9 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
   - [x] bcachefs
 
 # TODO
-1. nix build --option sandbox true
 1. cursor theme
 1. fix rpi4-btrfs: does not boot: btrfs subvolume is not defined at boot?
 1. fix rpi4-btrfs: image generating is too slow
-1. submodule is too slow
 1. git server
 1. rewrite rss2email module
 
