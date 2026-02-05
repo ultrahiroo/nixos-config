@@ -36,21 +36,42 @@ export GIT_CURRENT_BRANCH="$(git branch --show-current 2> /dev/null)"
 export FOSSIL_CURRENT_BRANCH="$(fossil branch current 2> /dev/null)"
 
 function prompt-sync() {
-    if [ $? -eq 0 ] ; then
-        c1='\fg.'  # Green
+    if [ $? -eq 0 ]; then
+        color_1='\fg.'  # Green
+        second_line="${color_1}❯ \fd."
     else
-        c1='\fr.'  # Red
+        color_1='\fr.'  # Red
+        second_line="${color_1}${$?} ❯ \fd."
     fi
-    #YASH_PS1="\fb.${USER} ❯ ${PWD} ❯ ${GIT_CURRENT_BRANCH}\n${c1}❯ \fd."
-    YASH_PS1="\fb.${PWD} ❯ ${GIT_CURRENT_BRANCH}\n${c1}❯ \fd."
-#    c2='\fg.'  # Green
-#    if test -n "$branch" ; then
-#        YASH_PS1R="${c2}❮ $branch ❮\fd."
-#    else
-#        #YASH_PS1R="${c2}❮\fd."
-#        YASH_PS1R=""
-#    fi
-}
-PROMPT_COMMAND=("$PROMPT_COMMAND" 'prompt-sync')
 
+    branch_info=''
+    if [ "${GIT_CURRENT_BRANCH}" != '' ]; then
+        branch_info=" ❯ ${GIT_CURRENT_BRANCH}"
+    elif [ "${FOSSIL_CURRENT_BRANCH}" != '' ]; then
+        branch_info=" ❯ ${FOSSIL_CURRENT_BRANCH}"
+    fi
+
+    host_info=''
+    if [ ${SSH_TTY:='NONE'} != 'NONE' ]; then
+        host_info="${USER}@${HOSTNAME} ❯ "
+    fi
+
+    directory_info="${PWD}"
+    first_line="\fb.${host_info}${directory_info}${branch_info}"
+
+    YASH_PS1="${first_line}\n${second_line}"
+    YASH_PS1R=''
+    YASH_PS2="${color_1}❯ \fd."
+    YASH_PS2R=''
+
+    # c2='\fg.'  # Green
+    # if test -n "$branch" ; then
+    #    YASH_PS1R="${c2}❮ $branch ❮\fd."
+    # else
+    #    #YASH_PS1R="${c2}❮\fd."
+    #    YASH_PS1R=""
+    # fi
+}
+
+PROMPT_COMMAND=("$PROMPT_COMMAND" 'prompt-sync')
 #PROMPT_COMMAND=("$PROMPT_COMMAND" 'starship prompt')
