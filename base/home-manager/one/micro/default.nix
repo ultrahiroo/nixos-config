@@ -1,8 +1,6 @@
 { pkgs, ... }:
 {
-  home = {
-    packages = with pkgs; [
-      micro
-    ];
-  };
+  home.packages = with pkgs; [
+    micro
+  ];
 }
