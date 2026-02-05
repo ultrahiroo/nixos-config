@@ -20,11 +20,6 @@ sudo nixos-rebuild-ng switch --flake .#main --option sandbox true
 sudo nixos-rebuild switch --flake .#rpi4-btrfs --option sandbox true
 ```
 
-## If Error When Switch
-```sh
-journalctl -xe --unit home-manager-one.service
-```
-
 ## Reload systemd
 ```sh
 sudo systemctl daemon-reload
