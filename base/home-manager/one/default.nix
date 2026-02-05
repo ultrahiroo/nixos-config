@@ -3,6 +3,7 @@
   imports = [
     ./alacritty
     ./antigravity
+    ./bash
     ./bat
     ./brave
     ./bottles
@@ -12,6 +13,7 @@
     ./editor
     ./firefox
     ./foot
+    ./fossil
     ./gh
     ./ghostty
     ./git
