@@ -6,6 +6,7 @@
   };
   home = {
     packages = with pkgs; [
+      starship
       yash
     ];
     file = {
