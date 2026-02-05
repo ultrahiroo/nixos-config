@@ -1,7 +1,6 @@
 {
   all_username,
   nixos_version,
-  pkgs,
   ...
 }:
 {
@@ -34,8 +33,4 @@
   };
 
   nixpkgs.config.allowUnfree = true;
-
-  environment.systemPackages = with pkgs; [
-    nixos-rebuild-ng
-  ];
 }
