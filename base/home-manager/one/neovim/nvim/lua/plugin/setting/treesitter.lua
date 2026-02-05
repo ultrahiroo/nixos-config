@@ -1,4 +1,5 @@
 local opts = {
+    install_dir = vim.fn.stdpath('cache') .. '/plugin',
     ensure_installed = {
         'c',
         'cpp',
@@ -31,7 +32,6 @@ return {
     'nvim-treesitter/nvim-treesitter',
     lazy = true,
     opts = opts,
-    main = 'nvim-treesitter.configs',
     build = ':TSUpdate',
     event = 'BufReadPre',
 }
