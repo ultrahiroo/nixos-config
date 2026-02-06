@@ -15,6 +15,7 @@
     grip-grab
 
     clang-tools
+    kdePackages.qtdeclarative # qmlls
     lua-language-server
     nil
     nixd

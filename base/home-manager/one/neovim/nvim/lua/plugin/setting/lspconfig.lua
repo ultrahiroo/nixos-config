@@ -50,6 +50,7 @@ local function config()
     pyright = {},
     ts_ls = {},
     -- pyrefly = {},
+    qmlls = {},
   }
 
   for server_name, _ in pairs(server) do
