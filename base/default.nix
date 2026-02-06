@@ -29,8 +29,8 @@
     ./nix
     ./nix-ld
     ./nixos-generators
+    ./nixpkgs
     ./openssh
-    ./overlay
     ./partition-manager
     ./plasma
     ./plymouth
