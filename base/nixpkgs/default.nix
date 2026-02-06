@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs,... }:
 {
   nixpkgs.overlays = [
     (
@@ -13,6 +13,7 @@
           terminal = inputs.terminal.packages.${system}.default;
         };
         firefox-addons = inputs.firefox-addons.packages.${system};
+        spotify-adblock = pkgs.callPackage ./spotify-adblock {};
       }
     )
   ];

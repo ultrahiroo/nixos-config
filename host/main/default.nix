@@ -14,6 +14,7 @@
     ./nvidia
     ./home-manager
     ./obs-studio
+    ./spotify
     ./swap
     # ./vgpu
   ];
