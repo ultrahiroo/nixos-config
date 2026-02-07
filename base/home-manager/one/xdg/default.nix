@@ -1,25 +1,28 @@
 { config, ... }:
+let
+  home = "${config.home.homeDirectory}";
+in
 {
   xdg = {
     enable = true;
-    cacheHome = "${config.home.homeDirectory}/.cache";
-    configHome = "${config.home.homeDirectory}/.config";
-    dataHome = "${config.home.homeDirectory}/.local/share";
-    stateHome = "${config.home.homeDirectory}/.local/state";
+    cacheHome = "${home}/.cache";
+    configHome = "${home}/.config";
+    dataHome = "${home}/.local/share";
+    stateHome = "${home}/.local/state";
     userDirs = {
       enable = true;
       createDirectories = true;
-      desktop = "${config.home.homeDirectory}/Desktop";
-      documents = "${config.home.homeDirectory}/Documents";
-      download = "${config.home.homeDirectory}/Downloads";
-      music = "${config.home.homeDirectory}/Music";
-      pictures = "${config.home.homeDirectory}/Pictures";
-      publicShare = "${config.home.homeDirectory}/Public";
-      templates = "${config.home.homeDirectory}/Templates";
-      videos = "${config.home.homeDirectory}/Videos";
+      desktop = "${home}/Desktop";
+      documents = "${home}/Documents";
+      download = "${home}/Downloads";
+      music = "${home}/Music";
+      pictures = "${home}/Pictures";
+      publicShare = "${home}/Public";
+      templates = "${home}/Templates";
+      videos = "${home}/Videos";
       extraConfig = {
-        XDG_MISC_DIR = "${config.home.homeDirectory}/Misc";
-        XDG_GAMES_DIR = "${config.home.homeDirectory}/Games";
+        XDG_MISC_DIR = "${home}/Misc";
+        XDG_GAMES_DIR = "${home}/Games";
       };
     };
   };
