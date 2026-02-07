@@ -23,7 +23,6 @@
     ./linux-pam
     ./mangowc
     ./micro
-    ./mydns
     ./neovim
     ./niri
     ./plasma

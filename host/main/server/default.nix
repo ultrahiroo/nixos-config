@@ -2,5 +2,7 @@
 {
   imports = [
     ./caddy
+    ./mydns
+    # ./wireproxy
   ];
 }
