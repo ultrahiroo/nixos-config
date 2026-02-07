@@ -9,11 +9,13 @@
     ./btrfs
     ./filesystem
     # ./gpu-passthrough
-    ./networking
-    ./iommu
-    ./nvidia
     ./home-manager
+    ./iommu
+    ./mumble
+    ./networking
+    ./nvidia
     ./obs-studio
+    ./server
     ./spotify
     ./swap
     # ./vgpu

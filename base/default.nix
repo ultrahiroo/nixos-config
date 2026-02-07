@@ -6,7 +6,6 @@
     ./audio
     ./auto-upgrade
     ./boot
-    ./caddy
     ./display_manager
     ./distrobox
     ./fcitx5
@@ -23,7 +22,6 @@
     ./keyd
     ./locale
     ./mango
-    ./mumble
     ./networking
     ./niri
     ./nix
