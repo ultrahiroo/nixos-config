@@ -39,7 +39,6 @@
     ./user
     ./v4l2loopback
     ./virt-manager
-    # ./wireguard
     ./ydotool
   ];
 }
