@@ -32,7 +32,6 @@
     ./terminal
     ./vscode
     ./warp
-    ./web_server
     ./wezterm
     ./xdg
     ./yash
