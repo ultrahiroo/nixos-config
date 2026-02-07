@@ -1,11 +1,10 @@
 { pkgs, ... }:
 {
-  home = {
-    packages = with pkgs; [
-      alacritty
-    ];
-    file = {
-      ".config/alacritty/alacritty.toml".source = ./alacritty/alacritty.toml;
-    };
+  xdg.configFile."alacritty" = {
+    source = ./alacritty;
+    force = true;
   };
+  home.packages = with pkgs; [
+    alacritty
+  ];
 }

@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    wireproxy
+  ];
   systemd.user.services = {
     wireproxy = {
       Unit = {

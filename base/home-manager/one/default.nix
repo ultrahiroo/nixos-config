@@ -58,35 +58,28 @@
       pavucontrol
       qjackctl
 
-      gnirehtet
+      gnirehtet # Reverse tethering over adb for Android
 
       appimage-run
       baobab
-      bat
       blender
       cargo
       curl
       custom.clean
-      # devenv
+      devenv
       disko
       eza
       fd
       file
       gimp3
-      gnumake
       gptfdisk
       hdparm
-      meson
       neofetch
       nixfmt-tree
-      nodejs
       kdePackages.discover
       kdePackages.filelight
       kdePackages.kdeconnect-kde
       kdePackages.kdenlive
-      python3
-      python3Packages.pip
-      python3Packages.virtualenv
       ripgrep
       rofi
       shotcut
@@ -96,10 +89,14 @@
       unzip
       vlc
       wget
-      wireproxy
-      wl-clipboard
       xclip
-      yash
+
+      # gnumake
+      # meson
+      nodejs
+      python3
+      python3Packages.pip
+      python3Packages.virtualenv
 
       # heroic
       # lutris
