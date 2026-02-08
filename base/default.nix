@@ -25,7 +25,6 @@
     ./networking
     ./niri
     ./nix
-    ./nix-ld
     ./nixos-generators
     ./nixpkgs
     ./openssh
