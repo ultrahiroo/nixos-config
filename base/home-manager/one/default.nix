@@ -3,6 +3,7 @@
   imports = [
     ./alacritty
     ./antigravity
+    ./audio
     ./bash
     ./bat
     ./brave
@@ -36,75 +37,69 @@
     ./xdg
     ./yash
   ];
+  home.packages = with pkgs; [
+    toybox
 
-  home = {
-    packages = with pkgs; [
-      toybox
+    bcachefs-tools
+    btrfs-progs
+    e2fsprogs
+    xfsprogs
 
-      bcachefs-tools
-      btrfs-progs
-      e2fsprogs
-      xfsprogs
+    compsize
 
-      compsize
+    cloc
+    scc
 
-      cloc
-      scc
+    droidcam
 
-      droidcam
-      qpwgraph
-      pavucontrol
-      qjackctl
+    gnirehtet # Reverse tethering over adb for Android
 
-      gnirehtet # Reverse tethering over adb for Android
+    appimage-run
+    baobab
+    blender
+    cargo
+    curl
+    custom.clean
+    devenv
+    disko
+    eza
+    fd
+    file
+    gimp3
+    gptfdisk
+    hdparm
+    neofetch
+    nixfmt-tree
+    kdePackages.discover
+    kdePackages.filelight
+    kdePackages.kdeconnect-kde
+    kdePackages.kdenlive
+    ripgrep
+    rofi
+    shotcut
+    tmux
+    unixtools.quota
+    unrar
+    unzip
+    vlc
+    wget
+    xclip
 
-      appimage-run
-      baobab
-      blender
-      cargo
-      curl
-      custom.clean
-      devenv
-      disko
-      eza
-      fd
-      file
-      gimp3
-      gptfdisk
-      hdparm
-      neofetch
-      nixfmt-tree
-      kdePackages.discover
-      kdePackages.filelight
-      kdePackages.kdeconnect-kde
-      kdePackages.kdenlive
-      ripgrep
-      rofi
-      shotcut
-      tmux
-      unixtools.quota
-      unrar
-      unzip
-      vlc
-      wget
-      xclip
+    # gnumake
+    # meson
+    nodejs
+    python3
+    python3Packages.pip
+    python3Packages.virtualenv
 
-      # gnumake
-      # meson
-      nodejs
-      python3
-      python3Packages.pip
-      python3Packages.virtualenv
+    # heroic
+    # lutris
+    mangohud
+    # rare
+    protonplus
 
-      # heroic
-      # lutris
-      mangohud
-      # rare
-      protonplus
-
-      ardour
-      reaper
-      rosegarden
-    ];
-  };
+    ardour
+    reaper
+    rosegarden
+  ];
 }

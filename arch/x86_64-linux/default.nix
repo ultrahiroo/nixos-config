@@ -12,7 +12,6 @@
     discord
     looking-glass-client
     protonup-qt
-    spotify
     unityhub
   ];
 }
