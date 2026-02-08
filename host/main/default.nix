@@ -17,7 +17,10 @@
     ./obs-studio
     ./server
     ./spotify
+    ./steam
     ./swap
     # ./vgpu
+    ./virtualbox
+    ./wine
   ];
 }
