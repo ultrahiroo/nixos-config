@@ -101,5 +101,8 @@
     ardour
     reaper
     rosegarden
+
+    seahorse
+    kdePackages.kleopatra
   ];
 }
