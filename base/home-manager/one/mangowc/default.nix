@@ -89,7 +89,7 @@ let
       number = "9";
       alias_key = "M";
       name = "Empty";
-      command = '''';
+      command = "";
       appid = "(?!.*)";
       title = ".*";
     }
