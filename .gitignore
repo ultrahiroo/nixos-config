@@ -5,3 +5,4 @@ NVIDIA-GRID-Linux-KVM*
 /result
 *.raw
 *.img
+*.age
