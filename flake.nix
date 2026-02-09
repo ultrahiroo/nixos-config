@@ -89,8 +89,10 @@
         {
           main =
             let
+              hostname = "main";
               system = "x86_64-linux";
               specialArgs = _specialArgs // {
+                inherit hostname;
                 inherit system;
               };
             in
@@ -105,8 +107,10 @@
 
           rpi4-btrfs =
             let
+              hostname = "rpi4-btrfs";
               system = "aarch64-linux";
               specialArgs = _specialArgs // {
+                inherit hostname;
                 inherit system;
               };
             in
@@ -122,8 +126,10 @@
 
           rpi4-btrfs-disko =
             let
+              hostname = "rpi4-btrfs";
               system = "aarch64-linux";
               specialArgs = _specialArgs // {
+                inherit hostname;
                 inherit system;
               };
             in
@@ -139,8 +145,10 @@
 
           rpi4-bcachefs-disko =
             let
+              hostname = "rpi4-bcachefs";
               system = "aarch64-linux";
               specialArgs = _specialArgs // {
+                inherit hostname;
                 inherit system;
               };
             in
@@ -156,8 +164,10 @@
 
           rpi4-xfs-disko =
             let
+              hostname = "rpi4-xfs";
               system = "aarch64-linux";
               specialArgs = _specialArgs // {
+                inherit hostname;
                 inherit system;
               };
             in
