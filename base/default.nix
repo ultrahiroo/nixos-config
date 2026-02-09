@@ -1,6 +1,7 @@
 { ... }:
 {
   imports = [
+    ./agenix
     ./android
     ./appimage
     ./audio
