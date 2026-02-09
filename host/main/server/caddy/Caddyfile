@@ -1,7 +1,11 @@
+inouehiroo.mydns.jp {
+	reverse_proxy :8888
+}
+
 testnet.inouehiroo.mydns.jp {
 	reverse_proxy :8080
 }
 
-inouehiroo.mydns.jp {
-	reverse_proxy :8888
+git.inouehiroo.mydns.jp {
+	reverse_proxy :8000
 }
