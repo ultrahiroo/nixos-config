@@ -77,7 +77,7 @@
             "one"
           ];
           default_username = "one";
-          specialArgs = {
+          _specialArgs = {
             inherit inputs;
             inherit all_username;
             inherit all_normal_username;
@@ -87,54 +87,89 @@
 
         in
         {
-          main = inputs.nixpkgs.lib.nixosSystem {
-            inherit specialArgs;
-            system = "x86_64-linux";
-            modules = [
-              ./base
-              ./host/main
-            ];
-          };
+          main =
+            let
+              system = "x86_64-linux";
+              specialArgs = _specialArgs // {
+                inherit system;
+              };
+            in
+            inputs.nixpkgs.lib.nixosSystem {
+              inherit system;
+              inherit specialArgs;
+              modules = [
+                ./base
+                ./host/main
+              ];
+            };
 
-          rpi4-btrfs = inputs.nixpkgs.lib.nixosSystem {
-            inherit specialArgs;
-            system = "aarch64-linux";
-            modules = [
-              ./base
-              ./host/rpi4
-              ./host/rpi4/filesystem
-            ];
-          };
+          rpi4-btrfs =
+            let
+              system = "aarch64-linux";
+              specialArgs = _specialArgs // {
+                inherit system;
+              };
+            in
+            inputs.nixpkgs.lib.nixosSystem {
+              inherit system;
+              inherit specialArgs;
+              modules = [
+                ./base
+                ./host/rpi4
+                ./host/rpi4/filesystem
+              ];
+            };
 
-          rpi4-btrfs-disko = inputs.nixpkgs.lib.nixosSystem {
-            inherit specialArgs;
-            system = "aarch64-linux";
-            modules = [
-              ./base
-              ./host/rpi4
-              ./disko/rpi4/btrfs
-            ];
-          };
+          rpi4-btrfs-disko =
+            let
+              system = "aarch64-linux";
+              specialArgs = _specialArgs // {
+                inherit system;
+              };
+            in
+            inputs.nixpkgs.lib.nixosSystem {
+              inherit system;
+              inherit specialArgs;
+              modules = [
+                ./base
+                ./host/rpi4
+                ./disko/rpi4/btrfs
+              ];
+            };
 
-          rpi4-bcachefs-disko = inputs.nixpkgs.lib.nixosSystem {
-            inherit specialArgs;
-            system = "aarch64-linux";
-            modules = [
-              ./base
-              ./host/rpi4
-              ./disko/rpi4/bcachefs
-            ];
-          };
+          rpi4-bcachefs-disko =
+            let
+              system = "aarch64-linux";
+              specialArgs = _specialArgs // {
+                inherit system;
+              };
+            in
+            inputs.nixpkgs.lib.nixosSystem {
+              inherit system;
+              inherit specialArgs;
+              modules = [
+                ./base
+                ./host/rpi4
+                ./disko/rpi4/bcachefs
+              ];
+            };
 
-          rpi4-xfs-disko = inputs.nixpkgs.lib.nixosSystem {
-            inherit specialArgs;
-            system = "aarch64-linux";
-            modules = [
-              ./base
-              ./host/rpi4
-              ./disko/rpi4/xfs
-            ];
-          };
+          rpi4-xfs-disko =
+            let
+              system = "aarch64-linux";
+              specialArgs = _specialArgs // {
+                inherit system;
+              };
+            in
+            inputs.nixpkgs.lib.nixosSystem {
+              inherit system;
+              inherit specialArgs;
+              modules = [
+                ./base
+                ./host/rpi4
+                ./disko/rpi4/xfs
+              ];
+            };
         };
     };
 }
