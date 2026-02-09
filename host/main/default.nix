@@ -15,6 +15,7 @@
     ./networking
     ./nvidia
     ./obs-studio
+    ./secrets
     ./server
     ./spotify
     ./steam

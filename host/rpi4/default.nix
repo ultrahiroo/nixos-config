@@ -11,6 +11,7 @@
     ./audio
     ./gpu
     ./networking
+    ./secrets
     ./swap
   ];
 
