@@ -31,8 +31,8 @@
       user = "one";
     in
     ''
-      password="$(tr -d '\n' < ${password.path})"
-      ${adminCommand} create --admin --email "root@localhost" --username ${user} --password $password || true
-      ${adminCommand} change-password --username ${user} --password $password
+      PASSWORD="$(tr -d '\n' < ${password.path})"
+      ${adminCommand} create --admin --email "root@localhost" --username ${user} --password $PASSWORD || true
+      ${adminCommand} change-password --username ${user} --password $PASSWORD
     '';
 }
