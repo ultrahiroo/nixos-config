@@ -67,6 +67,14 @@ vim.api.nvim_create_user_command(
 )
 
 vim.api.nvim_create_user_command(
+    'Paste',
+    function()
+        vim.cmd('normal +P')
+    end,
+    {}
+)
+
+vim.api.nvim_create_user_command(
     'LspFormat',
     function()
         vim.lsp.buf.format()
