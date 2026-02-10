@@ -11,6 +11,9 @@ nix flake check --abort-on-warn --show-trace
 ```sh
 systemctl list-timers
 ```
+```sh
+journalctl -xe --unit auto-upgrade
+```
 
 ## Install
 ```sh

@@ -28,6 +28,7 @@
         LOGIN_REMEMBER_DAYS = 365;
       };
       service = {
+        ENABLE_REVERSE_PROXY_AUTHENTICATION = true;
         ENABLE_CAPTCHA = true;
       };
     };
